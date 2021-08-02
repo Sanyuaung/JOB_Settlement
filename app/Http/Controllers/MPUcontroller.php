@@ -52,7 +52,9 @@ class MPUcontroller extends Controller
         if($a==='11C')
             {
                 $files=file(request('mpu')->getRealPath());
-                $data=(array_slice($files,0));
+                $count=array_pop($files);
+                unset($count);
+                $data=(array_slice($files,1));
                 $parts =(array_chunk($data, 5000));
                 foreach($parts as $part){
                     $name=request('mpu');
@@ -81,7 +83,9 @@ class MPUcontroller extends Controller
             }elseif($b==='ACOM') //ACOM
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -110,7 +114,9 @@ class MPUcontroller extends Controller
                 }elseif($b==='ICOM') // ICOM
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -139,7 +145,9 @@ class MPUcontroller extends Controller
                 }elseif($a==='11S') // 11S
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -168,7 +176,9 @@ class MPUcontroller extends Controller
                 }elseif($d==='901') // 11S_901
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -197,7 +207,9 @@ class MPUcontroller extends Controller
                 }elseif($b==='SCOM') // SCOM
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -226,7 +238,9 @@ class MPUcontroller extends Controller
                 }elseif($c==='901902') // SCOM_901902
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -255,7 +269,9 @@ class MPUcontroller extends Controller
                 }elseif($b==='AERR') // AERR
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -284,7 +300,9 @@ class MPUcontroller extends Controller
                 }elseif($a==='11E') // 11E
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -313,7 +331,9 @@ class MPUcontroller extends Controller
                 }elseif($b==='IERR') // IERR
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $data=(array_slice($files,0));
+                    $count=array_pop($files);
+                    unset($count);
+                    $data=(array_slice($files,1));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
