@@ -145,9 +145,7 @@ class MPUcontroller extends Controller
                 }elseif($a==='11S') // 11S
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $count=array_pop($files);
-                    unset($count);
-                    $data=(array_slice($files,1));
+                    $data=(array_slice($files,0));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -176,9 +174,7 @@ class MPUcontroller extends Controller
                 }elseif($d==='901') // 11S_901
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $count=array_pop($files);
-                    unset($count);
-                    $data=(array_slice($files,1));
+                    $data=(array_slice($files,0));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -207,9 +203,7 @@ class MPUcontroller extends Controller
                 }elseif($b==='SCOM') // SCOM
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $count=array_pop($files);
-                    unset($count);
-                    $data=(array_slice($files,1));
+                    $data=(array_slice($files,0));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -238,9 +232,7 @@ class MPUcontroller extends Controller
                 }elseif($c==='901902') // SCOM_901902
                 {
                     $files=file(request('mpu')->getRealPath());
-                    $count=array_pop($files);
-                    unset($count);
-                    $data=(array_slice($files,1));
+                    $data=(array_slice($files,0));
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
