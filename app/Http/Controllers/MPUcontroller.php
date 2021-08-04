@@ -55,6 +55,10 @@ class MPUcontroller extends Controller
                 $count=array_pop($files);
                 unset($count);
                 $data=(array_slice($files,1));
+                if ($data==[]){
+                    echo '<span style="color:RED;">NO DATA</span>';
+
+                }else{
                 $parts =(array_chunk($data, 5000));
                 foreach($parts as $part){
                     $name=request('mpu');
@@ -80,12 +84,17 @@ class MPUcontroller extends Controller
                         'ind11c' => $data->ind11c(),
                         'filename'=>$filename,
                     ]);
+                };
             }elseif($b==='ACOM') //ACOM
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
                     unset($count);
                     $data=(array_slice($files,1));
+                    if ($data==[]){
+                        echo '<span style="color:RED;">NO DATA</span>';
+    
+                    }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -111,12 +120,17 @@ class MPUcontroller extends Controller
                             'acom' => $data->ACOM(),
                             'filename'=>$filename,
                         ]);
+                    };
                 }elseif($b==='ICOM') // ICOM
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
                     unset($count);
                     $data=(array_slice($files,1));
+                    if ($data==[]){
+                        echo '<span style="color:RED;">NO DATA</span>';
+
+                    }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -142,6 +156,7 @@ class MPUcontroller extends Controller
                             'icom' => $data->ICOM(),
                             'filename'=>$filename,
                         ]);
+                    };    
                 }elseif($a==='11S') // 11S
                 {
                     $files=file(request('mpu')->getRealPath());
@@ -264,6 +279,10 @@ class MPUcontroller extends Controller
                     $count=array_pop($files);
                     unset($count);
                     $data=(array_slice($files,1));
+                    if ($data==[]){
+                        echo '<span style="color:RED;">NO DATA</span>';
+
+                    }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -289,12 +308,17 @@ class MPUcontroller extends Controller
                             'aerr' => $data->aerr(),
                             'filename'=>$filename,
                         ]);
+                    };
                 }elseif($a==='11E') // 11E
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
                     unset($count);
                     $data=(array_slice($files,1));
+                    if ($data==[]){
+                        echo '<span style="color:RED;">NO DATA</span>';
+
+                    }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -320,12 +344,17 @@ class MPUcontroller extends Controller
                             'inc11e' => $data->inc11e(),
                             'filename'=>$filename,
                         ]);
+                    };
                 }elseif($b==='IERR') // IERR
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
                     unset($count);
                     $data=(array_slice($files,1));
+                    if ($data==[]){
+                        echo '<span style="color:RED;">NO DATA</span>';
+
+                    }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
                         $name=request('mpu');
@@ -351,6 +380,7 @@ class MPUcontroller extends Controller
                             'ierr' => $data->ierr(),
                             'filename'=>$filename,
                         ]);
+                    };
                 }elseif($e==='IJC' && $a==='01C')
                 {
                     $files=file(request('mpu')->getRealPath());
