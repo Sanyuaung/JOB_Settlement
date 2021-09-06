@@ -10,9 +10,11 @@
              </div>
         @endif
 
-        @error('mpu')
-            <p class="text-danger">{{$message="Please select the MPU New Switch file"}}</p>
-        @enderror
+        @if (session('nodata'))
+            <div class="alert alert-danger">
+              {{session('nodata')}}
+             </div>
+        @endif
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">

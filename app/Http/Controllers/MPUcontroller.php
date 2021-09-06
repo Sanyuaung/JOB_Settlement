@@ -56,8 +56,7 @@ class MPUcontroller extends Controller
                 unset($count);
                 $data=(array_slice($files,1));
                 if ($data==[]){
-                    echo '<span style="color:RED;">NO DATA</span>';
-
+                    return back()->with('nodata'," This File is Empty.");
                 }else{
                 $parts =(array_chunk($data, 5000));
                 foreach($parts as $part){
@@ -92,7 +91,7 @@ class MPUcontroller extends Controller
                     unset($count);
                     $data=(array_slice($files,1));
                     if ($data==[]){
-                        echo '<span style="color:RED;">NO DATA</span>';
+                        return back()->with('nodata'," This File is Empty.");
     
                     }else{
                     $parts =(array_chunk($data, 5000));
@@ -128,8 +127,7 @@ class MPUcontroller extends Controller
                     unset($count);
                     $data=(array_slice($files,1));
                     if ($data==[]){
-                        echo '<span style="color:RED;">NO DATA</span>';
-
+                        return back()->with('nodata'," This File is Empty.");
                     }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
@@ -280,8 +278,7 @@ class MPUcontroller extends Controller
                     unset($count);
                     $data=(array_slice($files,1));
                     if ($data==[]){
-                        echo '<span style="color:RED;">NO DATA</span>';
-
+                        return back()->with('nodata'," This File is Empty.");
                     }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
@@ -316,8 +313,7 @@ class MPUcontroller extends Controller
                     unset($count);
                     $data=(array_slice($files,1));
                     if ($data==[]){
-                        echo '<span style="color:RED;">NO DATA</span>';
-
+                        return back()->with('nodata'," This File is Empty.");
                     }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
@@ -352,8 +348,7 @@ class MPUcontroller extends Controller
                     unset($count);
                     $data=(array_slice($files,1));
                     if ($data==[]){
-                        echo '<span style="color:RED;">NO DATA</span>';
-
+                        return back()->with('nodata'," This File is Empty.");
                     }else{
                     $parts =(array_chunk($data, 5000));
                     foreach($parts as $part){
