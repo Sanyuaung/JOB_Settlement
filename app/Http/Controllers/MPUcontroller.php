@@ -468,7 +468,7 @@ class MPUcontroller extends Controller
                     $filePath=glob($path);
                     foreach($filePath as $file){
                         $data=array_map('str_getcsv',file($file));
-                        DB::delete('delete from ii_incs');
+                        DB::delete('delete from ijc01_902s');
                             foreach($data as $row){
                                 ijc01_902::Create([
                                     'Field1'=>$row [0],
