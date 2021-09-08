@@ -48,8 +48,12 @@ class MPUcontroller extends Controller
         $b=substr($filename,11); //ACOM,AERR,SCOM and ICOM
         $c=substr($filename,16); //SCOM_901902
         $d=substr($filename,13); //11S_901
+        $f=substr($filename,9); //(MPU=>01S,01S_902,01C)
+
+
+
         // 11C
-        if($a==='11C')
+        if($e=='INC' && $a==='11C' || $f==='01C')
             {
                 $files=file(request('mpu')->getRealPath());
                 $count=array_pop($files);
@@ -84,7 +88,7 @@ class MPUcontroller extends Controller
                         'filename'=>$filename,
                     ]);
                 };
-            }elseif($b==='ACOM') //ACOM
+            }elseif($e=='IND' && $b==='ACOM') //ACOM
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
@@ -120,7 +124,7 @@ class MPUcontroller extends Controller
                             'filename'=>$filename,
                         ]);
                     };
-                }elseif($b==='ICOM') // ICOM
+                }elseif($e=='IND' && $b==='ICOM') // ICOM
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
@@ -155,7 +159,7 @@ class MPUcontroller extends Controller
                             'filename'=>$filename,
                         ]);
                     };    
-                }elseif($a==='11S') // 11S
+                }elseif($e=='INC' && $a==='11S' || $f==='01S') // 11S 01S
                 {
                     $files=file(request('mpu')->getRealPath());
                     $data=(array_slice($files,0));
@@ -184,7 +188,7 @@ class MPUcontroller extends Controller
                             'inc11s' => $data->inc11s(),
                             'filename'=>$filename,
                         ]);
-                }elseif($d==='901') // 11S_901
+                }elseif($e=='INC' && $d==='901' || $f==='01S_902') // 11S_901 01S_902
                 {
                     $files=file(request('mpu')->getRealPath());
                     $data=(array_slice($files,0));
@@ -213,7 +217,7 @@ class MPUcontroller extends Controller
                             'inc11s_901' => $data->inc11s_901(),
                             'filename'=>$filename,
                         ]);
-                }elseif($b==='SCOM') // SCOM
+                }elseif($e=='IND' && $b==='SCOM') // SCOM
                 {
                     $files=file(request('mpu')->getRealPath());
                     $data=(array_slice($files,0));
@@ -242,7 +246,7 @@ class MPUcontroller extends Controller
                             'scom' => $data->scom(),
                             'filename'=>$filename,
                         ]);
-                }elseif($c==='901902') // SCOM_901902
+                }elseif($e=='IND' && $c==='901902') // SCOM_901902
                 {
                     $files=file(request('mpu')->getRealPath());
                     $data=(array_slice($files,0));
@@ -271,7 +275,7 @@ class MPUcontroller extends Controller
                             'scom_901902' => $data->scom_901902(),
                             'filename'=>$filename,
                         ]);
-                }elseif($b==='AERR') // AERR
+                }elseif($e=='IND' && $b==='AERR') // AERR
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
@@ -306,7 +310,7 @@ class MPUcontroller extends Controller
                             'filename'=>$filename,
                         ]);
                     };
-                }elseif($a==='11E') // 11E
+                }elseif($e=='INC' && $a==='11E') // 11E
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
@@ -341,7 +345,7 @@ class MPUcontroller extends Controller
                             'filename'=>$filename,
                         ]);
                     };
-                }elseif($b==='IERR') // IERR
+                }elseif($e=='IND' && $b==='IERR') // IERR
                 {
                     $files=file(request('mpu')->getRealPath());
                     $count=array_pop($files);
