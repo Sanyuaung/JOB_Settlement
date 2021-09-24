@@ -4,11 +4,11 @@
    <div class="container-fluid mt-4">
    <label class="font-weight-bold text-danger mr-5 mt-5"><b>{{$filename}}</label>
        <div class="text-center">
-            {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
+            {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
             <a href="{{route('MPUHome')}}" class="btn btn-info float-left" role="button">Back</a></div>
 
         <div>
-                <a href="{{route('downloadinc11s_901')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-info float-left" role="button">Download EXCEL</a>
+                <a href="{{route('downloadinc11s_901')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-info float-left rounded-pill" role="button">Download EXCEL</a>
         </div>
             <br>
             <br>

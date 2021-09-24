@@ -2,9 +2,9 @@
 @section('content')
    <div class="container-fluid mt-5">
         <div class="text-center">
-            {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-            <a href="{{route('JCBHome')}}" class="btn btn-info float-left" role="button">Back</a>
-            <a href="{{route('pdf')}}" class="btn btn-info float-right" onclick="return confirm('Are you sure you want to download?')" role="button">Download PDF</a>
+            {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
+            <a href="{{route('JCBHome')}}" class="btn btn-info float-left rounded-pill" role="button">Back</a>
+            <a href="{{route('pdf')}}" class="btn btn-info float-right rounded-pill" onclick="return confirm('Are you sure you want to download?')" role="button">Download PDF</a>
         </div>
             <br>
             <br>

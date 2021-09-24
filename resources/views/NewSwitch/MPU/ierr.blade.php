@@ -5,10 +5,10 @@
        <div class="text-center">
 
             {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-            <a href="{{route('MPUHome')}}" class="btn btn-info float-left" role="button">Back</a></div>
+            <a href="{{route('MPUHome')}}" class="btn btn-info float-left rounded-pill" role="button">Back</a></div>
 
         <div>
-                <a href="{{route('downlodIERR')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-info float-left">Download EXCEL</a>
+                <a href="{{route('downlodIERR')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-info float-left rounded-pill">Download EXCEL</a>
         </div>
             <br>
             <br>
