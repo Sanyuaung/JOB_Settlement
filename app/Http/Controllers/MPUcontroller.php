@@ -48,12 +48,12 @@ class MPUcontroller extends Controller
         $b=substr($filename,11); //ACOM,AERR,SCOM and ICOM
         $c=substr($filename,16); //SCOM_901902
         $d=substr($filename,13); //11S_901
-        $f=substr($filename,9); //(MPU=>01S,01S_902,01C)
+        $f=substr($filename,9); //(MPU=>01S,01S_902,01C,01X)
 
 
 
         // 11C
-        if($e=='INC' && $a==='11C' || $e=='INC' && $f==='01C')
+        if($e=='INC' && $a==='11C' || $e=='INC' && $f==='01C' || $e=='INC' && $f==='01X')
             {
                 $files=file(request('mpu')->getRealPath());
                 $count=array_pop($files);
