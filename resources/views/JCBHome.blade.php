@@ -5,10 +5,11 @@
     <form class=" border border-light p-5" action="{{route('jcb')}}" method="post" enctype="multipart/form-data">
         @csrf
 
-        @error('jcb')
-            <p class="text-danger">{{$message="Please select the JCB file"}}</p>
-        @enderror
-
+        @if (session('error'))
+            <div class="alert alert-danger">
+              {{session('error')}}
+             </div>
+        @endif
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <button class="btn btn-info"  type="submit">JCB Upload</button>
