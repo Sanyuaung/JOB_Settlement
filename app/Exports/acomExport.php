@@ -7,7 +7,7 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class acomExport implements FromCollection,WithHeadings,WithMapping
+class acomExport implements FromCollection, WithHeadings, WithMapping
 {
     public function headings(): array
     {
@@ -95,6 +95,7 @@ class acomExport implements FromCollection,WithHeadings,WithMapping
     */
     public function collection()
     {
-        return collect(acom::ACOM());;
+        return collect(acom::ACOM());
+        ;
     }
 }

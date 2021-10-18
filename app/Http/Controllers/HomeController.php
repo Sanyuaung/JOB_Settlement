@@ -3,20 +3,19 @@
 
 namespace App\Http\Controllers;
 
-
 class HomeController extends Controller
 {
-    function home()
+    public function home()
     {
         return view('home');
     }
 
-    function JCBHome()
+    public function JCBHome()
     {
         return view('JCBHome');
     }
-    function MPUHome()
+    public function MPUHome()
     {
         return view('MPUHome');
     }
- }
+}

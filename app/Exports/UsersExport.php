@@ -12,6 +12,5 @@ class UsersExport implements FromCollection
     */
     public function collection()
     {
-        return aerr::all();
     }
 }

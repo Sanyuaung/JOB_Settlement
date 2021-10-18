@@ -29,5 +29,4 @@ class acom extends Model
         from acoms');
         return $ACOM;
     }
-
 }

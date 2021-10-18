@@ -7,7 +7,7 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class Inc11eExport implements FromCollection,WithHeadings,WithMapping
+class Inc11eExport implements FromCollection, WithHeadings, WithMapping
 {
     public function headings(): array
     {
@@ -86,6 +86,7 @@ class Inc11eExport implements FromCollection,WithHeadings,WithMapping
     */
     public function collection()
     {
-        return collect(inc11e::inc11e());;
+        return collect(inc11e::inc11e());
+        ;
     }
 }

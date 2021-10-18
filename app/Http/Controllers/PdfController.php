@@ -22,10 +22,10 @@ class PdfController extends Controller
     public function pdf()
     {
         $pdf=App::make('dompdf.wrapper');
-        $pdf->loadHtml($this->convert_pdf())->setPaper('a4','landscape');
+        $pdf->loadHtml($this->convert_pdf())->setPaper('a4', 'landscape');
         $d=new jcb;
         $date=$d->show();
-        foreach ($date as $date){
+        foreach ($date as $date) {
             $filename = "JCB".$date->date.'.pdf';
         }
         return $pdf->download($filename);
@@ -53,8 +53,8 @@ class PdfController extends Controller
               </tr>
             </thead>
                ';
-               foreach ($customer_data['users'] as $user){
-                   $header.='
+        foreach ($customer_data['users'] as $user) {
+            $header.='
                 <tbody>
                     <tr>
                         <td style="border: 1px solid;"align="center">'.$user->NO.'</td>
@@ -67,34 +67,38 @@ class PdfController extends Controller
                         <td style="border: 1px solid;"align="center"><b>'.$user->Debit.'</td>
                         <td style="border: 1px solid;"align="center"><b>'.$user->Credit.'</td>
                     </tr>
-                </tbody>';}
+                </tbody>';
+        }
 
-                $output='
+        $output='
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
                     <th style="border: 1px solid; padding:12px;"align="center">Total</th>
                 ';
-               foreach ($customer_data['one'] as $one){
-                $output.='
+        foreach ($customer_data['one'] as $one) {
+            $output.='
                     <th style="border: 1px solid; padding:12px; "align="center"><b>'.$one->one.'</th>
-                ';}
-                foreach ($customer_data['two'] as $two){
-                    $output.='
+                ';
+        }
+        foreach ($customer_data['two'] as $two) {
+            $output.='
                         <th style="border: 1px solid; padding:12px; "align="center"><b>'.$two->two.'</th>
-                    ';}
-                foreach ($customer_data['three'] as $three){
-                    $output.='
+                    ';
+        }
+        foreach ($customer_data['three'] as $three) {
+            $output.='
                         <th style="border: 1px solid; padding:12px; "align="center"><b>'.$three->three.'</th>
-                    ';}
-                foreach ($customer_data['four'] as $four){
-                    $output.='
+                    ';
+        }
+        foreach ($customer_data['four'] as $four) {
+            $output.='
                         <th style="border: 1px solid; padding:12px; "align="center"><b>'.$four->four.'</th>
-                    ';}
+                    ';
+        }
 
         $output .= '</table>';
         return $header.$output;
-
     }
 }
