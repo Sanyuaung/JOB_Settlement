@@ -1,0 +1,27 @@
+label {
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(6, 245, 26), rgb(50, 7, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#JCB{
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#MPU{
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#HOME{
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
