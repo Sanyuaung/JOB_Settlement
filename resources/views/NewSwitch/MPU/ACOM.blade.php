@@ -1,17 +1,17 @@
 @extends('layouts/app')
 @section('content')
 
-   <div class="container-fluid mt-4">
-   <label class="font-weight-bold text-danger mr-5 mt-5"><b>{{$filename}}</label>
+   <div class="container-fluid">
+   <label class="font-weight-bold text-danger"><b>{{$filename}}</label>
        <div class="text-center">
           {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-          <a href="{{route('MPUHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a></div>
+          <a href="{{route('MPUHome')}}" class="mt-2 btn btn-primary float-left rounded-pill" role="button">Back</a></div>
         <div>
-          <a href="{{route('downloadACOM')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-primary float-left rounded-pill">Download EXCEL</a>
+          <a href="{{route('downloadACOM')}}" onclick="return confirm('Are you sure you want to download?')" class="mt-2 ml-4 btn btn-primary float-left rounded-pill">Download EXCEL</a>
         </div>
             <br>
             <br>
-    <table class="table table-hover text-center aqua-gradient black-text">
+    <table class="mt-3 table table-hover text-center aqua-gradient black-text">
     
         <thead>
           <tr>

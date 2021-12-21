@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('content')
-   <div class="container-fluid mt-5">
+   <div class="container-fluid">
         <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
             <a href="{{route('JCBHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a>
@@ -8,7 +8,7 @@
         </div>
             <br>
             <br>
-    <table class="table table-hover text-center aqua-gradient black-text">
+    <table class="mt-2 table table-hover text-center aqua-gradient black-text">
         <thead>
           <tr>
             <th scope="col">NO</th>
