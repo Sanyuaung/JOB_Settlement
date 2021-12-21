@@ -5,14 +5,14 @@
     <form class=" border border-light p-5" action="{{route('jcb')}}" method="post" enctype="multipart/form-data">
         @csrf
 
-        @if (session('error'))
+        @if (session('errors'))
             <div class="alert alert-danger">
-              {{session('error')}}
+              {{session('errors')}}
              </div>
         @endif
                 <div class="input-group mb-5">
                     <div class="input-group-prepend">
-                        <button class="btn btn-info"  type="submit">JCB Upload</button>
+                        <button class="btn btn-primary"  type="submit">JCB Upload</button>
                     </div>
                      <input type="file" name="jcb" class="form-control">
                 </div>

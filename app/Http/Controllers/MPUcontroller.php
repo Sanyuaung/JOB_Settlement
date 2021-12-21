@@ -541,7 +541,7 @@ class MPUcontroller extends Controller
                         ]);
             };
         } else {
-            return back()->with('error', " Doesn't work this file (Please select other file).");
+            return back()->with('mpuerror', " Doesn't work this file (Please select other file).");
         }
     }
 }

@@ -3,8 +3,8 @@
    <div class="container-fluid mt-5">
         <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
-            <a href="{{route('JCBHome')}}" class="btn btn-info float-left rounded-pill" role="button">Back</a>
-            <a href="{{route('pdf')}}" class="btn btn-info float-right rounded-pill" onclick="return confirm('Are you sure you want to download?')" role="button">Download PDF</a>
+            <a href="{{route('JCBHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a>
+            <a href="{{route('pdf')}}" class="btn btn-primary float-right rounded-pill" onclick="return confirm('Are you sure you want to download?')" role="button">Download PDF</a>
         </div>
             <br>
             <br>
@@ -25,7 +25,7 @@
         <tbody>
             @foreach ($users as $user)
             <tr>
-              <td>{{$user->NO}}</td>
+              <td><b>{{$user->NO}}</td>
               <td><b>{{$user->Institution_Code}}</td>
               <td><b>{{$user->Short_Name}}</td>
               <td><b>{{$user->Account_Number}}</td>

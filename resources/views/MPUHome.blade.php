@@ -4,9 +4,9 @@
     <h1 id="MPU" class="text-center">Welcome MOB NewSwitch Settlement</h1>
     <form class=" border border-light p-5" action="{{route('mpu')}}" method="post" enctype="multipart/form-data">
         @csrf
-        @if (session('error'))
+        @if (session('mpuerror'))
             <div class="alert alert-danger">
-              {{session('error')}}
+              {{session('mpuerror')}}
              </div>
         @endif
 
@@ -18,7 +18,7 @@
 
                 <div class="input-group mb-5">
                     <div class="input-group-prepend">
-                        <button class="btn btn-info"  type="submit">MPU Upload</button>
+                        <button class="btn btn-primary"  type="submit">MPU Upload</button>
                     </div>
                      <input type="file" name="mpu" class="form-control">
                 </div>

@@ -13,8 +13,8 @@ class JCBcontroller extends Controller
 {
     public function jcb()
     {
-        request()->validate([
-            "jcb"=>"required|mimes:txt",
+        $validation=request()->validate([
+            "jcb"=>"required",
         ]);
         $name=request('jcb');
         $filename=$name->getClientoriginalName();
@@ -51,7 +51,7 @@ class JCBcontroller extends Controller
                         'four'   => $data->total4()
                     ]);
         } else {
-            return back()->with('error', " Doesn't work this file (Please select other file).");
+            return back()->with('errors', " Doesn't work this file (Please select CLR file).");
         }
     }
     public function download()
