@@ -1,4 +1,13 @@
+footer {
+    font-size: 12px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(6, 245, 26), rgb(50, 7, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 label {
+    /* font-size: 20px; */
     font-weight: bold;
     background: -webkit-linear-gradient(rgb(6, 245, 26), rgb(50, 7, 241));
     -webkit-background-clip: text;
@@ -25,3 +34,56 @@ label {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.scroll-table-container {
+    height: 320px; 
+    overflow: scroll;
+} 
+
+.scroll-table, td, th {
+    min-width: 20px;
+    font-size: 15px;
+}
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font: size 5px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #table tr:hover {background-color: #ddd;}
+  
+  #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+}
+
+    #table td {
+        border: 1px solid #ddd;
+        font-size: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        text-align: left;
+        text-align: center;
+        color: black;
+    }
+    /* #table #jcbth{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+    background: white;
+    color: white;
+ } */
+
+/* #btn{
+    background-color: #04AA6D;
+} */

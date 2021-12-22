@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<link href="/css/style.css" rel="stylesheet">
+
 <div class="container mt-3 p-4">
     <h1 id="MPU" class="text-center">Welcome MOB NewSwitch Settlement</h1>
     <form class=" border border-light p-5" action="{{route('mpu')}}" method="post" enctype="multipart/form-data">
@@ -18,7 +20,7 @@
 
                 <div class="input-group mb-5">
                     <div class="input-group-prepend">
-                        <button class="btn btn-primary"  type="submit">MPU Upload</button>
+                        <button id="btn" class="btn btn-primary"  type="submit">MPU Upload</button>
                     </div>
                      <input type="file" name="mpu" class="form-control">
                 </div>

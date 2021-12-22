@@ -1,18 +1,19 @@
 @extends('layouts/app')
 @section('content')
+<link href="/css/style.css" rel="stylesheet">
+
    <div class="container-fluid">
-   <label class="font-weight-bold text-danger"><b>{{$filename}}</label>
        <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-            <a href="{{route('MPUHome')}}" class="mt-2 btn btn-primary float-left rounded-pill" role="button">Back</a></div>
-
+            <a href="{{route('MPUHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a></div>
         <div>
-                <a href="{{route('downloadincSCOM_901902')}}" onclick="return confirm('Are you sure you want to download?')" class="mt-2 ml-4 btn btn-primary float-left rounded-pill" role="button">Download EXCEL</a>
+            <a href="{{route('downloadincSCOM_901902')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-primary float-left rounded-pill" role="button">Download EXCEL</a>
+            <label class="float-right">{{$filename}}</label>
         </div>
             <br>
             <br>
-    <table class="mt-3 table table-hover text-center aqua-gradient black-text">
-        <thead>
+    <div class="scroll-table-container">
+      <table id="table" class="scroll-table">
           <tr>
             <th scope="col">NO</th>
             <th scope="col">recordtype</th>
@@ -24,25 +25,21 @@
             <th scope="col">debit_amt</th>
             <th scope="col">reserved</th>
           </tr>
-        </thead>
-        <tbody>
             @foreach ($scom_901902 as $scom_901902)
             <tr>
-              <td><b>{{$scom_901902->NO}}</td>
-              <td><b>{{$scom_901902->recordtype}}</td>
-              <td><b>{{$scom_901902->member_institution}}</td>
-              <td><b>{{$scom_901902->curr_code}}</td>
-              <td><b>{{$scom_901902->statistics_txn_code}}</td>
-              <td><b>{{$scom_901902->no_txn_summary}}</td>
-              <td><b>{{$scom_901902->credit_amt}}</td>
-              <td><b>{{$scom_901902->debit_amt}}</td>
-              <td><b>{{$scom_901902->reserved}}</td>
+              <td>{{$scom_901902->NO}}</td>
+              <td>{{$scom_901902->recordtype}}</td>
+              <td>{{$scom_901902->member_institution}}</td>
+              <td>{{$scom_901902->curr_code}}</td>
+              <td>{{$scom_901902->statistics_txn_code}}</td>
+              <td>{{$scom_901902->no_txn_summary}}</td>
+              <td>{{$scom_901902->credit_amt}}</td>
+              <td>{{$scom_901902->debit_amt}}</td>
+              <td>{{$scom_901902->reserved}}</td>
             </tr>
-            
-
             @endforeach
-        </tbody>
       </table>
    </div>
+  </div>
 
 @endsection

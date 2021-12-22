@@ -1,19 +1,20 @@
 @extends('layouts/app')
 @section('content')
+<link href="/css/style.css" rel="stylesheet">
 
    <div class="container-fluid">
-   <label class="font-weight-bold text-danger"><b>{{$filename}}</label>
+   {{-- <label class="font-weight-bold text-danger"><b>{{$filename}}</label> --}}
        <div class="text-center">
           {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-          <a href="{{route('MPUHome')}}" class="mt-2 btn btn-primary float-left rounded-pill" role="button">Back</a></div>
+          <a href="{{route('MPUHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a></div>
         <div>
-          <a href="{{route('downloadACOM')}}" onclick="return confirm('Are you sure you want to download?')" class="mt-2 ml-4 btn btn-primary float-left rounded-pill">Download EXCEL</a>
+          <a href="{{route('downloadACOM')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-primary float-left rounded-pill">Download EXCEL</a>
+          <label class="float-right">{{$filename}}</label>
         </div>
             <br>
             <br>
-    <table class="mt-3 table table-hover text-center aqua-gradient black-text">
-    
-        <thead>
+    <div class="scroll-table-container">
+      <table id="table" class="scroll-table">
           <tr>
             <th scope="col">NO</th>
             <th scope="col">Record_Type</th>
@@ -51,50 +52,46 @@
             <th scope="col">cardholder_fee</th>
             <th scope="col">txn_tramsmission</th>
           </tr>
-        </thead>
-        <tbody>
             @foreach ($acom as $acom)
             <tr>
-              <td><b>{{$acom->NO}}</td>
-              <td><b>{{$acom->recordtype}}</td>
-              <td><b>{{$acom->CardNo}}</td>
-              <td><b>{{$acom->process_code}}</td>
-              <td><b>{{$acom->txn_amt}}</td>
-              <td><b>{{$acom->settle_amt}}</td>
-              <td><b>{{$acom->sett_rate}}</td>
-              <td><b>{{$acom->system_trace}}</td>
-              <td><b>{{$acom->txn_time}}</td>
-              <td><b>{{$acom->txn_date}}</td>
-              <td><b>{{$acom->settle_date}}</td>
-              <td><b>{{$acom->MCC}}</td>
-              <td><b>{{$acom->Acq_institution_code}}</td>
-              <td><b>{{$acom->Issuer_bank_code}}</td>
-              <td><b>{{$acom->beneficiary_bank_code}}</td>
-              <td><b>{{$acom->Forward_institution_code}}</td>
-              <td><b>{{$acom->auth_no}}</td>
-              <td><b>{{$acom->RRN}}</td>
-              <td><b>{{$acom->Card_Acceptor_Terminal}}</td>
-              <td><b>{{$acom->txn_curr_code}}</td>
-              <td><b>{{$acom->settle_curr_code}}</td>
-              <td><b>{{$acom->from_acc}}</td>
-              <td><b>{{$acom->to_acc}}</td>
-              <td><b>{{$acom->msg_type_identifier}}</td>
-              <td><b>{{$acom->res_code}}</td>
-              <td><b>{{$acom->receivable_fee}}</td>
-              <td><b>{{$acom->payable_fee}}</td>
-              <td><b>{{$acom->interchange_fee}}</td>
-              <td><b>{{$acom->POS_mode}}</td>
-              <td><b>{{$acom->system_traceno}}</td>
-              <td><b>{{$acom->POS_condition}}</td>
-              <td><b>{{$acom->card_acceptor_code}}</td>
-              <td><b>{{$acom->accept_amt}}</td>
-              <td><b>{{$acom->cardholder_fee}}</td>
-              <td><b>{{$acom->txn_tramsmission}}</td>
+              <td>{{$acom->NO}}</td>
+              <td>{{$acom->recordtype}}</td>
+              <td>{{$acom->CardNo}}</td>
+              <td>{{$acom->process_code}}</td>
+              <td>{{$acom->txn_amt}}</td>
+              <td>{{$acom->settle_amt}}</td>
+              <td>{{$acom->sett_rate}}</td>
+              <td>{{$acom->system_trace}}</td>
+              <td>{{$acom->txn_time}}</td>
+              <td>{{$acom->txn_date}}</td>
+              <td>{{$acom->settle_date}}</td>
+              <td>{{$acom->MCC}}</td>
+              <td>{{$acom->Acq_institution_code}}</td>
+              <td>{{$acom->Issuer_bank_code}}</td>
+              <td>{{$acom->beneficiary_bank_code}}</td>
+              <td>{{$acom->Forward_institution_code}}</td>
+              <td>{{$acom->auth_no}}</td>
+              <td>{{$acom->RRN}}</td>
+              <td>{{$acom->Card_Acceptor_Terminal}}</td>
+              <td>{{$acom->txn_curr_code}}</td>
+              <td>{{$acom->settle_curr_code}}</td>
+              <td>{{$acom->from_acc}}</td>
+              <td>{{$acom->to_acc}}</td>
+              <td>{{$acom->msg_type_identifier}}</td>
+              <td>{{$acom->res_code}}</td>
+              <td>{{$acom->receivable_fee}}</td>
+              <td>{{$acom->payable_fee}}</td>
+              <td>{{$acom->interchange_fee}}</td>
+              <td>{{$acom->POS_mode}}</td>
+              <td>{{$acom->system_traceno}}</td>
+              <td>{{$acom->POS_condition}}</td>
+              <td>{{$acom->card_acceptor_code}}</td>
+              <td>{{$acom->accept_amt}}</td>
+              <td>{{$acom->cardholder_fee}}</td>
+              <td>{{$acom->txn_tramsmission}}</td>
             </tr>
-
             @endforeach
-        </tbody>
       </table>
    </div>
-
+  </div>
 @endsection

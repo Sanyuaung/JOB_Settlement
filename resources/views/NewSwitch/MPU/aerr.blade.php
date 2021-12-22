@@ -1,19 +1,20 @@
 @extends('layouts/app')
 @section('content')
+<link href="/css/style.css" rel="stylesheet">
+
    <div class="container-fluid">
-   <label class="font-weight-bold text-danger"><b>{{$filename}}</label>
+   {{-- <label class="font-weight-bold text-danger"><b>{{$filename}}</label> --}}
        <div class="text-center">
-
             {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-            <a href="{{route('MPUHome')}}" class="mt-2 btn btn-primary float-left rounded-pill" role="button">Back</a></div>
-
+            <a href="{{route('MPUHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a></div>
         <div>
-                <a href="{{route('downloadAerr')}}" onclick="return confirm('Are you sure you want to download?')" class="mt-2 ml-4 btn btn-primary float-left rounded-pill">Download EXCEL</a>
+          <a href="{{route('downloadAerr')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-primary float-left rounded-pill">Download EXCEL</a>
+          <label class="float-right">{{$filename}}</label>
         </div>
             <br>
             <br>
-    <table class="mt-3 table table-hover text-center aqua-gradient black-text">
-        <thead>
+    <div class="scroll-table-container">
+      <table id="table" class="scroll-table">
           <tr>
             <th scope="col">NO</th>
             <th scope="col">Record_Type</th>
@@ -51,51 +52,47 @@
             <th scope="col">cardholder_fee</th>
             <th scope="col">txn_tramsmission</th>
           </tr>
-        </thead>
-        <tbody>
             @foreach ($aerr as $aerr)
             <tr>
-              <td><b>{{$aerr->NO}}</td>
-              <td><b>{{$aerr->recordtype}}</td>
-              <td><b>{{$aerr->CardNo}}</td>
-              <td><b>{{$aerr->process_code}}</td>
-              <td><b>{{$aerr->txn_amt}}</td>
-              <td><b>{{$aerr->settle_amt}}</td>
-              <td><b>{{$aerr->sett_rate}}</td>
-              <td><b>{{$aerr->system_trace}}</td>
-              <td><b>{{$aerr->txn_time}}</td>
-              <td><b>{{$aerr->txn_date}}</td>
-              <td><b>{{$aerr->settle_date}}</td>
-              <td><b>{{$aerr->MCC}}</td>
-              <td><b>{{$aerr->Acq_institution_code}}</td>
-              <td><b>{{$aerr->Issuer_bank_code}}</td>
-              <td><b>{{$aerr->beneficiary_bank_code}}</td>
-              <td><b>{{$aerr->Forward_institution_code}}</td>
-              <td><b>{{$aerr->auth_no}}</td>
-              <td><b>{{$aerr->RRN}}</td>
-              <td><b>{{$aerr->Card_Acceptor_Terminal}}</td>
-              <td><b>{{$aerr->txn_curr_code}}</td>
-              <td><b>{{$aerr->settle_curr_code}}</td>
-              <td><b>{{$aerr->from_acc}}</td>
-              <td><b>{{$aerr->to_acc}}</td>
-              <td><b>{{$aerr->msg_type_identifier}}</td>
-              <td><b>{{$aerr->reason_code}}</td>
-              <td><b>{{$aerr->receivable_fee}}</td>
-              <td><b>{{$aerr->payable_fee}}</td>
-              <td><b>{{$aerr->interchange_fee}}</td>
-              <td><b>{{$aerr->POS_mode}}</td>
-              <td><b>{{$aerr->system_traceno}}</td>
-              <td><b>{{$aerr->POS_condition}}</td>
-              <td><b>{{$aerr->card_acceptor_code}}</td>
-              <td><b>{{$aerr->accept_amt}}</td>
-              <td><b>{{$aerr->cardholder_fee}}</td>
-              <td><b>{{$aerr->txn_tramsmission}}</td>
+              <td>{{$aerr->NO}}</td>
+              <td>{{$aerr->recordtype}}</td>
+              <td>{{$aerr->CardNo}}</td>
+              <td>{{$aerr->process_code}}</td>
+              <td>{{$aerr->txn_amt}}</td>
+              <td>{{$aerr->settle_amt}}</td>
+              <td>{{$aerr->sett_rate}}</td>
+              <td>{{$aerr->system_trace}}</td>
+              <td>{{$aerr->txn_time}}</td>
+              <td>{{$aerr->txn_date}}</td>
+              <td>{{$aerr->settle_date}}</td>
+              <td>{{$aerr->MCC}}</td>
+              <td>{{$aerr->Acq_institution_code}}</td>
+              <td>{{$aerr->Issuer_bank_code}}</td>
+              <td>{{$aerr->beneficiary_bank_code}}</td>
+              <td>{{$aerr->Forward_institution_code}}</td>
+              <td>{{$aerr->auth_no}}</td>
+              <td>{{$aerr->RRN}}</td>
+              <td>{{$aerr->Card_Acceptor_Terminal}}</td>
+              <td>{{$aerr->txn_curr_code}}</td>
+              <td>{{$aerr->settle_curr_code}}</td>
+              <td>{{$aerr->from_acc}}</td>
+              <td>{{$aerr->to_acc}}</td>
+              <td>{{$aerr->msg_type_identifier}}</td>
+              <td>{{$aerr->reason_code}}</td>
+              <td>{{$aerr->receivable_fee}}</td>
+              <td>{{$aerr->payable_fee}}</td>
+              <td>{{$aerr->interchange_fee}}</td>
+              <td>{{$aerr->POS_mode}}</td>
+              <td>{{$aerr->system_traceno}}</td>
+              <td>{{$aerr->POS_condition}}</td>
+              <td>{{$aerr->card_acceptor_code}}</td>
+              <td>{{$aerr->accept_amt}}</td>
+              <td>{{$aerr->cardholder_fee}}</td>
+              <td>{{$aerr->txn_tramsmission}}</td>
             </tr>
-            
-
             @endforeach
-        </tbody>
       </table>
    </div>
+  </div>
 
 @endsection

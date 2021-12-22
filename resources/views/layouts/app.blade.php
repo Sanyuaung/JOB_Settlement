@@ -37,7 +37,7 @@
         <main class="py-3"">
             @yield('content')
         </main>
-            <label class="ml-2 float-left"> Copyright © 2021 San Yu Aung. All Rights Reserved.</label>
     </div>
+    <footer class="mt-2 ml-2 float-left"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer>
 </body>
 </html>

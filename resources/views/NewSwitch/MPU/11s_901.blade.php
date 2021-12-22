@@ -1,19 +1,20 @@
 @extends('layouts/app')
 @section('content')
+<link href="/css/style.css" rel="stylesheet">
 
    <div class="container-fluid">
-   <label class="font-weight-bold text-danger5"><b>{{$filename}}</label>
+   {{-- <label class="font-weight-bold text-danger5"><b>{{$filename}}</label> --}}
        <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
-            <a href="{{route('MPUHome')}}" class="mt-2 btn btn-primary float-left rounded-pill" role="button">Back</a></div>
-
+            <a href="{{route('MPUHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a></div>
         <div>
-                <a href="{{route('downloadinc11s_901')}}" onclick="return confirm('Are you sure you want to download?')" class="mt-2 ml-4 btn btn-primary float-left rounded-pill" role="button">Download EXCEL</a>
+          <a href="{{route('downloadinc11s_901')}}" onclick="return confirm('Are you sure you want to download?')" class="mt-2 ml-4 btn btn-primary float-left rounded-pill" role="button">Download EXCEL</a>
+          <label class="float-right">{{$filename}}</label>
         </div>
             <br>
             <br>
-    <table class="mt-3 table table-hover text-center aqua-gradient black-text">
-        <thead>
+    <div class="scroll-table-container">
+      <table id="table" class="scroll-table">
           <tr>
             <th scope="col">NO</th>
             <th scope="col">recordtype</th>
@@ -25,24 +26,21 @@
             <th scope="col">debit_amt</th>
             <th scope="col">reserved</th>
           </tr>
-        </thead>
-        <tbody>
             @foreach ($inc11s_901 as $inc11s_901)
             <tr>
-              <td><b>{{$inc11s_901->NO}}</td>
-              <td><b>{{$inc11s_901->recordtype}}</td>
-              <td><b>{{$inc11s_901->member_institution}}</td>
-              <td><b>{{$inc11s_901->curr_code}}</td>
-              <td><b>{{$inc11s_901->statistics_txn_code}}</td>
-              <td><b>{{$inc11s_901->no_txn_summary}}</td>
-              <td><b>{{$inc11s_901->credit_amt}}</td>
-              <td><b>{{$inc11s_901->debit_amt}}</td>
-              <td><b>{{$inc11s_901->reserved}}</td>
+              <td>{{$inc11s_901->NO}}</td>
+              <td>{{$inc11s_901->recordtype}}</td>
+              <td>{{$inc11s_901->member_institution}}</td>
+              <td>{{$inc11s_901->curr_code}}</td>
+              <td>{{$inc11s_901->statistics_txn_code}}</td>
+              <td>{{$inc11s_901->no_txn_summary}}</td>
+              <td>{{$inc11s_901->credit_amt}}</td>
+              <td>{{$inc11s_901->debit_amt}}</td>
+              <td>{{$inc11s_901->reserved}}</td>
             </tr>
-            
             @endforeach
-        </tbody>
       </table>
    </div>
+  </div>
 
 @endsection

@@ -1,18 +1,20 @@
 @extends('layouts/app')
 @section('content')
+<link href="/css/style.css" rel="stylesheet">
+
    <div class="container-fluid">
-   <label class="font-weight-bold text-danger"><b>{{$filename}}</label>
+   {{-- <label class="font-weight-bold text-danger"><b>{{$filename}}</label> --}}
        <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-            <a href="{{route('MPUHome')}}"  class="mt-2 btn btn-primary float-left rounded-pill" role="button">Back</a></div>
-
+            <a href="{{route('MPUHome')}}"  class="btn btn-primary float-left rounded-pill" role="button">Back</a></div>
         <div>
-                <a href="{{route('downlodinc01c')}}" onclick="return confirm('Are you sure you want to download?')" class="mt-2 ml-4 btn btn-primary float-left rounded-pill" role="button">Download EXCEL</a>
+          <a href="{{route('downlodinc01c')}}" onclick="return confirm('Are you sure you want to download?')" class="ml-4 btn btn-primary float-left rounded-pill" role="button">Download EXCEL</a>
+          <label class="float-right">{{$filename}}</label>
         </div>
             <br>
             <br>
-    <table class="mt-3 table table-hover text-center aqua-gradient black-text">
-        <thead>
+    <div class="scroll-table-container">
+      <table id="table" class="scroll-table">
           <tr>
             <th scope="col">NO</th>
             <th scope="col">Record_Type</th>
@@ -46,47 +48,43 @@
             <th scope="col">Service_Fee_Payable</th>
             <th scope="col">Reserved</th>
           </tr>
-        </thead>
-        <tbody>
             @foreach ($inc01c as $inc01c)
             <tr>
-              <td><b>{{$inc01c->NO}}</td>
-              <td><b>{{$inc01c->Record_Type}}</td>
-              <td><b>{{$inc01c->PAN}}</td>
-              <td><b>{{$inc01c->Processing_Code}}</td>
-              <td><b>{{$inc01c->Amount_Transaction}}</td>
-              <td><b>{{$inc01c->Amount_Settlement}}</td>
-              <td><b>{{$inc01c->Sett_Conversion_Rate}}</td>
-              <td><b>{{$inc01c->Currency_Code_Transaction}}</td>
-              <td><b>{{$inc01c->Settlement_Currency_Code}}</td>
-              <td><b>{{$inc01c->Transmission_Date_and_Time}}</td>
-              <td><b>{{$inc01c->System_Trace_Audit_Number}}</td>
-              <td><b>{{$inc01c->Authorization_Identification_Response}}</td>
-              <td><b>{{$inc01c->Date_Authorization}}</td>
-              <td><b>{{$inc01c->RRN}}</td>
-              <td><b>{{$inc01c->Acquring_IIN}}</td>
-              <td><b>{{$inc01c->Forwarding_IIN}}</td>
-              <td><b>{{$inc01c->Merchant_Type}}</td>
-              <td><b>{{$inc01c->Card_Acceptor_Terminal_Identification}}</td>
-              <td><b>{{$inc01c->Card_Acceptor_Identification}}</td>
-              <td><b>{{$inc01c->Card_Acceptor_Name}}</td>
-              <td><b>{{$inc01c->Original_Transaction_Information}}</td>
-              <td><b>{{$inc01c->Message_Reason_Code}}</td>
-              <td><b>{{$inc01c->Receiving_IIN}}</td>
-              <td><b>{{$inc01c->Issuing_IIN}}</td>
-              <td><b>{{$inc01c->Identifer_of_Transaction_Feature}}</td>
-              <td><b>{{$inc01c->Point_of_Service_Condition_Code}}</td>
-              <td><b>{{$inc01c->Merchant_Country_Code}}</td>
-              <td><b>{{$inc01c->Authorization_Type}}</td>
-              <td><b>{{$inc01c->Service_Fee_Receivable}}</td>
-              <td><b>{{$inc01c->Service_Fee_Payable}}</td>
-              <td><b>{{$inc01c->Reserved}}</td>
+              <td>{{$inc01c->NO}}</td>
+              <td>{{$inc01c->Record_Type}}</td>
+              <td>{{$inc01c->PAN}}</td>
+              <td>{{$inc01c->Processing_Code}}</td>
+              <td>{{$inc01c->Amount_Transaction}}</td>
+              <td>{{$inc01c->Amount_Settlement}}</td>
+              <td>{{$inc01c->Sett_Conversion_Rate}}</td>
+              <td>{{$inc01c->Currency_Code_Transaction}}</td>
+              <td>{{$inc01c->Settlement_Currency_Code}}</td>
+              <td>{{$inc01c->Transmission_Date_and_Time}}</td>
+              <td>{{$inc01c->System_Trace_Audit_Number}}</td>
+              <td>{{$inc01c->Authorization_Identification_Response}}</td>
+              <td>{{$inc01c->Date_Authorization}}</td>
+              <td>{{$inc01c->RRN}}</td>
+              <td>{{$inc01c->Acquring_IIN}}</td>
+              <td>{{$inc01c->Forwarding_IIN}}</td>
+              <td>{{$inc01c->Merchant_Type}}</td>
+              <td>{{$inc01c->Card_Acceptor_Terminal_Identification}}</td>
+              <td>{{$inc01c->Card_Acceptor_Identification}}</td>
+              <td>{{$inc01c->Card_Acceptor_Name}}</td>
+              <td>{{$inc01c->Original_Transaction_Information}}</td>
+              <td>{{$inc01c->Message_Reason_Code}}</td>
+              <td>{{$inc01c->Receiving_IIN}}</td>
+              <td>{{$inc01c->Issuing_IIN}}</td>
+              <td>{{$inc01c->Identifer_of_Transaction_Feature}}</td>
+              <td>{{$inc01c->Point_of_Service_Condition_Code}}</td>
+              <td>{{$inc01c->Merchant_Country_Code}}</td>
+              <td>{{$inc01c->Authorization_Type}}</td>
+              <td>{{$inc01c->Service_Fee_Receivable}}</td>
+              <td>{{$inc01c->Service_Fee_Payable}}</td>
+              <td>{{$inc01c->Reserved}}</td>
             </tr>
-          
-
             @endforeach
-        </tbody>
       </table>
    </div>
+  </div>
 
 @endsection
