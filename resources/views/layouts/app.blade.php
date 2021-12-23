@@ -28,7 +28,7 @@
     <script type="text/javascript" src="js/jquery.printPage.js"></script>
 
 </head>
-<body class="bg-white">
+<body>
     <div>
         <label class="mr-2 mt-5 float-right">{{date('Y-m-d')}}</label>
             <a href="{{ url('/') }}">
@@ -38,6 +38,6 @@
             @yield('content')
         </main>
     </div>
-    <footer class="mt-2 ml-2 float-left"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer>
+    <footer> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer>
 </body>
 </html>
