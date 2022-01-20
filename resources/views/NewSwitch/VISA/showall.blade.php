@@ -23,8 +23,8 @@
           <td>{{$tranx->id}}</td>
           <td>{{$tranx->settleDate}}</td>
           <td>{{$tranx->noTranx}}</td>
-          <td>{{$tranx->usdAmt}} $</td>
-          <td>{{$tranx->mmkAmt}} MMK</td>
+          <td>{{$tranx->usdAmt}}</td>
+          <td>{{$tranx->mmkAmt}}</td>
           <td>{{$tranx->exRate}}</td>
           <td>{{$tranx->commAmt}}</td>
           <td>{{$tranx->terminal}}</td>
