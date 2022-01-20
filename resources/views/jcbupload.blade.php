@@ -5,11 +5,10 @@
    <div class="container-fluid">
         <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
-            <a href="{{route('JCBHome')}}" class="btn btn-primary float-left rounded-pill" role="button">Back</a>
-            <a href="{{route('pdf')}}" class="btn btn-primary float-right rounded-pill" onclick="return confirm('Are you sure you want to download?')" role="button">Download PDF</a>
+            <a href="{{route('JCBHome')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Back</a></div>
+        <div>
+            <a href="{{route('pdf')}}" class="btn white-text btn-indigo btn-rounded-pill float" onclick="return confirm('Are you sure you want to download?')" role="button">Download PDF</a>
         </div>
-            <br>
-            <br>
     <div class="scroll-table-container">
       <table id="table" class="scroll-table">
           <tr>

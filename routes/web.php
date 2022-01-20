@@ -16,9 +16,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JCBcontroller;
 use App\Http\Controllers\MPUcontroller;
 use App\Http\Controllers\PdfController;
-
-
-
+use App\Http\Controllers\VisaDataController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,"home"])->name("home");
@@ -63,3 +61,7 @@ Route::get('/downlodinc01c', [DownloadController::class,"downlodinc01c"])->name(
 
 
 Route::get('/pdf', [PdfController::class,"pdf"])->name("pdf");
+
+Route::get('/visa', [VisaDataController::class,"visa"])->name("visa");
+Route::post('/visa', [VisaDataController::class,"insert"])->name("insert");
+Route::get('/visaall', [VisaDataController::class,"show"])->name("showall");

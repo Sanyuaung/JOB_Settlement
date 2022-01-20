@@ -12,11 +12,11 @@
               {{session('errors')}}
              </div>
         @endif
-                <div class="input-group mb-5">
+                <div class="input-group">
                     <div class="input-group-prepend">
-                        <button id="btn" class="btn btn-primary"  type="submit">JCB Upload</button>
+                        <button id="btn" class="btn white-text btn-indigo btn-rounded-pill"  type="submit">JCB Upload</button>
                     </div>
-                     <input type="file" name="jcb" class="form-control">
+                     <input type="file" name="jcb" class="form-control mt-1">
                 </div>
 
     </form>

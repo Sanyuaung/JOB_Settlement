@@ -4,8 +4,8 @@
    <div class="container-fluid mt-5">
        <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
-            <a href="{{route('home')}}" class="btn btn float-left text-primary" role="button">Home</a>
-            <a href="{{route('pdf')}}" class="btn btn float-right text-primary" onclick="confirm('You sure you want to download?')" role="button">Download PDF</a>
+            <a href="{{route('home')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Home</a>
+            <a href="{{route('pdf')}}" class="btn white-text btn-indigo btn-rounded-pill" onclick="confirm('You sure you want to download?')" role="button">Download PDF</a>
         </div>
             <br>
     <table class="table table-hover text-center aqua-gradient black-text">
