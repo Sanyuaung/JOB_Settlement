@@ -83,8 +83,8 @@
                 @enderror
             </div>
 
-            <label for="terminal">Select Treminal : </label>
-            <select name="terminal" id="terminal">
+            <label for="terminal">Select Type of Transaction : </label>
+            <select name="typeOfTrans" id="terminal">
                 <option selected></option>
                 <option value="visapos">VISA_POS</option>
                 <option value="visaatm">VISA_ATM</option>

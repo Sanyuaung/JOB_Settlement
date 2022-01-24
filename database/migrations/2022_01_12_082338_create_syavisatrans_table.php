@@ -15,13 +15,13 @@ class CreateSyavisatransTable extends Migration
     {
         Schema::connection('mysql2')->create('syavisatrans', function (Blueprint $table) {
             $table->id();
-            $table->string('settleDate',500);
-            $table->string('noTranxs',500);
-            $table->string('usdAmt',500);
-            $table->string('mmkAmt',500);
-            $table->string('exRate',500);
-            $table->string('commAmt',500);
-            $table->string('terminal',500);
+            $table->string('settleDate', 500);
+            $table->string('noTrans', 500);
+            $table->string('usdAmt', 500);
+            $table->string('mmkAmt', 500);
+            $table->string('exRate', 500);
+            $table->string('commAmt', 500);
+            $table->string('typeOfTrans', 500);
             $table->timestamps();
         });
     }

@@ -24,7 +24,7 @@ class VisaDataController extends Controller
             'usd'=>"required",
             'mmk'=>"required",
             'rate'=>"required",
-            'terminal'=>"required",
+            'typeOfTrans'=>"required",
             'commAmt'=>"required",
         ]);
         $Year=substr($req->settledate, 0, 4);
@@ -36,11 +36,11 @@ class VisaDataController extends Controller
             //insert data to DB
             $tranx=new syavisatran();
             $tranx->settleDate=$settledate;
-            $tranx->noTranx=$req->num;
+            $tranx->noTrans=$req->num;
             $tranx->usdAmt=$req->usd;
             $tranx->mmkAmt=$req->mmk;
             $tranx->exRate=$req->rate;
-            $tranx->terminal=strtoupper($req->terminal);
+            $tranx->typeOfTrans=strtoupper($req->typeOfTrans);
             $tranx->commAmt=$req->commAmt;
             $tranx->save();
             return back()->with("success", "Input Data Successful");

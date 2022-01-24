@@ -16,18 +16,18 @@
         <th scope="col">MMK Amount</th>
         <th scope="col">Exchange Rate</th>
         <th scope="col">Commissions Amount</th>
-        <th scope="col">Terminal</th>
+        <th scope="col">Type of Transaction</th>
       </tr>
       @foreach ($tranxs as $tranx)
         <tr>
           <td>{{$tranx->id}}</td>
           <td>{{$tranx->settleDate}}</td>
-          <td>{{$tranx->noTranx}}</td>
+          <td>{{$tranx->noTrans}}</td>
           <td>{{$tranx->usdAmt}}</td>
           <td>{{$tranx->mmkAmt}}</td>
           <td>{{$tranx->exRate}}</td>
           <td>{{$tranx->commAmt}}</td>
-          <td>{{$tranx->terminal}}</td>
+          <td>{{$tranx->typeOfTrans}}</td>
         </tr>
       @endforeach
     </table>
