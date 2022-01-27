@@ -6,7 +6,7 @@
     <div class="text-center">
         {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
         <a href="{{route('showall')}}" class="btn white-text btn-indigo btn-rounded-pill float-right" role="button">Show All</a>
-        <a href="{{route('home')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Back</a>
+        {{-- <a href="{{route('home')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Back</a> --}}
     </div>
     <div>
         <h1 id="welcome" class="grey-text text-center">Welcome Visa Transactions</h1>

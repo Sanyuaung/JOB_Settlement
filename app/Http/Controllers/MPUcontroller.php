@@ -2,21 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\acomExport;
-use App\Exports\icomExport;
-use App\Exports\Inc11eExport;
-use App\Exports\AerrExport;
-use App\Exports\ierrExport;
-use App\Exports\ijc01_900sExport;
-use App\Exports\ijc01_902sExport;
-use App\Exports\ijc01cExport;
-use App\Exports\inc11sExport;
-use App\Exports\inc901Export;
-use App\Exports\incExport;
-use App\Exports\ind11cExport;
-use App\Exports\indcExport;
-use App\Exports\scom901902Export;
-use App\Exports\scomExport;
 use App\Models\acom;
 use App\Models\aerr;
 use App\Models\ierr;
@@ -29,8 +14,6 @@ use App\Models\ijc01_902;
 use App\Models\ijc01c;
 use App\Models\inc;
 use App\Models\inc01c;
-use App\Models\inc11s;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Models\ind11c;
 use App\Models\scom;
 use Illuminate\Support\Facades\DB;

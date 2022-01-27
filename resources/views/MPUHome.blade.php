@@ -22,7 +22,7 @@
                     <div class="input-group-prepend">
                         <button id="btn" class="btn white-text btn-indigo btn-rounded-pill"  type="submit">MPU Upload</button>
                     </div>
-                     <input type="file" name="mpu" class="form-control mt-1">
+                     <input type="file" name="mpu" class="form-control mt-2">
                 </div>
 
     </form>

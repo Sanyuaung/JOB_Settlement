@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\sya_visa_tran;
-use App\Models\SYA_VisaTrans;
 use App\Models\syavisatran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class VisaDataController extends Controller
 {
@@ -53,5 +50,31 @@ class VisaDataController extends Controller
     {
         $tranx=syavisatran::latest()->paginate(7); // latest to first
         return view('NewSwitch/VISA/showall', ['tranxs'=>$tranx]);
+    }
+    
+    public function ccy()
+    {
+        return view('NewSwitch/VISA/currency');
+    }
+
+    public function ccyinsert(Request $req)
+    {
+        $validation=$req->validate([
+            'date'=> "required",
+            'rate'=>"required",
+            'ccy'=>"required",
+        ]);
+        $Year=substr($req->date, 0, 4);
+        $Month=substr($req->date, 5, 2);
+        $Date=substr($req->date, 8, 2);
+        // dd($Year.$Month.$Date);
+        $date=$Year.$Month.$Date;
+        if ($validation) {
+                DB::statement(DB::raw('set @row:=0'));
+                DB::connection('mysql2')->select("insert into KCN_EXCHANGE (CurrencyDate,CURRENCY_CODE,MarketRate) VALUES ('$date','$req->ccy','$req->rate')");            
+            return back()->with("success", "Input Data Successful");
+        } else {
+            return back()->withErrors($validation);
+        }
     }
 }
