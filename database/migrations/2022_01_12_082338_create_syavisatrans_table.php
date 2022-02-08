@@ -14,7 +14,7 @@ class CreateSyavisatransTable extends Migration
     public function up()
     {
         Schema::connection('mysql2')->create('syavisatrans', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
             $table->string('settleDate', 500);
             $table->string('noTrans', 500);
             $table->string('usdAmt', 500);
@@ -22,6 +22,9 @@ class CreateSyavisatransTable extends Migration
             $table->string('exRate', 500);
             $table->string('commAmt', 500);
             $table->string('typeOfTrans', 500);
+            $table->string('Debit', 500);
+            $table->string('Credit', 500);
+            $table->string('Prepaid', 500);
             $table->timestamps();
         });
     }

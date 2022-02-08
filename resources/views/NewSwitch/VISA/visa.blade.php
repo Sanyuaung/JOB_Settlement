@@ -83,6 +83,30 @@
                 @enderror
             </div>
 
+            <div class="md-form mt-4">
+                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Debit">
+                <label for="materialRegisterFormEmail">Debit</label>
+                @error('Debit')
+                    <p class="text-danger">{{$message}}</p>
+                @enderror
+            </div>
+
+            <div class="md-form mt-4">
+                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Credit">
+                <label for="materialRegisterFormEmail">Credit</label>
+                @error('Credit')
+                    <p class="text-danger">{{$message}}</p>
+                @enderror
+            </div>
+
+            <div class="md-form mt-4">
+                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Prepaid">
+                <label for="materialRegisterFormEmail">Prepaid</label>
+                @error('Prepaid')
+                    <p class="text-danger">{{$message}}</p>
+                @enderror
+            </div>
+
             <label for="terminal">Select Type of Transaction : </label>
             <select name="typeOfTrans" id="terminal">
                 <option selected></option>
@@ -98,8 +122,6 @@
             @error('terminal')
                 <p class="text-danger">{{$message}}</p>
             @enderror
-
-
             <!-- Order button -->
             <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0" type="sumbit">Save Now</button>
             {{-- <footer id="viasFot"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer> --}}

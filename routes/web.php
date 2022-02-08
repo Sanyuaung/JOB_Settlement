@@ -72,4 +72,5 @@ Route::get('/ccy', [VisaDataController::class,"ccy"])->name("ccy");
 Route::post('/ccy', [VisaDataController::class,"ccyinsert"])->name("ccyinsert");
 
 //Onecard
-Route::get('/cz', [onecardController::class,"card"])->name("card");
+Route::get('/atm', [onecardController::class,"home"])->name("atmhome");
+Route::post('/cz', [onecardController::class,"print"])->name("print");

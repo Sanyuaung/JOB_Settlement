@@ -9,7 +9,7 @@
   <div class="table-container">
     <table id="table" class="scroll-table">
       <tr>
-        <th scope="col">No</th>
+        {{-- <th scope="col">No</th> --}}
         <th scope="col">Settlement Date</th>
         <th scope="col">Number of Transactions</th>
         <th scope="col">USD Amount</th>
@@ -17,10 +17,13 @@
         <th scope="col">Exchange Rate</th>
         <th scope="col">Commissions Amount</th>
         <th scope="col">Type of Transaction</th>
+        <th scope="col">Debit</th>
+        <th scope="col">Credit</th>
+        <th scope="col">Prepaid</th>
       </tr>
       @foreach ($tranxs as $tranx)
         <tr>
-          <td>{{$tranx->id}}</td>
+          {{-- <td>{{$tranx->id}}</td> --}}
           <td>{{$tranx->settleDate}}</td>
           <td>{{$tranx->noTrans}}</td>
           <td>{{$tranx->usdAmt}}</td>
@@ -28,6 +31,9 @@
           <td>{{$tranx->exRate}}</td>
           <td>{{$tranx->commAmt}}</td>
           <td>{{$tranx->typeOfTrans}}</td>
+          <td>{{$tranx->Debit}}</td>
+          <td>{{$tranx->Credit}}</td>
+          <td>{{$tranx->Prepaid}}</td>
         </tr>
       @endforeach
     </table>

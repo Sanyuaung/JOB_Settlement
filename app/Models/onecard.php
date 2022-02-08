@@ -11,6 +11,10 @@ class onecard extends Model
     use HasFactory;
     protected $connection = 'mysql2';
 
+    public function FunctionNameatmprint($request)
+    {
+        dd($request);
+    }
     public function card()
     {
         DB::statement(DB::raw('set @row:=0'));

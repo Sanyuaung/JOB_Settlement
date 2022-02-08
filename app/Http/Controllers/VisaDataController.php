@@ -23,6 +23,9 @@ class VisaDataController extends Controller
             'rate'=>"required",
             'typeOfTrans'=>"required",
             'commAmt'=>"required",
+            'Debit'=>"required",
+            'Credit'=>"required",
+            'Prepaid'=>"required",
         ]);
         $Year=substr($req->settledate, 0, 4);
         $Month=substr($req->settledate, 5, 2);
@@ -39,7 +42,12 @@ class VisaDataController extends Controller
             $tranx->exRate=$req->rate;
             $tranx->typeOfTrans=strtoupper($req->typeOfTrans);
             $tranx->commAmt=$req->commAmt;
+            $tranx->Debit=$req->Debit;
+            $tranx->Credit=$req->Credit;
+            $tranx->Prepaid=$req->Prepaid;
             $tranx->save();
+            // DB::connection('mysql2')->select("insert into $tranx (settleDate,noTrans,usdAmt,mmkAmt,exRate,typeOfTrans,commAmt) 
+            // VALUES ('$settledate','$req->num','$req->usd','$req->mmk','$req->rate''$req->typeOfTrans''$req->commAmt')");   
             return back()->with("success", "Input Data Successful");
         } else {
             return back()->withErrors($validation);
