@@ -25,7 +25,7 @@ class acom extends Model
         format(concat(substring(Field1,253,10),".",substring(Field1,263,2)),2) as interchange_fee,substring(Field1,265,3) as POS_mode,
         substring(Field1,268,6) as system_traceno,substring(Field1,274,2) as POS_condition,substring(Field1,276,15) as card_acceptor_code,
         format(concat(substring(Field1,291,10),".",substring(Field1,301,2)),2) as accept_amt,
-        format(concat(substring(Field1,303,10),".",substring(Field1,313,2)),2) as cardholder_fee,substring(Field1,315,10) as txn_tramsmission,f,filename
+        format(concat(substring(Field1,303,10),".",substring(Field1,313,2)),2) as cardholder_fee,substring(Field1,315,10) as txn_tramsmission,(@row:=@row + 1) AS NO,filename
         from acoms');
         return $ACOM;
     }

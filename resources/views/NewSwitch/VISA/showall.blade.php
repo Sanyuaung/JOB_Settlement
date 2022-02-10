@@ -17,13 +17,12 @@
         <th scope="col">Exchange Rate</th>
         <th scope="col">Commissions Amount</th>
         <th scope="col">Type of Transaction</th>
-        <th scope="col">Debit</th>
-        <th scope="col">Credit</th>
-        <th scope="col">Prepaid</th>
+        <th scope="col">Card Type</th>
+        <th scope="col">Authorization Currency</th>
       </tr>
       @foreach ($tranxs as $tranx)
         <tr>
-          {{-- <td>{{$tranx->id}}</td> --}}
+          {{-- <td>{{$$no->No}}</td> --}}
           <td>{{$tranx->settleDate}}</td>
           <td>{{$tranx->noTrans}}</td>
           <td>{{$tranx->usdAmt}}</td>
@@ -31,9 +30,8 @@
           <td>{{$tranx->exRate}}</td>
           <td>{{$tranx->commAmt}}</td>
           <td>{{$tranx->typeOfTrans}}</td>
-          <td>{{$tranx->Debit}}</td>
-          <td>{{$tranx->Credit}}</td>
-          <td>{{$tranx->Prepaid}}</td>
+          <td>{{$tranx->cardType}}</td>
+          <td>{{$tranx->currency}}</td>
         </tr>
       @endforeach
     </table>

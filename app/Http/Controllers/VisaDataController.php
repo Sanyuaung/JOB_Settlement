@@ -23,14 +23,13 @@ class VisaDataController extends Controller
             'rate'=>"required",
             'typeOfTrans'=>"required",
             'commAmt'=>"required",
-            'Debit'=>"required",
-            'Credit'=>"required",
-            'Prepaid'=>"required",
+            'cardType'=>"required",
+            'currency'=>"required"
         ]);
         $Year=substr($req->settledate, 0, 4);
         $Month=substr($req->settledate, 5, 2);
         $Date=substr($req->settledate, 8, 2);
-        // dd($Year.$Month.$Date);
+        // dd($req->cardType,$req->typeOfTrans);
         $settledate=$Year.$Month.$Date;
         if ($validation) {
             //insert data to DB
@@ -42,9 +41,8 @@ class VisaDataController extends Controller
             $tranx->exRate=$req->rate;
             $tranx->typeOfTrans=strtoupper($req->typeOfTrans);
             $tranx->commAmt=$req->commAmt;
-            $tranx->Debit=$req->Debit;
-            $tranx->Credit=$req->Credit;
-            $tranx->Prepaid=$req->Prepaid;
+            $tranx->cardType=$req->cardType;
+            $tranx->currency=strtoupper($req->currency);
             $tranx->save();
             // DB::connection('mysql2')->select("insert into $tranx (settleDate,noTrans,usdAmt,mmkAmt,exRate,typeOfTrans,commAmt) 
             // VALUES ('$settledate','$req->num','$req->usd','$req->mmk','$req->rate''$req->typeOfTrans''$req->commAmt')");   
@@ -56,6 +54,8 @@ class VisaDataController extends Controller
 
     public function show()
     {
+        // DB::statement(DB::raw('set @row:=0'));
+        // $no = DB::connection('mysql2')->select('select @row:=@row + 1) AS NO from syavisatrans');
         $tranx=syavisatran::latest()->paginate(7); // latest to first
         return view('NewSwitch/VISA/showall', ['tranxs'=>$tranx]);
     }

@@ -22,9 +22,8 @@ class CreateSyavisatransTable extends Migration
             $table->string('exRate', 500);
             $table->string('commAmt', 500);
             $table->string('typeOfTrans', 500);
-            $table->string('Debit', 500);
-            $table->string('Credit', 500);
-            $table->string('Prepaid', 500);
+            $table->string('cardType', 500);
+            $table->string('currency', 500);
             $table->timestamps();
         });
     }

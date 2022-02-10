@@ -82,7 +82,7 @@
                     <p class="text-danger">{{$message}}</p>
                 @enderror
             </div>
-
+{{-- 
             <div class="md-form mt-4">
                 <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Debit">
                 <label for="materialRegisterFormEmail">Debit</label>
@@ -105,7 +105,32 @@
                 @error('Prepaid')
                     <p class="text-danger">{{$message}}</p>
                 @enderror
-            </div>
+            </div> --}}
+
+            <label for="cardType">Select Card Type : </label>
+            <select name="cardType" id="terminal">
+                <option selected></option>
+                <option value="Debit">Debit</option>
+                <option value="Credit">Credit</option>
+                <option value="Prepaid">Prepaid</option>
+            </select>
+            @error('cardType')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+
+            {{-- <br> --}}
+
+            <label for="terminal">Select Currency : </label>
+            <select name="currency" id="terminal">
+                <option selected></option>
+                <option value="mmk">MMK</option>
+                <option value="usd">USD</option>
+            </select>
+            @error('currency')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+
+            {{-- <br> --}}
 
             <label for="terminal">Select Type of Transaction : </label>
             <select name="typeOfTrans" id="terminal">
@@ -116,12 +141,13 @@
                 <option value="masteratm">Master_ATM</option>
                 <option value="upipos">UPI_POS</option>
                 <option value="upiatm">UPI_ATM</option>
-                <option value="jcbapos">JCB_POS</option>
+                <option value="jcbpos">JCB_POS</option>
                 <option value="jcbatm">JCB_ATM</option>
             </select>
             @error('terminal')
                 <p class="text-danger">{{$message}}</p>
             @enderror
+
             <!-- Order button -->
             <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0" type="sumbit">Save Now</button>
             {{-- <footer id="viasFot"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer> --}}
