@@ -9,7 +9,7 @@
         {{-- <a href="{{route('home')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Back</a> --}}
     </div>
     <div>
-        <h1 id="welcome" class="grey-text text-center">Welcome Visa Transactions</h1>
+        <h1 id="VISA" class="grey-text text-center">Welcome Visa Transactions</h1>
         {{-- <img src="{{asset('images/logo.png')}}" class="img-responsive "> --}}
         {{-- <img  src="{{asset('images/logo.png')}}" class="text-center"> --}}
 

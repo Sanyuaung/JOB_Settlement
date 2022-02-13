@@ -4,7 +4,7 @@
 
 <div class="container">
     <div>
-        <h1 id="welcome" class="grey-text text-center">Welcome Daily Currency Rate</h1>
+        <h1 id="VISA" class="grey-text text-center">Welcome Daily Currency Rate</h1>
         {{-- <img src="{{asset('images/logo.png')}}" class="img-responsive "> --}}
         {{-- <img  src="{{asset('images/logo.png')}}" class="text-center"> --}}
 

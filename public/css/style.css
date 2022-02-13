@@ -1,5 +1,20 @@
-body{
-    background-color: white;
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+  background-color: white;
+}
+section
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
 }
 
 footer {
@@ -11,34 +26,55 @@ footer {
     font-weight: bold;
     background: -webkit-linear-gradient(rgb(6, 245, 26), rgb(50, 7, 241));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;    
 }
+#HOME {
+    overflow: hidden;
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+#MPU {
+    overflow: hidden;
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+#JCB {
+    overflow: hidden;
+    font-weight: bold;
+    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position: -500%;
+    }
+    100%
+    {
+        background-position: 500%;
+    }
+}
+
 
 label {
     /* font-size: 15px; */
     font-weight: bold;
     background: -webkit-linear-gradient(rgb(6, 245, 26), rgb(50, 7, 241));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#JCB{
-    font-weight: bold;
-    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#MPU{
-    font-weight: bold;
-    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#HOME{
-    font-weight: bold;
-    background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

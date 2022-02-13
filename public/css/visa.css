@@ -5,7 +5,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  /* padding-bottom: 6rem; */
+  background-color: white;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
@@ -26,11 +26,26 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-#welcome{
+#VISA {
+  overflow: hidden;
   font-weight: bold;
   background: -webkit-linear-gradient(rgb(161, 245, 6), rgb(241, 7, 163));
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;    
+}
+@keyframes animate
+{
+  0%
+  {
+      background-position: -500%;
+  }
+  100%
+  {
+      background-position: 500%;
+  }
 }
 
 label {
