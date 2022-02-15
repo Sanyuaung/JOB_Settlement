@@ -16,7 +16,93 @@ section
     align-items: center;
     min-height: 30vh;
 }
-
+.btn1 button
+{
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+button:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn1 button:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    transition: all .5s ease-in-out;
+}
+.btn1 button:after
+{
+    background: #E52E2E;
+    transform: translate(-105%, -20%) rotate(45deg);
+}
+.btn1:hover button:after{
+    transform: translate(-9%, -20%) rotate(45deg);
+}
+button span{
+    position: relative;
+    z-index: 1;
+}
+.icon button
+{
+    font-weight: bold;
+    position: relative;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+button:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.icon button:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    transition: all .5s ease-in-out;
+}
+.icon button:after
+{
+    background: #E52E2E;
+    transform: translate(-105%, -20%) rotate(45deg);
+}
+.icon:hover button:after{
+    transform: translate(-9%, -20%) rotate(45deg);
+}
+button span{
+    position: relative;
+    z-index: 1;
+}
 footer {
     position:absolute;
     bottom:0;
@@ -28,6 +114,7 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
 }
+
 #HOME {
     overflow: hidden;
     font-weight: bold;

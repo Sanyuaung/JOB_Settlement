@@ -3,15 +3,11 @@
 <link href="/css/visa.css" rel="stylesheet">
 
 <div class="container">
-    <div class="text-center">
-        {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
-        <a href="{{route('showall')}}" class="btn white-text btn-indigo btn-rounded-pill float-right" role="button">Show All</a>
-        {{-- <a href="{{route('home')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Back</a> --}}
+    <div class="btn1">
+        <a href="{{route('showall')}}" class="btn white-text btn-indigo btn-rounded-pill float-right" role="button"><span>SHOW ALL</span></a>
     </div>
     <div>
         <h1 id="VISA" class="grey-text text-center">Welcome Visa Transactions</h1>
-        {{-- <img src="{{asset('images/logo.png')}}" class="img-responsive "> --}}
-        {{-- <img  src="{{asset('images/logo.png')}}" class="text-center"> --}}
 
         @if (Session('success'))
         <div class="alert alert-success">
@@ -82,30 +78,6 @@
                     <p class="text-danger">{{$message}}</p>
                 @enderror
             </div>
-{{-- 
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Debit">
-                <label for="materialRegisterFormEmail">Debit</label>
-                @error('Debit')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
-
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Credit">
-                <label for="materialRegisterFormEmail">Credit</label>
-                @error('Credit')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
-
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Prepaid">
-                <label for="materialRegisterFormEmail">Prepaid</label>
-                @error('Prepaid')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div> --}}
 
             <label for="cardType">Select Card Type : </label>
             <select name="cardType" id="terminal">
@@ -149,9 +121,11 @@
             @enderror
 
             <!-- Order button -->
-            <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0" type="sumbit">Save Now</button>
+            {{-- <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0" type="sumbit">Save Now</button> --}}
             {{-- <footer id="viasFot"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer> --}}
-
+            <div class="btn2">
+                <a href="{{route('showall')}}" class="btn white-text btn-indigo btn-rounded-pill float-center" role="button"><span>Save Now</span></a>
+            </div>
         </form>
         <!-- Form -->
 
