@@ -356,3 +356,57 @@ a span{
     position: relative;
     z-index: 1;
 }
+
+/* HOME */
+.home button
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -100px;
+    font-weight: bold;
+    display: block;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+button:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.home button:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    transition: all .5s ease-in-out;
+}
+.home button:after
+{
+    background: #E52E2E;
+    transform: translate(-105%, -20%) rotate(45deg);
+}
+.home:hover button:after{
+    transform: translate(-9%, -20%) rotate(45deg);
+}
+button span{
+    position: relative;
+    z-index: 1;
+}
+#home:hover{
+    background-color: #E52E2E;
+}
+#home{
+    background-color: #F69C09;
+}
