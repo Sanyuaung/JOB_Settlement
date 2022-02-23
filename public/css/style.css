@@ -16,93 +16,7 @@ section
     align-items: center;
     min-height: 30vh;
 }
-.btn1 button
-{
-    font-weight: bold;
-    position: relative;
-    display: block;
-    border-radius: 50px;
-    margin-right: 5px;
-    margin-top: 5px;
-    border: none;
-    color: white;
-    background: #F69C09;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-}
-button:hover
-{
-    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
-}
-.btn1 button:after
-{
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140%;
-    transition: all .5s ease-in-out;
-}
-.btn1 button:after
-{
-    background: #E52E2E;
-    transform: translate(-105%, -20%) rotate(45deg);
-}
-.btn1:hover button:after{
-    transform: translate(-9%, -20%) rotate(45deg);
-}
-button span{
-    position: relative;
-    z-index: 1;
-}
-.icon button
-{
-    font-weight: bold;
-    position: relative;
-    border-radius: 50px;
-    margin-right: 5px;
-    margin-top: 5px;
-    border: none;
-    color: white;
-    background: #F69C09;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-}
-button:hover
-{
-    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
-}
-.icon button:after
-{
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140%;
-    transition: all .5s ease-in-out;
-}
-.icon button:after
-{
-    background: #E52E2E;
-    transform: translate(-105%, -20%) rotate(45deg);
-}
-.icon:hover button:after{
-    transform: translate(-9%, -20%) rotate(45deg);
-}
-button span{
-    position: relative;
-    z-index: 1;
-}
+
 footer {
     position:absolute;
     bottom:0;
@@ -114,7 +28,6 @@ footer {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
 }
-
 #HOME {
     overflow: hidden;
     font-weight: bold;
@@ -159,7 +72,6 @@ footer {
 
 
 label {
-    /* font-size: 15px; */
     font-weight: bold;
     background: -webkit-linear-gradient(rgb(6, 245, 26), rgb(50, 7, 241));
     -webkit-background-clip: text;
@@ -167,7 +79,7 @@ label {
 }
 
 .scroll-table-container {
-    height: 320px; 
+    height: 400px; 
     overflow: scroll;
 } 
 
@@ -206,15 +118,241 @@ label {
         text-align: center;
         color: black;
     }
-    /* #table #jcbth{
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    text-align: center;
-    background: white;
-    color: white;
- } */
 
-/* #btn{
-    background-color: #04AA6D;
-} */
+/* JCB */
+.btn1 button
+{
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+button:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn1 button:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    transition: all .5s ease-in-out;
+}
+.btn1 button:after
+{
+    background: #E52E2E;
+    transform: translate(-105%, -20%) rotate(45deg);
+}
+.btn1:hover button:after{
+    transform: translate(-9%, -20%) rotate(45deg);
+}
+button span{
+    position: relative;
+    z-index: 1;
+}
+
+/* JCB BACK */
+.btn1 a
+{
+    text-decoration: none;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+a:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn1 a:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 500%;
+    width: 200%;
+    transition: all .5s ease-in-out;
+}
+.btn1 a:after
+{
+    background: #E52E2E;
+    transform: translate(-115%, -20%) rotate(45deg);
+}
+.btn1:hover a:after{
+    transform: translate(-15%, -20%) rotate(45deg);
+}
+a span{
+    position: relative;
+    z-index: 1;
+}
+
+/* JCB DOWNLOAD */
+.btn2 a
+{
+    
+    text-decoration: none;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+a:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn2 a:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 700%;
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+.btn2 a:after
+{
+    background: #E52E2E;
+    transform: translate(-130%, -20%) rotate(45deg);
+}
+.btn2:hover a:after{
+    transform: translate(-30%, -20%) rotate(45deg);
+}
+a span{
+    position: relative;
+    z-index: 1;
+}
+
+/* MPU */
+.btn3 button
+{
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+button:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn3 button:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    transition: all .5s ease-in-out;
+}
+.btn3 button:after
+{
+    background: #E52E2E;
+    transform: translate(-100%, -20%) rotate(45deg);
+}
+.btn3:hover button:after{
+    transform: translate(-9%, -20%) rotate(45deg);
+}
+button span{
+    position: relative;
+    z-index: 1;
+}
+
+/* MPU DOWNLOAD */
+.btn4 a
+{
+    
+    text-decoration: none;
+    float: left;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background: #F69C09;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+a:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn4 a:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 700%;
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+.btn4 a:after
+{
+    background: #E52E2E;
+    transform: translate(-123%, -20%) rotate(45deg);
+}
+.btn4:hover a:after{
+    transform: translate(-30%, -30%) rotate(45deg);
+}
+a span{
+    position: relative;
+    z-index: 1;
+}

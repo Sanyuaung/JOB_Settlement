@@ -17,9 +17,8 @@
               {{session('nodata')}}
              </div>
         @endif
-
                 <div class="input-group mb-5">
-                    <div class="btn1">
+                    <div class="btn3">
                         <button type="submit"><span>MPU Upload</span></button>
                     </div>
                      <input type="file" name="mpu" class="form-control mt-2">

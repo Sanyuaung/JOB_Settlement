@@ -3,13 +3,14 @@
 <link href="/css/style.css" rel="stylesheet">
 
    <div class="container-fluid">
-        <div class="text-center">
-            {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
-            <a href="{{route('JCBHome')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Back</a></div>
-        <div>
-            <a href="{{route('pdf')}}" class="btn white-text btn-indigo btn-rounded-pill float" onclick="return confirm('Are you sure you want to download?')" role="button">Download PDF</a>
-        </div>
     <div class="scroll-table-container">
+            <div class="btn1">
+                <a  href="{{route('JCBHome')}}" role="button"><span>Back</span></a>
+            </div>
+            <div class="btn2">
+                <a href="{{route('pdf')}}" onclick="return confirm('Are you sure you want to download?')" role="button"><span>Download PDF</span></a>
+            </div><br><br><br>
+    {{-- <div class="scroll-table-container"> --}}
       <table id="table" class="scroll-table">
           <tr>
             <th scope="col">NO</th>
@@ -55,6 +56,7 @@
              </tr>
       </table>
    </div>
+    </div>
   </div>
 
 @endsection

@@ -14,92 +14,6 @@ body {
 			color: white !important;
 			border-color: #5cb85c !important;
 }
-.btn1 a
-{
-    font-weight: bold;
-    position: relative;
-    display: block;
-    border-radius: 50px;
-    margin-right: 5px;
-    margin-top: 5px;
-    border: none;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-}
-a:hover
-{
-    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
-}
-.btn1 a:after
-{
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140%;
-    transition: all .5s ease-in-out;
-}
-.btn1 a:after
-{
-    background: #F6DD09;
-    transform: translate(-108%, -20%) rotate(45deg);
-}
-.btn1:hover a:after{
-    transform: translate(-10%, -50%) rotate(45deg);
-}
-a span{
-    position: relative;
-    z-index: 1;
-}
-
-.btn2 a
-{
-    font-weight: bold;
-    position: relative;
-    display: block;
-    border-radius: 50px;
-    margin-right: 5px;
-    margin-top: 5px;
-    border: none;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-}
-a:hover
-{
-    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
-}
-.btn2 a:after
-{
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140%;
-    transition: all .5s ease-in-out;
-}
-.btn2 a:after
-{
-    background: #F6DD09;
-    transform: translate(-108%, -20%) rotate(45deg);
-}
-.btn2:hover a:after{
-    transform: translate(-10%, -50%) rotate(45deg);
-}
-a span{
-    position: relative;
-    z-index: 1;
-}
-
 #viasFot {
   position:absolute;
   bottom:0;
@@ -183,3 +97,89 @@ label {
       text-align: center;
       color: black;
   }
+
+  .btn1 a
+{
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+a:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn1 a:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    transition: all .5s ease-in-out;
+}
+.btn1 a:after
+{
+    background: #F6DD09;
+    transform: translate(-108%, -20%) rotate(45deg);
+}
+.btn1:hover a:after{
+    transform: translate(-10%, -50%) rotate(45deg);
+}
+a span{
+    position: relative;
+    z-index: 1;
+}
+
+.btn2 a
+{
+    font-weight: bold;
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+a:hover
+{
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+.btn2 a:after
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    transition: all .5s ease-in-out;
+}
+.btn2 a:after
+{
+    background: #F6DD09;
+    transform: translate(-80%, -20%) rotate(45deg);
+}
+.btn2:hover a:after{
+    transform: translate(-20%, -50%) rotate(45deg);
+}
+a span{
+    position: relative;
+    z-index: 1;
+}

@@ -44,8 +44,6 @@ class VisaDataController extends Controller
             $tranx->cardType=$req->cardType;
             $tranx->currency=strtoupper($req->currency);
             $tranx->save();
-            // DB::connection('mysql2')->select("insert into $tranx (settleDate,noTrans,usdAmt,mmkAmt,exRate,typeOfTrans,commAmt) 
-            // VALUES ('$settledate','$req->num','$req->usd','$req->mmk','$req->rate''$req->typeOfTrans''$req->commAmt')");   
             return back()->with("success", "Input Data Successful");
         } else {
             return back()->withErrors($validation);
@@ -54,8 +52,6 @@ class VisaDataController extends Controller
 
     public function show()
     {
-        // DB::statement(DB::raw('set @row:=0'));
-        // $no = DB::connection('mysql2')->select('select @row:=@row + 1) AS NO from syavisatrans');
         $tranx=syavisatran::latest()->paginate(7); // latest to first
         return view('NewSwitch/VISA/showall', ['tranxs'=>$tranx]);
     }
@@ -78,11 +74,16 @@ class VisaDataController extends Controller
         // dd($Year.$Month.$Date);
         $date=$Year.$Month.$Date;
         if ($validation) {
-                DB::statement(DB::raw('set @row:=0'));
-                DB::connection('mysql2')->select("insert into KCN_EXCHANGE (CurrencyDate,CURRENCY_CODE,MarketRate) VALUES ('$date','$req->ccy','$req->rate')");            
-            return back()->with("success", "Input Data Successful");
-        } else {
-            return back()->withErrors($validation);
+            DB::statement(DB::raw('set @row:=0'));
+            $a=DB::connection('mysql2')->select("select CurrencyDate from KCN_EXCHANGE where CurrencyDate=$date");
+            if (empty($a)) {
+                DB::connection('mysql2')->select("insert into KCN_EXCHANGE (CurrencyDate,CURRENCY_CODE,MarketRate) VALUES ('$date','$req->ccy','$req->rate')");
+                return back()->with("success", "Input Data Successful");
+            } elseif ($a[0]->CurrencyDate=$date) {
+                return back()->with("already", "Date is Already Imported");
+            } else {
+                return back()->withErrors($validation);
+            }
         }
     }
 }

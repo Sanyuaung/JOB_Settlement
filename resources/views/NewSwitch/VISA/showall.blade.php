@@ -3,9 +3,12 @@
 <link href="/css/visa.css" rel="stylesheet">
 
 <div class="container-fluid">
-  <div class="text-left">
+  {{-- <div class="text-left">
     <a href="{{route('visa')}}" class="btn white-text btn-indigo btn-rounded-pill" role="button">Add New Transactions</a>
-  </div>  
+  </div>   --}}
+  <div class="btn2">
+    <a href="{{route('visa')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button"><span>Add New Transactions</span></a>
+</div>
   <div class="table-container">
     <table id="table" class="scroll-table">
       <tr>

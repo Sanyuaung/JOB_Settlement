@@ -3,15 +3,15 @@
 <link href="/css/style.css" rel="stylesheet">
 
    <div class="container-fluid">
-   {{-- <label class="font-weight-bold text-danger5"><b>{{$filename}}</label> --}}
-       <div class="text-center">
-            {{-- <a href="{{route('download')}}" class="btn btn float-right rounded-pill" role="button">Download</a> --}}
-            <a href="{{route('MPUHome')}}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button">Back</a></div>
-        <div>
-          <a href="{{route('downloadinc11s_901')}}" onclick="return confirm('Are you sure you want to download?')" class="btn white-text btn-indigo btn-rounded-pill" role="button">Download EXCEL</a>
-          <label class="float-right">{{$filename}}</label>
-        </div>
     <div class="scroll-table-container">
+      <div class="btn1">
+        <a  href="{{route('MPUHome')}}" role="button"><span>Back</span></a>
+    </div>
+    <div class="btn4">
+      <a href="{{route('downloadinc11s_901')}}" onclick="return confirm('Are you sure you want to download?')" role="button"><span>Download EXCEL</span></a>
+  </div>
+  <div><label class="float-right">{{$filename}}</label></div><br><br><br>
+    {{-- <div class="scroll-table-container"> --}}
       <table id="table" class="scroll-table">
           <tr>
             <th scope="col">NO</th>
