@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JCBcontroller;
 use App\Http\Controllers\MPUcontroller;
@@ -73,4 +74,4 @@ Route::post('/ccy', [VisaDataController::class,"ccyinsert"])->name("ccyinsert");
 
 //Onecard
 Route::get('/atm', [onecardController::class,"home"])->name("atmhome");
-Route::post('/cz', [onecardController::class,"print"])->name("print");
+Route::post('/atm', [onecardController::class,"print"])->name("print");
