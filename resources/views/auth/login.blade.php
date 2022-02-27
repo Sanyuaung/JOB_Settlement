@@ -1,73 +1,72 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
+<x-authlayout>
+    <div class="container">
+        <div class="col-md-4 offset-4 mt-5">
+            <!-- Material form register -->
+        <div class="card">
+    
+            <h5 class="card-header pink white-text text-center py-4">
+                <strong>Sign in</strong>
+            </h5>
+        @if (session('error'))
+            <div class="alert alert-danger">
+              {{session('error')}}
+             </div>
+        @endif
+        @if (session('message'))
+        <div class="alert alert-success">
+          {{session('message')}}
+         </div>
+    @endif
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+    
+                <!-- Form -->
+                <form class="text-center" style="color: #757575;" action="{{route('login')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- E-mail -->
+                            <div class="md-form">
+                                <input type="email" id="materialRegisterFormemail" class="form-control" name="email" placeholder="Email" value="{{old('email')}}">
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <p class="text-danger">{{$message}}</p>
                                 @enderror
+                                {{-- <label for="materialRegisterFormFirstName" >User Name</label> --}}
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                    </div>
+    
+                      <!-- Password -->
+                    <div class="md-form mt-0">
+                        <input type="password" id="defaultLoginFormPassword" class="form-control" name="password" placeholder="Password" value="{{old('password')}}">
+                        @error('password')
+                            <p class="text-danger">{{$message}}</p>
+                         @enderror
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <!-- Forgot password -->
+                            <a href="{{route('forgetpasswordhome')}}">Forgot password?</a>
                         </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+            
+                    <!-- Sign in button -->
+                    <button class="btn pink white-text btn-block my-4" type="submit">Sign in</button>
+            
+                    <!-- Register -->
+                    {{-- @if (!auth()->user()) --}}
+                    <p>Not registered?
+                        <a href="{{route("register")}}">Register</a>
+                    </p>
+                    {{-- @endif --}}
+                </form>
+                <!-- Form -->
+    
             </div>
+    
+        </div>
+        <!-- Material form register -->
         </div>
     </div>
-</div>
-@endsection
+    </x-authlayout>
+    

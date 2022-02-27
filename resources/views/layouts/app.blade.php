@@ -54,74 +54,32 @@
 
 </head>
 <body>
-    {{-- <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
-    
-        <!-- Navbar brand -->
-        <a href="{{ url('/') }}">
-          <img  src="{{asset('images/logo.png')}}" class="ml-2">
-      </a>
-      
-        <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="basicExampleNav">
-      
-          <!-- Links -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-      
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-      
-          </ul>
-          <!-- Links -->
-      
-          <form class="form-inline">
-              <div class="md-form my-0">
-                  <h6 class="white-text mr-sm-2">{{date('Y-m-d')}}</h6>
-              </div>
-          </form>
-        </div>
-        <!-- Collapsible content -->
-      
-      </nav>
-      <!--/.Navbar--> --}}
-    <div>
-        <label class="mr-2 mt-5 float-right">{{date('Y-m-d')}}</label>
-            <a href="{{ url('/') }}">
-                <img  src="{{asset('images/logo.png')}}" class="ml-2">
-            </a>
+  <div>
+    <a href="{{ url('/') }}"><img  src="{{asset('images/logo.png')}}" class="ml-2"></a>
+    <a id="profile" class="mr-2 mt-5 float-right" data-mdb-toggle="dropdown">{{auth()->user()->name}}</a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <b><a id="home" type="submit" href="{{route('logout')}}" class="text-center white-text dropdown-item"11111>Logout</a>
+        {{-- @if (auth()->user()->isAdmin=="1")
+          <li><b><a id="home" type="submit" href="{{route('register')}}" class="text-center white-text dropdown-item">Register</a></li>
+        @endif --}}
+            {{-- <li><b><a id="home" type="submit" href="{{route('visa')}}" class="text-center white-text dropdown-item">Visa Transactions Add</a></li> --}}
+       {{-- <li><b><a id="home" type="submit" href="{{route('ccy')}}" class="text-center white-text dropdown-item">Daily Currency Rate</a></li> --}}
+      </ul>
         <main>
             @yield('content')
         </main>
-    </div>
+  </div>
     
 
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></>
+<!-- JQuery --><!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
