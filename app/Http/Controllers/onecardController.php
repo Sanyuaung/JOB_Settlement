@@ -12,29 +12,30 @@ class onecardController extends Controller
     {
         return view('NewSwitch/Reports/atmhome');
     }
-    public function print(Request $request)
+    public function print(Request $req)
     {
-        $validation=request()->validate([
+        $validation=$req->validate([
             "start"=>"required",
             "end"=>"required",
         ]);
-        $atm=new onecard();
-        $atm->atmprint($request);
-        dd($atm->atmprint($request));
-        
-        // $lo=DB::connection('mysql2')->select('select ATM_LOCATION FROM CZ_ATM');
-        // DB::statement(DB::raw('set @row:=0'));
-        // $atms = DB::connection('mysql2')->select("select B.ATM_ID AS ID,B.ATM_LOCATION,
-        // IFNULL(concat(hour(SEC_TO_TIME(SUM(A.ATMDOWN_DURATION)*3600)),':',minute(SEC_TO_TIME(SUM(A.ATMDOWN_DURATION)*3600))
-        // ,':',second(SEC_TO_TIME(SUM(A.ATMDOWN_DURATION)*3600))),'744:00:00') as DOWNTIME,
-        // IFNULL(ROUND((SUM(A.ATMDOWN_DURATION)/720)*100,2),'100') AS DOWNTIME_PERCENT,
-        // IFNULL(ROUND(100-((SUM(A.ATMDOWN_DURATION)/720)*100),2),'0') AS AVALIABLE_PERCENT
-        // from CZ_ATMDOWN A right join CZ_ATM B
-        // ON A.ATMDOWN_ATM_ID= B.ATM_ID 
-        // AND A.ATMDOWN_DATE>='20211201' AND A.ATMDOWN_DATE<='20211231' GROUP BY B.ATM_ID,B.ATM_LOCATION");
-        // dd($atms);
-        // return view('onecard', [
-        //     'atm' => $atms,
-        // ]);
+        $startdate=substr($req->start,0,4).substr($req->start,5,2).substr($req->start,8,2);
+        $enddate=substr($req->end,0,4).substr($req->end,5,2).substr($req->end,8,2);
+        $count1=substr($req->start,8,2);
+        $count2=substr($req->end,8,2);
+        $count=(($count2-$count1)+1)*24;
+        // dd("$count:00:00");
+        // dd($startdate,$enddate);
+        if($validation){
+            DB::connection('mysql2')->statement(DB::raw('set @row:=0'));
+            $atm = DB::connection('mysql2')->select("select  @row:=@row + 1 AS NO,B.ATM_ID AS ATM_ID, B.ATM_LOCATION, 
+            IFNULL(concat(hour(SEC_TO_TIME(SUM(A.ATMDOWN_DURATION)*3600)),':',minute(SEC_TO_TIME(SUM(A.ATMDOWN_DURATION)*3600)),
+            ':',second(SEC_TO_TIME(SUM(A.ATMDOWN_DURATION)*3600))),'$count:00:00') as DOWNTIME,
+            IFNULL(ROUND((SUM(A.ATMDOWN_DURATION)/$count)*100,2),'100') AS DOWNTIME_PERCENT,
+            IFNULL(ROUND(100-((SUM(A.ATMDOWN_DURATION)/$count)*100),2),'0') AS AVALIABLE_PERCENT
+            from CZ_ATMDOWN A right join CZ_ATM B ON A.ATMDOWN_ATM_ID= B.ATM_ID 
+            AND A.ATMDOWN_DATE>=$startdate AND A.ATMDOWN_DATE<=$enddate GROUP BY B.ATM_ID,B.ATM_LOCATION Order by NO asc");
+            // dd($atm);
+        return view('NewSwitch/Reports/atmshow', ['atm'=>$atm,'startdate'=>$startdate,'enddate'=>$enddate]);
+        }
     }
 }
