@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JCBcontroller;
 use App\Http\Controllers\MPUcontroller;
@@ -20,6 +21,33 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\VisaDataController;
 use Illuminate\Support\Facades\Route;
 
+// Admin Middleware
+// Route::middleware('admin')->group(function ()
+// {
+// // Route::get('/register', [AuthController::class,"registerhome"])->name("registerhome");
+// // Route::post('/register',[AuthController::class,"register"])->name("register");
+// Route::post('/registerinfo',[AuthController::class,"registerinfo"])->name("registerinfo");
+// });
+
+// Guest Middleware
+Route::middleware('guest')->group(function ()
+{
+Route::get('/register', [AuthController::class,"registerhome"])->name("registerhome");
+Route::post('/register',[AuthController::class,"register"])->name("register");
+Route::get('/login', [AuthController::class,"loginhome"])->name("loginhome");
+Route::post('/login',[AuthController::class,"login"])->name("login");
+Route::get('/forgetpasswordhome',[AuthController::class,"forgetpasswordhome"])->name("forgetpasswordhome");
+Route::post('/forgetpasswordvalidate',[AuthController::class,"forgetpasswordvalidate"])->name("forgetpasswordvalidate");
+Route::post('/updatePassword/{id}',[AuthController::class,"updatePassword"])->name("updatePassword");
+});
+
+
+Route::get('/logout',[AuthController::class,"logout"])->name("logout");
+
+
+// Auth Middleware
+Route::middleware('auth')->group(function ()
+{
 Route::get('/', [HomeController::class,"home"])->name("home");
 
 Route::get('/JCB', [HomeController::class,"JCBHome"])->name("JCBHome");
@@ -73,4 +101,5 @@ Route::post('/ccy', [VisaDataController::class,"ccyinsert"])->name("ccyinsert");
 
 //Onecard
 Route::get('/atm', [onecardController::class,"home"])->name("atmhome");
-Route::post('/cz', [onecardController::class,"print"])->name("print");
+Route::post('/atm', [onecardController::class,"print"])->name("print");
+});

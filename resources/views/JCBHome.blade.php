@@ -13,6 +13,9 @@
              </div>
         @endif
                 <div class="input-group">
+                    {{-- <div class="input-group-prepend">
+                        <button id="btn" class="btn white-text btn-indigo btn-rounded-pill"  type="submit">JCB Upload</button>
+                    </div> --}}
                     <div class="btn1">
                         <button type="submit"><span>JCB Upload</span></button>
                     </div>
