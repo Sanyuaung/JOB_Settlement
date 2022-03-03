@@ -83,14 +83,13 @@ class AuthController extends Controller
         $email=request("email");
         if ($validation) {
             $auth=DB::select("select * from users where name='$username' and email='$email'");
-            // where('name', request("username"))->where('email', request("email"))->first();
-            // dd($auth[0]->id);
             if ($auth) {
-                return view("auth.forgetPassword",['old'=>$auth]);
-                // ['username'=>request('username'),'email'=>request('email')]);
-            }else{
+                return view("auth.forgetPassword", ['old'=>$auth]);
+                }
+            else{
                 return back()->withErrors(["email"=>"User not found"]);
-            }
+            }   
+        
         }
     }
     public function updatePassword($id){

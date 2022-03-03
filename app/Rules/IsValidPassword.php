@@ -63,32 +63,32 @@ class IsValidPassword implements Rule
             case !$this->uppercasePasses
                 && $this->numericPasses
                 && $this->specialCharacterPasses:
-                return 'The :attribute must be at least 8 characters and contain at least 1 uppercase character.';
+                return 'The :attribute must be at least 8 characters that contain at least 1 uppercase character.';
 
             case !$this->numericPasses
                 && $this->uppercasePasses
                 && $this->specialCharacterPasses:
-                return 'The :attribute must be at least 8 characters and contain at least 1 number.';
+                return 'The :attribute must be at least 8 characters that contain at least 1 number.';
 
             case !$this->specialCharacterPasses
                 && $this->uppercasePasses
                 && $this->numericPasses:
-                return 'The :attribute must be at least 8 characters and contain at least 1 special character.';
+                return 'The :attribute must be at least 8 characters that contain at least 1 special character.';
 
             case !$this->uppercasePasses
                 && !$this->numericPasses
                 && $this->specialCharacterPasses:
-                return 'The :attribute must be at least 8 characters and contain at least 1 uppercase character and 1 number.';
+                return 'The :attribute must be at least 8 characters that contain at least 1 uppercase character and 1 number.';
 
             case !$this->uppercasePasses
                 && !$this->specialCharacterPasses
                 && $this->numericPasses:
-                return 'The :attribute must be at least 8 characters and contain at least 1 uppercase character and 1 special character.';
+                return 'The :attribute must be at least 8 characters that contain at least 1 uppercase character and 1 special character.';
 
             case !$this->uppercasePasses
                 && !$this->numericPasses
                 && !$this->specialCharacterPasses:
-                return 'The :attribute must be at least 8 characters and contain at least 1 uppercase character, 1 number, and 1 special character.';
+                return 'The :attribute must be at least 8 characters that contain at least 1 uppercase character, 1 number, and 1 special character.';
 
             default:
                 return 'The :attribute must be at least 8 characters.';

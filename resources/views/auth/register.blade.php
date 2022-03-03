@@ -8,7 +8,7 @@
             <!-- Material form register -->
         <div class="card">
 
-            <h5 class="card-header pink white-text text-center py-4">
+            <h5 class="card-header orange darken-2 white-text text-center py-4">
                 <strong>Register</strong>
             </h5>
             @if (session('error'))
@@ -31,7 +31,7 @@
                         <div class="col">
                             <!-- First name -->
                             <div class="md-form">
-                                <input type="text" id="materialRegisterFormFirstName" class="form-control" name="username" placeholder="User Name">
+                                <inputz type="text" id="materialRegisterFormFirstName" class="form-control" name="username" placeholder="User Name">
                                 @error('username')
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
@@ -79,7 +79,7 @@
                         @enderror
                     </div> --}}
                     <!-- Sign up button -->
-                    <button class="btn pink white-text btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Register</button>
+                    <button class="btn orange darken-2 white-text btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Register</button>
                     <p>
                         <a href="{{route("login")}}">Already Registered?</a>
                     </p>

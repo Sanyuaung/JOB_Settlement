@@ -75,10 +75,16 @@ footer {
     -webkit-text-fill-color: transparent;
 }
 #profile {
+    float: right;
+    margin-right: 0.1in;
+    margin-top: 0.5in;
     font-weight: bold;
     background: -webkit-linear-gradient(rgb(6, 245, 26), rgb(50, 7, 241));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+#profile:hover {
+    background-color: #e52e2e;
 }
 label {
     margin-right: 5px;
@@ -167,7 +173,7 @@ button:hover {
 }
 .btn1 button:after {
     background: #e52e2e;
-    transform: translate(-105%, -20%) rotate(45deg);
+    transform: translate(-100%, -20%) rotate(45deg);
 }
 .btn1:hover button:after {
     transform: translate(-9%, -20%) rotate(45deg);
@@ -379,7 +385,7 @@ button:hover {
     content: "";
     left: 0;
     top: 0;
-    height: 490%;
+    height: 530%;
     width: 140%;
     transition: all 0.5s ease-in-out;
 }
@@ -422,7 +428,7 @@ button:hover {
     content: "";
     left: 0;
     top: 0;
-    height: 700%;
+    height: 750%;
     width: 200%;
     transition: all 0.5s ease-in-out;
 }
@@ -431,7 +437,7 @@ button:hover {
     transform: translate(-115%, -20%) rotate(45deg);
 }
 .home2:hover button:after {
-    transform: translate(-15%, -20%) rotate(45deg);
+    transform: translate(-15%, -30%) rotate(45deg);
 }
 button span {
     position: relative;

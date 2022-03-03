@@ -56,12 +56,12 @@
 <body>
   <div>
     <a href="{{ url('/') }}"><img  src="{{asset('images/logo.png')}}" class="ml-2"></a>
-    <a id="profile" class="mr-2 mt-5 float-right" data-mdb-toggle="dropdown">{{auth()->user()->name}}</a>
+    <a id="profile"  data-mdb-toggle="dropdown">{{auth()->user()->name}}</a>
       <ul class="dropdown-menu dropdown-menu-end">
-        <b><a id="home" type="submit" href="{{route('logout')}}" class="text-center white-text dropdown-item"11111>Logout</a>
-        {{-- @if (auth()->user()->isAdmin=="1")
-          <li><b><a id="home" type="submit" href="{{route('register')}}" class="text-center white-text dropdown-item">Register</a></li>
-        @endif --}}
+        <b><a id="home" type="submit" href="{{route('logout')}}" class="text-center white-text dropdown-item">Logout</a>
+        @if (auth()->user()->isAdmin=="1")
+          <li><b><a id="home" type="submit" href="{{route("userhome")}}" class="text-center white-text dropdown-item">User Control</a></li>
+        @endif
             {{-- <li><b><a id="home" type="submit" href="{{route('visa')}}" class="text-center white-text dropdown-item">Visa Transactions Add</a></li> --}}
        {{-- <li><b><a id="home" type="submit" href="{{route('ccy')}}" class="text-center white-text dropdown-item">Daily Currency Rate</a></li> --}}
       </ul>

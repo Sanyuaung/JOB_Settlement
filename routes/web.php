@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -102,4 +103,16 @@ Route::post('/ccy', [VisaDataController::class,"ccyinsert"])->name("ccyinsert");
 //Onecard
 Route::get('/atm', [onecardController::class,"home"])->name("atmhome");
 Route::post('/atm', [onecardController::class,"print"])->name("print");
+
+// User Control
+Route::get('/usercontol',[AdminController::class,"home"])->name("userhome");
+Route::get('/edituser/{id}',[AdminController::class,"edituser"])->name("edituser");
+Route::post('/editUpdateUser/{id}',[AdminController::class,"editUpdateUser"])->name("editUpdateUser");
+Route::get('/deleteUser/{id}',[AdminController::class,"deleteUser"])->name("deleteUser");
+});
+Route::middleware('admin')->group(function ()
+{
+    Route::get('/edituser/{id}',[AdminController::class,"edituser"])->name("edituser");
+    Route::post('/editUpdateUser/{id}',[AdminController::class,"editUpdateUser"])->name("editUpdateUser");
+    Route::get('/deleteUser/{id}',[AdminController::class,"deleteUser"])->name("deleteUser");
 });

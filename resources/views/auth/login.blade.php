@@ -4,7 +4,7 @@
             <!-- Material form register -->
         <div class="card">
     
-            <h5 class="card-header pink white-text text-center py-4">
+            <h5 class="card-header orange darken-2 white-text text-center py-4">
                 <strong>Sign in</strong>
             </h5>
         @if (session('error'))
@@ -16,7 +16,7 @@
         <div class="alert alert-success">
           {{session('message')}}
          </div>
-    @endif
+        @endif
             <!--Card content-->
             <div class="card-body px-lg-5 pt-0">
     
@@ -51,7 +51,7 @@
                     </div>
             
                     <!-- Sign in button -->
-                    <button class="btn pink white-text btn-block my-4" type="submit">Sign in</button>
+                    <button class="btn orange darken-2 white-text btn-block my-4" type="submit">Sign in</button>
             
                     <!-- Register -->
                     {{-- @if (!auth()->user()) --}}

@@ -4,7 +4,7 @@
             <!-- Material form register -->
         <div class="card">
     
-            <h5 class="card-header pink white-text text-center py-4">
+            <h5 class="card-header orange darken-2 white-text text-center py-4">
                 <strong>Forget Password</strong>
             </h5>
         @if (session('Errors'))
@@ -40,7 +40,7 @@
                     </div>
             
                     <!-- Sign in button -->
-                    <button class="btn pink white-text btn-block my-4" type="submit">Continue</button>
+                    <button class="btn orange darken-2 white-text btn-block my-4" type="submit">Continue</button>
             
                 </form>
                 <!-- Form -->

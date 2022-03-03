@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col-md-4 offset-4 mt-5">
         <div class="card">
-            <h5 class="card-header pink white-text text-center py-4">
+            <h5 class="card-header orange darken-2 white-text text-center py-4">
                 <strong>Create New Password</strong>
             </h5>
             @if (session('error'))
@@ -61,7 +61,7 @@
                             {{-- At least 8 characters and 1 digit --}}
                         </small>
                     </div>
-                    <button class="btn pink white-text btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Update</button>
+                    <button class="btn orange darken-2 white-text btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Update</button>
                 </form>
             </div>
         </div>
