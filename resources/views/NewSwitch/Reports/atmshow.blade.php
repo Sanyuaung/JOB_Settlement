@@ -7,9 +7,9 @@
       <div class="btn1">
         <a  href="{{route('atmhome')}}" role="button"><span>Back</span></a>
     </div>
-    {{-- <div class="btn4">
-      <a href="{{route('downloadinc11s_901')}}" onclick="return confirm('Are you sure you want to download?')" role="button"><span>Download EXCEL</span></a>
-  </div> --}}
+    <div class="btn4">
+      <a href="{{route('atmdownload',['startdate'=>$startdate,'enddate'=>$enddate])}}" onclick="return confirm('Are you sure you want to download?')" role="button"><span>Download EXCEL</span></a>
+  </div>
   <div><label class="float-right mr-3">From {{$startdate}} to {{$enddate}}</label></div>
   <br><br><br>
     {{-- <div class="scroll-table-container"> --}}

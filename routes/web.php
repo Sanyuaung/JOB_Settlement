@@ -44,6 +44,7 @@ Route::post('/updatePassword/{id}',[AuthController::class,"updatePassword"])->na
 
 
 Route::get('/logout',[AuthController::class,"logout"])->name("logout");
+// Route::post('/print',[onecardController::class,"d"])->name("d");
 
 
 // Auth Middleware
@@ -100,9 +101,10 @@ Route::get('/visaall', [VisaDataController::class,"show"])->name("showall");
 Route::get('/ccy', [VisaDataController::class,"ccy"])->name("ccy");
 Route::post('/ccy', [VisaDataController::class,"ccyinsert"])->name("ccyinsert");
 
-//Onecard
+//Onecard ATM
 Route::get('/atm', [onecardController::class,"home"])->name("atmhome");
 Route::post('/atm', [onecardController::class,"print"])->name("print");
+Route::get('/atmdownload/{startdate}/{enddate}', [onecardController::class,"download"])->name("atmdownload");
 
 // User Control
 Route::get('/usercontol',[AdminController::class,"home"])->name("userhome");

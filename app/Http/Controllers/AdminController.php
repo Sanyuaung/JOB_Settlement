@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function home(){
-        $users=User::all();
+        // $users=User::all();
+        // $users=User::latest()->paginate(7);
+        $users=User::paginate(7);
         return view("admin.adminhome",['users'=>$users]);
     }
     public function edituser($id)

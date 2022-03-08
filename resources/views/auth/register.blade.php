@@ -31,7 +31,7 @@
                         <div class="col">
                             <!-- First name -->
                             <div class="md-form">
-                                <inputz type="text" id="materialRegisterFormFirstName" class="form-control" name="username" placeholder="User Name">
+                                <input type="text" id="materialRegisterFormemail" class="form-control" name="username" placeholder="User Name">
                                 @error('username')
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
@@ -46,7 +46,6 @@
                         @error('email')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
-                        {{-- <label for="materialRegisterFormEmail" >E-mail</label> --}}
                     </div>
 
                     <!-- Password -->
