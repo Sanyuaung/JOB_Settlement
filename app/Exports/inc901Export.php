@@ -6,8 +6,9 @@ use App\Models\ii_inc;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class inc901Export implements FromCollection, WithHeadings, WithMapping
+class inc901Export implements FromCollection, WithHeadings, WithMapping,ShouldAutoSize
 {
     public function headings(): array
     {

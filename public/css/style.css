@@ -217,7 +217,7 @@ a:hover {
 }
 .btn1 a:after {
     background: #e52e2e;
-    transform: translate(-115%, -20%) rotate(45deg);
+    transform: translate(-110%, -20%) rotate(45deg);
 }
 .btn1:hover a:after {
     transform: translate(-15%, -20%) rotate(45deg);
@@ -347,10 +347,10 @@ a:hover {
 }
 .btn4 a:after {
     background: #e52e2e;
-    transform: translate(-123%, -20%) rotate(45deg);
+    transform: translate(-108%, -10%) rotate(45deg);
 }
 .btn4:hover a:after {
-    transform: translate(-30%, -30%) rotate(45deg);
+    transform: translate(-10%, -30%) rotate(45deg);
 }
 a span {
     position: relative;

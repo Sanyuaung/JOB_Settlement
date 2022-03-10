@@ -6,8 +6,9 @@ use App\Models\aerr;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class AerrExport implements FromCollection,WithHeadings,WithMapping
+class AerrExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize
 {
     public function headings(): array
     {

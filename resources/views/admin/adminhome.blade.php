@@ -15,11 +15,13 @@
     <div class="table-container">
       <table id="table" class="scroll-table">
           <tr>
-            <th scope="col">NO</th>
+            <th scope="col">ID</th>
             <th scope="col">User Name</th>
             <th scope="col">E-mail</th>
             <th scope="col">isAdmin</th>
             <th scope="col">isApproved</th>
+            <th scope="col">Card Dept;</th>
+            <th scope="col">Settlement Dept;</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
           </tr><br><br><br>
@@ -30,9 +32,11 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->isAdmin=='0'?"NO":"YES"}}</td>
                 <td>{{$user->isApproved=='0'?"NO":"YES"}}</td>
+                <td>{{$user->Card=='0'?"NO":"YES"}}</td>
+                <td>{{$user->Settlement=='0'?"NO":"YES"}}</td>
                 <td><a class="btn btn-sm green white-text" href="{{route('edituser',$user->id)}}">Update</a></td>
                 <td><a class="btn btn-sm red white-text" href="{{route('deleteUser',$user->id)}}" onclick="return confirm('Are you sure?')">Delete</a></td>
-            </tr>
+            </tr> 
             @endforeach
       </table>
       <div class="col-md-12">

@@ -9,12 +9,9 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
-use PhpOffice\PhpSpreadsheet\Shared\Date;
-use Maatwebsite\Excel\Concerns\WithColumnFormatting;
-use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
-use PhpParser\Node\Scalar\String_;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class AtmExport implements FromCollection,WithHeadings,WithMapping
+class AtmExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize
 
 {
     /**

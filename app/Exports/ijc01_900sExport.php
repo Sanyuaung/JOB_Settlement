@@ -4,8 +4,11 @@ namespace App\Exports;
 
 use App\Models\ijc01_900;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class ijc01_900sExport implements FromCollection
+class ijc01_900sExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize
 {
     public function headings(): array
     {

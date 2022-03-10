@@ -25,6 +25,8 @@ class AdminController extends Controller
             'email'=>'required',
             'isAdmin'=>'required',
             'isApproved'=>'required',
+            'Card'=>'required',
+            'Settlement'=>'required',
         ]);
         if($validation){
             $editUpdateUser=User::find($id);
@@ -33,6 +35,8 @@ class AdminController extends Controller
             $editUpdateUser->email=$validation["email"];
             $editUpdateUser->isAdmin=$validation["isAdmin"];
             $editUpdateUser->isApproved=$validation["isApproved"];
+            $editUpdateUser->Card=$validation["Card"];
+            $editUpdateUser->Settlement=$validation["Settlement"];
             // return $editUpdateUser;
             $editUpdateUser->update();
             return redirect()->route('userhome')->with('message','User Updated');

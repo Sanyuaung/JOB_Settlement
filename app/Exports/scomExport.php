@@ -6,8 +6,9 @@ use App\Models\scom;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class scomExport implements FromCollection, WithHeadings, WithMapping
+class scomExport implements FromCollection, WithHeadings, WithMapping, ShouldAutoSize
 {
     public function headings(): array
     {
