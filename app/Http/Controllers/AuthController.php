@@ -53,7 +53,7 @@ class AuthController extends Controller
             "password"=>"required",
         ]);
         if ($validation) {
-            $auth=Auth::attempt(['email' => request("email"),'isApproved'=>1, 'password' => request("password")]);
+            $auth=Auth::attempt(['email' => request("email"),'status'=>1, 'password' => request("password")]);
             if ($auth) {
                 return  redirect()->route('home');
                 ;

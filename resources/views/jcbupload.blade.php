@@ -1,62 +1,62 @@
 @extends('layouts/app')
 @section('content')
-<link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
-   <div class="container-fluid">
-    <div class="scroll-table-container">
+    <div class="container-fluid">
+        <div class="scroll-table-container">
             <div class="btn1">
-                <a  href="{{route('JCBHome')}}" role="button"><span>Back</span></a>
+                <a href="{{ route('JCBHome') }}" role="button"><span>Back</span></a>
             </div>
             <div class="btn2">
-                <a href="{{route('pdf')}}" onclick="return confirm('Are you sure you want to download?')" role="button"><span>Download PDF</span></a>
+                <a href="{{ route('pdf') }}" onclick="return confirm('Are you sure you want to download?')"
+                    role="button"><span>Download PDF</span></a>
             </div><br><br><br>
-    {{-- <div class="scroll-table-container"> --}}
-      <table id="table" class="scroll-table">
-          <tr>
-            <th scope="col">NO</th>
-            <th scope="col">Institution Code</th>
-            <th scope="col">Acquiriing Bank Name</th>
-            <th scope="col">Account Number</th>
-            <th scope="col">Settlement Date</th>
-            <th scope="col">MPU Commission</th>
-            <th scope="col">Acquiriing Settlement Amount</th>
-            <th scope="col">Debit</th>
-            <th scope="col">Credit</th>
-          </tr>
-            @foreach ($users as $user)
-            <tr>
-              <td>{{$user->NO}}</td>
-              <td>{{$user->Institution_Code}}</td>
-              <td>{{$user->Short_Name}}</td>
-              <td>{{$user->Account_Number}}</td>
-              <td>{{$user->date}}</td>
-              <td>{{$user->MPU_Comm}}</td>
-              <td>{{$user->Acq_Bank_Settle_Amt}}</td>
-              <td>{{$user->Debit}}</td>
-              <td>{{$user->Credit}}</td>
-            </tr>
-            @endforeach
+            {{-- <div class="scroll-table-container"> --}}
+            <table id="table" class="scroll-table">
+                <tr>
+                    <th scope="col">NO</th>
+                    <th scope="col">Institution Code</th>
+                    <th scope="col">Acquiriing Bank Name</th>
+                    <th scope="col">Account Number</th>
+                    <th scope="col">Settlement Date</th>
+                    <th scope="col">MPU Commission</th>
+                    <th scope="col">Acquiriing Settlement Amount</th>
+                    <th scope="col">Debit</th>
+                    <th scope="col">Credit</th>
+                </tr>
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->NO }}</td>
+                        <td>{{ $user->Institution_Code }}</td>
+                        <td>{{ $user->Short_Name }}</td>
+                        <td>{{ $user->Account_Number }}</td>
+                        <td>{{ $user->date }}</td>
+                        <td>{{ $user->MPU_Comm }}</td>
+                        <td>{{ $user->Acq_Bank_Settle_Amt }}</td>
+                        <td>{{ $user->Debit }}</td>
+                        <td>{{ $user->Credit }}</td>
+                    </tr>
+                @endforeach
                 @foreach ($one as $one)
                     <th scope="col">Total</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
-                    <th scope="col">{{$one->one}}</th>
+                    <th scope="col">{{ $one->one }}</th>
                 @endforeach
                 @foreach ($two as $two)
-                    <th scope="col">{{$two->two}}</th>
+                    <th scope="col">{{ $two->two }}</th>
                 @endforeach
                 @foreach ($three as $three)
-                    <th scope="col">{{$three->three}}</th>
+                    <th scope="col">{{ $three->three }}</th>
                 @endforeach
                 @foreach ($four as $four)
-                    <th scope="col">{{$four->four}}</th>
+                    <th scope="col">{{ $four->four }}</th>
                 @endforeach
-             </tr>
-      </table>
-   </div>
+                </tr>
+            </table>
+        </div>
     </div>
-  </div>
-
+    </div>
 @endsection

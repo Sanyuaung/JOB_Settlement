@@ -1,27 +1,27 @@
 @extends('layouts.app')
 @section('content')
-<link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
-<div class="container mt-3 p-4">
-    <h1 id="JCB" class="text-center">Welcome JCB Post Files</h1>
-    <form class=" border border-light p-5" action="{{route('jcb')}}" method="post" enctype="multipart/form-data">
-        @csrf
+    <div class="container mt-3 p-4">
+        <h1 id="JCB" class="text-center">Welcome JCB Post Files</h1>
+        <form class=" border border-light p-5" action="{{ route('jcb') }}" method="post" enctype="multipart/form-data">
+            @csrf
 
-        @if (session('errors'))
-            <div class="alert alert-danger">
-              {{session('errors')}}
-             </div>
-        @endif
-                <div class="input-group">
-                    {{-- <div class="input-group-prepend">
+            @if (session('errors'))
+                <div class="alert alert-danger">
+                    {{ session('errors') }}
+                </div>
+            @endif
+            <div class="input-group">
+                {{-- <div class="input-group-prepend">
                         <button id="btn" class="btn white-text btn-indigo btn-rounded-pill"  type="submit">JCB Upload</button>
                     </div> --}}
-                    <div class="btn1">
-                        <button type="submit"><span>JCB Upload</span></button>
-                    </div>
-                     <input type="file" name="jcb" class="form-control mt-2">
+                <div class="btn1">
+                    <button type="submit"><span>JCB Upload</span></button>
                 </div>
+                <input type="file" name="jcb" class="form-control mt-2">
+            </div>
 
-    </form>
-</div>
+        </form>
+    </div>
 @endsection

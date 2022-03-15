@@ -50,7 +50,7 @@ Route::get('/logout',[AuthController::class,"logout"])->name("logout");
 // Auth Middleware
 Route::middleware('auth')->group(function ()
 {
-Route::get('/', [HomeController::class,"home"])->name("home");
+Route::get('/cardsettlement', [HomeController::class,"home"])->name("home");
 
 Route::get('/JCB', [HomeController::class,"JCBHome"])->name("JCBHome");
 Route::get('/MPU', [HomeController::class,"MPUHome"])->name("MPUHome");
@@ -102,9 +102,16 @@ Route::get('/ccy', [VisaDataController::class,"ccy"])->name("ccy");
 Route::post('/ccy', [VisaDataController::class,"ccyinsert"])->name("ccyinsert");
 
 //Onecard ATM
-Route::get('/atm', [onecardController::class,"home"])->name("atmhome");
-Route::post('/atm', [onecardController::class,"print"])->name("print");
-Route::get('/atmdownload/{startdate}/{enddate}', [onecardController::class,"download"])->name("atmdownload");
+Route::get('/atm', [onecardController::class,"atmhome"])->name("atmhome");
+Route::post('/atmprint', [onecardController::class,"atmprint"])->name("print");
+Route::get('/atmdownload/{startdate}/{enddate}', [onecardController::class,"atmdownload"])->name("atmdownload");
+
+// Onecard Customer Outstanding
+Route::get('/outstanding', [onecardController::class,"cohome"])->name("cohome");
+Route::post('/outstandingprint', [onecardController::class,"coprint"])->name("coprint");
+Route::get('/codownload/{date}', [onecardController::class,"codownload"])->name("codownload");
+
+
 
 // User Control
 Route::get('/usercontol',[AdminController::class,"home"])->name("userhome");
@@ -112,6 +119,8 @@ Route::get('/edituser/{id}',[AdminController::class,"edituser"])->name("edituser
 Route::post('/editUpdateUser/{id}',[AdminController::class,"editUpdateUser"])->name("editUpdateUser");
 Route::get('/deleteUser/{id}',[AdminController::class,"deleteUser"])->name("deleteUser");
 });
+
+// Admin
 Route::middleware('admin')->group(function ()
 {
     Route::get('/edituser/{id}',[AdminController::class,"edituser"])->name("edituser");

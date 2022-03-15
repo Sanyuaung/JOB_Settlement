@@ -47,12 +47,13 @@
 
 <body>
     <div>
-        <a href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" class="ml-2"></a>
-        <a id="profile" data-mdb-toggle="dropdown">{{ auth()->user()->name }}</a>
+        <a href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" class="ml-2"></a>
+        <a id="profile">({{ auth()->user()->department }})</a>
+        <a id="profile" data-mdb-toggle="dropdown">{{ auth()->user()->name }} </a>
         <ul class="dropdown-menu dropdown-menu-end">
             <b><a id="home" type="submit" href="{{ route('logout') }}"
                     class="text-center white-text dropdown-item">Logout</a>
-                @if (auth()->user()->isAdmin == '1')
+                @if (auth()->user()->department == 'Admin')
                     <li><b><a id="home" type="submit" href="{{ route('userhome') }}"
                                 class="text-center white-text dropdown-item">User Control</a></li>
                 @endif

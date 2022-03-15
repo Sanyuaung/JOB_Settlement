@@ -1,87 +1,88 @@
 @extends('layouts/app')
 @section('content')
-<link href="/css/visa.css" rel="stylesheet">
+    <link href="/css/visa.css" rel="stylesheet">
 
-<div class="container">
-    <div class="btn1">
-        <a href="{{route('showall')}}" class="btn white-text btn-indigo btn-rounded-pill float-right" role="button"><span>SHOW ALL</span></a>
-    </div>
-    <div>
-        <h1 id="VISA" class="grey-text text-center">Welcome Visa Transactions</h1>
-        {{-- <img src="{{asset('images/logo.png')}}" class="img-responsive "> --}}
-        {{-- <img  src="{{asset('images/logo.png')}}" class="text-center"> --}}
-
-        @if (Session('success'))
-        <div class="alert alert-success">
-            {{Session('success')}}
+    <div class="container">
+        <div class="btn1">
+            <a href="{{ route('showall') }}" class="btn white-text btn-indigo btn-rounded-pill float-right"
+                role="button"><span>SHOW ALL</span></a>
         </div>
-        @endif
+        <div>
+            <h1 id="VISA" class="grey-text text-center">Welcome Visa Transactions</h1>
+            {{-- <img src="{{asset('images/logo.png')}}" class="img-responsive "> --}}
+            {{-- <img  src="{{asset('images/logo.png')}}" class="text-center"> --}}
 
-    <h5 class="mt-4 card-header indigo  white-text text-center py-4">
-        <strong>Create Transactions</strong>
-    </h5>
+            @if (Session('success'))
+                <div class="alert alert-success">
+                    {{ Session('success') }}
+                </div>
+            @endif
 
-    <!--Card content-->
-    <div class="card-body px-lg-5 pt-0">
+            <h5 class="mt-4 card-header indigo  white-text text-center py-4">
+                <strong>Create Transactions</strong>
+            </h5>
 
-        <!-- Form -->
-        <form class="text-center" action="{{route("insert")}}" method="post">
-            @csrf
-            <!-- User Name -->
-            <div class="md-form mt-4">
-                {{-- <input type="date" id="materialRegisterFormEmail" class="form-control" name="settledate"> --}}
-                <input type="date" id="materialRegisterFormEmail" class="form-control" name="settledate">
-                <label for="materialRegisterFormEmail">Settlement Date</label>
-                @error('settledate')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
 
-            <!-- Pizza Name -->
-            <div class="md-form mt-4">
-                <input type="number" step="0" id="materialRegisterFormEmail" class="form-control" name="num">
-                <label for="materialRegisterFormEmail">Number of Transactions</label>
-                @error('num')
-                <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
+                <!-- Form -->
+                <form class="text-center" action="{{ route('insert') }}" method="post">
+                    @csrf
+                    <!-- User Name -->
+                    <div class="md-form mt-4">
+                        {{-- <input type="date" id="materialRegisterFormEmail" class="form-control" name="settledate"> --}}
+                        <input type="date" id="materialRegisterFormEmail" class="form-control" name="settledate">
+                        <label for="materialRegisterFormEmail">Settlement Date</label>
+                        @error('settledate')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-            <!-- Toppings -->
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="usd">
-                <label for="materialRegisterFormEmail">USD Amount</label>
-                @error('usd')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
+                    <!-- Pizza Name -->
+                    <div class="md-form mt-4">
+                        <input type="number" step="0" id="materialRegisterFormEmail" class="form-control" name="num">
+                        <label for="materialRegisterFormEmail">Number of Transactions</label>
+                        @error('num')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-            <!-- Sauce -->
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="mmk">
-                <label for="materialRegisterFormEmail">MMK Amount</label>
-                @error('mmk')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
+                    <!-- Toppings -->
+                    <div class="md-form mt-4">
+                        <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="usd">
+                        <label for="materialRegisterFormEmail">USD Amount</label>
+                        @error('usd')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-            <!-- Price -->
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="rate">
-                <label for="materialRegisterFormEmail">Exchange Rate</label>
-                @error('rate')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
+                    <!-- Sauce -->
+                    <div class="md-form mt-4">
+                        <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="mmk">
+                        <label for="materialRegisterFormEmail">MMK Amount</label>
+                        @error('mmk')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="commAmt">
-                <label for="materialRegisterFormEmail">Commissions Amount</label>
-                @error('rate')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
-{{-- 
-            <div class="md-form mt-4">
+                    <!-- Price -->
+                    <div class="md-form mt-4">
+                        <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="rate">
+                        <label for="materialRegisterFormEmail">Exchange Rate</label>
+                        @error('rate')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="md-form mt-4">
+                        <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control"
+                            name="commAmt">
+                        <label for="materialRegisterFormEmail">Commissions Amount</label>
+                        @error('rate')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    {{-- <div class="md-form mt-4">
                 <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Debit">
                 <label for="materialRegisterFormEmail">Debit</label>
                 @error('Debit')
@@ -105,56 +106,56 @@
                 @enderror
             </div> --}}
 
-            <label for="cardType">Select Card Type : </label>
-            <select name="cardType" id="terminal">
-                <option selected></option>
-                <option value="Debit">Debit</option>
-                <option value="Credit">Credit</option>
-                <option value="Prepaid">Prepaid</option>
-            </select>
-            @error('cardType')
-                <p class="text-danger">{{$message}}</p>
-            @enderror
+                    <label for="cardType">Select Card Type : </label>
+                    <select name="cardType" id="terminal">
+                        <option selected></option>
+                        <option value="Debit">Debit</option>
+                        <option value="Credit">Credit</option>
+                        <option value="Prepaid">Prepaid</option>
+                    </select>
+                    @error('cardType')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
 
-            {{-- <br> --}}
+                    {{-- <br> --}}
 
-            <label for="terminal">Select Currency : </label>
-            <select name="currency" id="terminal">
-                <option selected></option>
-                <option value="mmk">MMK</option>
-                <option value="usd">USD</option>
-            </select>
-            @error('currency')
-                <p class="text-danger">{{$message}}</p>
-            @enderror
+                    <label for="terminal">Select Currency : </label>
+                    <select name="currency" id="terminal">
+                        <option selected></option>
+                        <option value="mmk">MMK</option>
+                        <option value="usd">USD</option>
+                    </select>
+                    @error('currency')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
 
-            {{-- <br> --}}
+                    {{-- <br> --}}
 
-            <label for="terminal">Select Type of Transaction : </label>
-            <select name="typeOfTrans" id="terminal">
-                <option selected></option>
-                <option value="visapos">VISA_POS</option>
-                <option value="visaatm">VISA_ATM</option>
-                <option value="masterpos">Master_POS</option>
-                <option value="masteratm">Master_ATM</option>
-                <option value="upipos">UPI_POS</option>
-                <option value="upiatm">UPI_ATM</option>
-                <option value="jcbpos">JCB_POS</option>
-                <option value="jcbatm">JCB_ATM</option>
-            </select>
-            @error('terminal')
-                <p class="text-danger">{{$message}}</p>
-            @enderror
+                    <label for="terminal">Select Type of Transaction : </label>
+                    <select name="typeOfTrans" id="terminal">
+                        <option selected></option>
+                        <option value="visapos">VISA_POS</option>
+                        <option value="visaatm">VISA_ATM</option>
+                        <option value="masterpos">Master_POS</option>
+                        <option value="masteratm">Master_ATM</option>
+                        <option value="upipos">UPI_POS</option>
+                        <option value="upiatm">UPI_ATM</option>
+                        <option value="jcbpos">JCB_POS</option>
+                        <option value="jcbatm">JCB_ATM</option>
+                    </select>
+                    @error('terminal')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
 
-            <!-- Order button -->
-            <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0" type="sumbit">Save Now</button>
-            {{-- <footer id="viasFot"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer> --}}
+                    <!-- Order button -->
+                    <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0"
+                        type="sumbit">Save Now</button>
+                    {{-- <footer id="viasFot"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer> --}}
 
-        </form>
-        <!-- Form -->
+                </form>
+                <!-- Form -->
 
-    </div>
+            </div>
 
-</div>
-
-@endsection
+        </div>
+    @endsection
