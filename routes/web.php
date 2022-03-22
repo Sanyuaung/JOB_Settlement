@@ -111,6 +111,11 @@ Route::get('/outstanding', [onecardController::class,"cohome"])->name("cohome");
 Route::post('/outstandingprint', [onecardController::class,"coprint"])->name("coprint");
 Route::get('/codownload/{date}', [onecardController::class,"codownload"])->name("codownload");
 
+// PSSD_01
+Route::get('/pssd01', [onecardController::class,"pssd01home"])->name("pssd01home");
+Route::post('/pssd01print', [onecardController::class,"pssd01print"])->name("pssd01print");
+Route::get('/pssd01download/{date}', [onecardController::class,"pssd01download"])->name("pssd01download");
+
 
 
 // User Control

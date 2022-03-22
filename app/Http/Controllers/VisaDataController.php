@@ -52,7 +52,7 @@ class VisaDataController extends Controller
 
     public function show()
     {
-        $tranx=syavisatran::latest()->paginate(7); // latest to first
+        $tranx=syavisatran::latest()->paginate(10); // latest to first
         return view('NewSwitch/VISA/showall', ['tranxs'=>$tranx]);
     }
     

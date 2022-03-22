@@ -71,7 +71,7 @@ class icomExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSi
             $icom->beneficiary_bank_code,
             $icom->Forward_institution_code,
             $icom->auth_no,
-            $icom->RRN,
+            "'".$icom->RRN,
             $icom->Card_Acceptor_Terminal,
             $icom->txn_curr_code,
             $icom->settle_curr_code,

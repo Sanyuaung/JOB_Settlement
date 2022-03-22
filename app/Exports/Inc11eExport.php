@@ -50,7 +50,7 @@ class Inc11eExport implements FromCollection, WithHeadings, WithMapping,ShouldAu
     {
         return [
               $inc11e->recordtype,
-              $inc11e->PAN,
+              "'".$inc11e->PAN,
               $inc11e->Processing_Code,
               $inc11e->Amount_Transaction,
               $inc11e->Amount_Settlement,
@@ -66,7 +66,7 @@ class Inc11eExport implements FromCollection, WithHeadings, WithMapping,ShouldAu
               $inc11e->Forwarding_IIC,
               $inc11e->Merchant_Type,
               $inc11e->Card_Acceptor_Terminal_Identification,
-              $inc11e->Card_Acceptor_Identification_Code,
+              "'".$inc11e->Card_Acceptor_Identification_Code,
               $inc11e->Card_Acceptor_Name,
               $inc11e->Original_Transaction_Information,
               $inc11e->Message_Reason_Code,

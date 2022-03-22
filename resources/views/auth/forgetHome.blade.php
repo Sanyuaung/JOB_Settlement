@@ -5,11 +5,11 @@
             <div class="card">
 
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
-                    <strong>Forget Password</strong>
+                <a class="float-left" href="{{ route('login') }}"><i class="fas fa-backward"></i></a><strong>Forget Password</strong>
                 </h5>
                 @if (session('Errors'))
                     <div class="alert alert-danger">
-                        {{ session('Errors') }}
+                        {{ session('Errors')}}
                     </div>
                 @endif
                 <!--Card content-->
@@ -43,7 +43,7 @@
                         </div>
 
                         <!-- Sign in button -->
-                        <button class="btn orange darken-2 white-text btn-block my-4" type="submit">Continue</button>
+                        <button class="btn orange darken-2 white-text btn-block my-4" type="submit">Continue&nbsp;&nbsp;<i class="fas fa-forward"></i></button>
 
                     </form>
                     <!-- Form -->

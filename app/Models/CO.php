@@ -43,31 +43,4 @@ class CO extends Model
             return $co;
         }
     }
-
-    public static function count(Request $req)
-    {
-        $validation=$req->validate([
-            "month"=>"required",
-        ]);
-        $year=substr($req->month, 0, 4);
-        $month=substr($req->month, 5, 2);
-        $date=$year.$month;
-        // dd($date);
-        if ($validation) {
-            $count = DB::connection('mysql2')->select("select  count(*)
-            FROM  CZ_CARD A
-            INNER JOIN CZ_CUSTOMER F ON A.CARD_CUST_ID = F.CUST_ID
-            INNER JOIN CZ_CSTMTACCT B ON B.CSTMTACCT_ACCT_NO =A.CARD_CRDACCT_NO 
-            AND B.CSTMTACCT_CUST_ID=F.CUST_ID AND B.CSTMTACCT_CRDR_IND='C' AND B.CSTMTACCT_YYYYMM='$date'
-            -- INNER JOIN CZ_CRDACCT F ON A.CARD_CUST_ID = F.CRDACCT_CUST_ID
-            INNER JOIN CZ_ACCGRPLMT E ON E.ACCGRPLMT_CUST_ID=A.CARD_CUST_ID 
-            LEFT JOIN CZ_CONTACT C ON C.CONTACT_ID=F.CUST_ID AND CONTACT_OF='CS' AND CONTACT_TYPE_ID='MAIN' 
-            LEFT JOIN CZ_STATUS D ON STS_ID=CUST_STATUS_ID
-            GROUP BY A.CARD_BRANCH_ID, STATUS,CURR_AGE_CODE,CLOSE_BALANCE,E.ACCGRPLMT_CREDIT_LMT,OPEN_BALANCE,CURRENCY,STMT_MONTH,ACCOUNT_NO,F.CUST_ID,
-            F.CUST_NAME,C.CONTACT_NAME, C.CONTACT_BIRTH_DATE, C.CONTACT_MOBILE,
-            C.CONTACT_EMPLOYER_NAME, C.CONTACT_STAFF ORDER BY NO ASC");
-            return $count;
-        }
-    }
-
 }

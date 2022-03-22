@@ -3,7 +3,7 @@
         <div class="col-md-4 offset-4 mt-5">
             <div class="card">
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
-                    <strong>Create New Password</strong>
+                <a class="float-left" href="{{ route('forgetpasswordhome') }}"><i class="fas fa-backward"></i></a><strong>Create New Password</strong>
                 </h5>
                 @if (session('error'))
                     <div class="alert alert-danger">
@@ -70,7 +70,7 @@
                         </small>
                     </div>
                     <button class="btn orange darken-2 white-text btn-rounded btn-block my-4 waves-effect z-depth-0"
-                        type="submit">Update</button>
+                        type="submit">Update&nbsp;&nbsp;<i class="fas fa-sync-alt"></i></button>
                     </form>
                 </div>
             </div>

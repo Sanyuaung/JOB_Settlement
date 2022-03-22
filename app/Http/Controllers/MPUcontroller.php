@@ -457,13 +457,8 @@ class MPUcontroller extends Controller
             };
         } elseif ($e==='IJC' && $a==='01S') {
             $files=file(request('mpu')->getRealPath());
-            $count=array_pop($files);
-            unset($count);
-            $data=(array_slice($files, 1));
-            if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
-            } else {
-                $parts =(array_chunk($data, 5000));
+            $data=(array_slice($files, 0));
+            $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
                     $name=request('mpu');
                     $filename=$name->getClientoriginalName();
@@ -488,16 +483,10 @@ class MPUcontroller extends Controller
                             'ijc01_900s' => $data->ijc01_900s(),
                             'filename'=>$filename,
                         ]);
-            };
         } elseif ($e==='IJC' && $d==='902') { // 01S_902
             $files=file(request('mpu')->getRealPath());
-            $count=array_pop($files);
-            unset($count);
-            $data=(array_slice($files, 1));
-            if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
-            } else {
-                $parts =(array_chunk($data, 5000));
+            $data=(array_slice($files, 0));
+            $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
                     $name=request('mpu');
                     $filename=$name->getClientoriginalName();
@@ -522,7 +511,6 @@ class MPUcontroller extends Controller
                             'ijc01_902' => $data->ijc01_902(),
                             'filename'=>$filename,
                         ]);
-            };
         } else {
             return back()->with('mpuerror', " Doesn't work this file (Please select other file).");
         }

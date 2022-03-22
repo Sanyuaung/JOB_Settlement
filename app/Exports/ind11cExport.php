@@ -50,7 +50,7 @@ class ind11cExport implements FromCollection, WithHeadings, WithMapping,ShouldAu
         return [
 
               $ind11c->Record_Type,
-              $ind11c->PAN,
+              "'".$ind11c->PAN,
               $ind11c->Processing_Code,
               $ind11c->Amount_Transaction,
               $ind11c->Amount_Settlement,
@@ -61,12 +61,12 @@ class ind11cExport implements FromCollection, WithHeadings, WithMapping,ShouldAu
               $ind11c->System_Trace_Audit_Number,
               $ind11c->Authorization_Identification_Response,
               $ind11c->Date_Authorization,
-              $ind11c->RRN,
+              "'".$ind11c->RRN,
               $ind11c->Acquring_IIN,
               $ind11c->Forwarding_IIN,
               $ind11c->Merchant_Type,
               $ind11c->Card_Acceptor_Terminal_Identification,
-              $ind11c->Card_Acceptor_Identification,
+              "'".$ind11c->Card_Acceptor_Identification,
               $ind11c->Card_Acceptor_Name,
               $ind11c->Original_Transaction_Information,
               $ind11c->Message_Reason_Code,

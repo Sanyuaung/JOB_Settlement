@@ -50,7 +50,7 @@ class ijc01cExport implements FromCollection,WithHeadings,WithMapping,ShouldAuto
         return [
 
               $ijc01c->Record_Type,
-              $ijc01c->PAN,
+              "'".$ijc01c->PAN,
               $ijc01c->Processing_Code,
               $ijc01c->Amount_Transaction,
               $ijc01c->Amount_Settlement,
@@ -61,12 +61,12 @@ class ijc01cExport implements FromCollection,WithHeadings,WithMapping,ShouldAuto
               $ijc01c->System_Trace_Audit_Number,
               $ijc01c->Authorization_Identification_Response,
               $ijc01c->Date_Authorization,
-              $ijc01c->RRN,
+              "'".$ijc01c->RRN,
               $ijc01c->Acquring_IIN,
               $ijc01c->Forwarding_IIN,
               $ijc01c->Merchant_Type,
               $ijc01c->Card_Acceptor_Terminal_Identification,
-              $ijc01c->Card_Acceptor_Identification,
+              "'".$ijc01c->Card_Acceptor_Identification,
               $ijc01c->Card_Acceptor_Name,
               $ijc01c->Original_Transaction_Information,
               $ijc01c->Message_Reason_Code,

@@ -9,7 +9,8 @@
             <div class="card">
 
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
-                    <strong>Register</strong>
+                <!-- <a class="float-left" href="{{ route('login') }}"><i class="fas fa-backward"></i></a> -->
+                <strong>Register</strong>
                 </h5>
                 @if (session('error'))
                     <div class="alert alert-danger">

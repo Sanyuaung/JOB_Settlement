@@ -30,7 +30,7 @@ class AuthController extends Controller
         if ($validation) {
             $auth=User::where('email', request("email"))->first();
             if ($auth) {
-                return redirect()->back()->withErrors(["email"=>"Email already exists"]);
+                return redirect()->back()->withErrors(["email"=>"Email already exists 😭"]);
             } else {
                 $password=$validation["password"];
                 $user=new User();
@@ -39,7 +39,7 @@ class AuthController extends Controller
                 $user->password=Hash::make($password);
                 $user->save();
                 // if (Auth::attempt(['email' => $validation['email'], 'password' => $validation['password']])) {
-                    return redirect('login')->with('message','Successful');
+                    return redirect('login')->with('message','Successful 🙂');
                 // }
             }
         }else {
@@ -58,7 +58,7 @@ class AuthController extends Controller
                 return  redirect()->route('home');
                 ;
             } else {
-                return back()->with('error', 'Authentication Failed Try Again');
+                return back()->with('error', 'Authentication Failed Try Again 😭');
             }
         } else {
             return back()->withErrors('$validation');
@@ -87,7 +87,7 @@ class AuthController extends Controller
                 return view("auth.forgetPassword", ['old'=>$auth]);
                 }
             else{
-                return back()->withErrors(["email"=>"User not found"]);
+                return back()->withErrors(["email"=>"User not found 😭"]);
             }   
         
         }
@@ -107,7 +107,7 @@ class AuthController extends Controller
             $update->email=$validation["email"];
             $update->password=Hash::make($password);
             $update->update();
-            return redirect()->route('login')->with('message','Update Success, Please Sign in');
+            return redirect()->route('login')->with('message','Update Success, Please Sign in 🙂');
         }else {
             return back()->withErrors($validation);
         }

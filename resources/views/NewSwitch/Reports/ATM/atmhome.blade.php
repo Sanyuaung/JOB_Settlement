@@ -14,7 +14,8 @@
                 @csrf
                 <div class="md-form mt-4">
                     <input type="date" class="form-control" name="start">
-                    <label for="materialRegisterFormEmail">Start Date</label>
+                    <label for="materialRegisterFormEmail">Start Date&nbsp;<span class="iconify"
+                            data-icon="flat-color-icons:calendar" data-width="25"></span></label>
                     @error('start')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
@@ -22,14 +23,15 @@
                 <div class="md-form mt-4">
                     {{-- <input type="date" id="materialRegisterFormEmail" class="form-control" name="settledate"> --}}
                     <input type="date" id="materialRegisterFormEmail" class="form-control" name="end">
-                    <label for="materialRegisterFormEmail">End Date</label>
+                    <label for="materialRegisterFormEmail">End Date&nbsp;<span class="iconify"
+                            data-icon="flat-color-icons:calendar" data-width="25"></span></label>
                     @error('end')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="h">
-                    <button class="white-text btn btn-rounded btn-block my-4 waves-effect z-depth-0" type="sumbit">Print
-                        Now</button>
+                    <button class="white-text btn btn-rounded btn-block my-4 waves-effect z-depth-0"
+                        type="sumbit">Search</button>
                 </div>
             </form>
             <!-- Form -->

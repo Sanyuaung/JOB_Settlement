@@ -18,9 +18,9 @@
                 </div>
             @endif
 
-            <h5 class="mt-4 card-header indigo  white-text text-center py-4">
-                <strong>Create Transactions</strong>
-            </h5>
+            <h3 style="line-height: 250%" class="mt-4 indigo white-text text-center">
+                <i class="ml-2 mt-2 float-left fab fa-cc-visa fa-2x"></i><strong>Create Transactions</strong>
+            </h3>
 
             <!--Card content-->
             <div class="card-body px-lg-5 pt-0">
@@ -32,7 +32,8 @@
                     <div class="md-form mt-4">
                         {{-- <input type="date" id="materialRegisterFormEmail" class="form-control" name="settledate"> --}}
                         <input type="date" id="materialRegisterFormEmail" class="form-control" name="settledate">
-                        <label for="materialRegisterFormEmail">Settlement Date</label>
+                        <label for="materialRegisterFormEmail">Settlement Date&nbsp;<span class="iconify"
+                                data-icon="flat-color-icons:calendar" data-width="25"></span></label>
                         @error('settledate')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -149,12 +150,11 @@
 
                     <!-- Order button -->
                     <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0"
-                        type="sumbit">Save Now</button>
-                    {{-- <footer id="viasFot"> Copyright © 2021 San Yu Aung. All Rights Reserved.</footer> --}}
-
+                        type="sumbit">
+                        <h5><i class="mt-2 far fa-save fa-2x"></i><strong>&nbsp;&nbsp;Save Now</strong></h5>
+                    </button>
                 </form>
                 <!-- Form -->
-
             </div>
 
         </div>

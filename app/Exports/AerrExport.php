@@ -50,44 +50,44 @@ class AerrExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSi
         ];
     }
 
-    public function map($acom): array
+    public function map($aerr): array
     {
         return [
 
-            $acom->recordtype,
-            "'".$acom->CardNo,
-            $acom->process_code,
-            $acom->txn_amt,
-            $acom->settle_amt,
-            $acom->sett_rate,
-            $acom->system_trace,
-            $acom->txn_time,
-            $acom->txn_date,
-            $acom->settle_date,
-            $acom->MCC,
-            $acom->Acq_institution_code,
-            $acom->Issuer_bank_code,
-            $acom->beneficiary_bank_code,
-            $acom->Forward_institution_code,
-            $acom->auth_no,
-            $acom->RRN,
-            $acom->Card_Acceptor_Terminal,
-            $acom->txn_curr_code,
-            $acom->settle_curr_code,
-            $acom->from_acc,
-            $acom->to_acc,
-            $acom->msg_type_identifier,
-            $acom->reason_code,
-            $acom->receivable_fee,
-            $acom->payable_fee,
-            $acom->interchange_fee,
-            $acom->POS_mode,
-            $acom->system_traceno,
-            $acom->POS_condition,
-            $acom->card_acceptor_code,
-            $acom->accept_amt,
-            $acom->cardholder_fee,
-            $acom->txn_tramsmission,
+            $aerr->recordtype,
+            "'".$aerr->CardNo,
+            $aerr->process_code,
+            $aerr->txn_amt,
+            $aerr->settle_amt,
+            $aerr->sett_rate,
+            $aerr->system_trace,
+            $aerr->txn_time,
+            $aerr->txn_date,
+            $aerr->settle_date,
+            $aerr->MCC,
+            $aerr->Acq_institution_code,
+            $aerr->Issuer_bank_code,
+            $aerr->beneficiary_bank_code,
+            $aerr->Forward_institution_code,
+            $aerr->auth_no,
+            "'".$aerr->RRN,
+            $aerr->Card_Acceptor_Terminal,
+            $aerr->txn_curr_code,
+            $aerr->settle_curr_code,
+            $aerr->from_acc,
+            $aerr->to_acc,
+            $aerr->msg_type_identifier,
+            $aerr->reason_code,
+            $aerr->receivable_fee,
+            $aerr->payable_fee,
+            $aerr->interchange_fee,
+            $aerr->POS_mode,
+            $aerr->system_traceno,
+            $aerr->POS_condition,
+            $aerr->card_acceptor_code,
+            $aerr->accept_amt,
+            $aerr->cardholder_fee,
+            $aerr->txn_tramsmission,
         ];
     }
 
@@ -96,6 +96,6 @@ class AerrExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSi
     */
     public function collection()
     {
-        return collect(aerr::aerr());;
+        return collect(aerr::aerr());
     }
 }

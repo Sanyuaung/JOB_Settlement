@@ -8,10 +8,10 @@
                 <a href="{{ route('cohome') }}" role="button"><span>Back</span></a>
             </div>
             <div class="btn4">
-                <a href="{{ route('codownload',$date) }}"
-                    onclick="return confirm('Are you sure you want to download?')" role="button"><span>Download EXCEL</span></a>
+                <a href="{{ route('codownload', $date) }}" onclick="return confirm('Are you sure you want to download?')"
+                    role="button"><span>Download EXCEL</span></a>
             </div>
-            <div><label class="float-right mr-3">Report Date : {{$date}}</label></div>
+            <div><label class="float-right mr-3">Report Date : {{ $date }}</label></div>
             <br><br><br>
             {{-- <div class="scroll-table-container"> --}}
             <table id="table" class="scroll-table">

@@ -70,7 +70,7 @@ class acomExport implements FromCollection, WithHeadings, WithMapping,ShouldAuto
             $acom->beneficiary_bank_code,
             $acom->Forward_institution_code,
             $acom->auth_no,
-            $acom->RRN,
+            "'".$acom->RRN,
             $acom->Card_Acceptor_Terminal,
             $acom->txn_curr_code,
             $acom->settle_curr_code,

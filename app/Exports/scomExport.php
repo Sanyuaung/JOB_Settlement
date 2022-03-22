@@ -28,7 +28,7 @@ class scomExport implements FromCollection, WithHeadings, WithMapping, ShouldAut
             'STF_amt',
             'STF_Fee_sign',
             'STF_fee',
-            'outgoing_sum</th',
+            'outgoing_sum',
             'incoming_summary',
             'settlement_curr',
             'reserved',

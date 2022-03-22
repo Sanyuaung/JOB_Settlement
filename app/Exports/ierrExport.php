@@ -70,7 +70,7 @@ class ierrExport implements  FromCollection,WithHeadings,WithMapping,ShouldAutoS
             $ierr->beneficiary_bank_code,
             $ierr->Forward_institution_code,
             $ierr->auth_no,
-            $ierr->RRN,
+            "'".$ierr->RRN,
             $ierr->Card_Acceptor_Terminal,
             $ierr->txn_curr_code,
             $ierr->settle_curr_code,

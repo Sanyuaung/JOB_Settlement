@@ -19,7 +19,7 @@
             @endif
             <div class="input-group mb-5">
                 <div class="btn3">
-                    <button type="submit"><span>MPU Upload</span></button>
+                    <button type="submit"><span>MPU Upload&nbsp;<i class="fas fa-upload"></i></span></button>
                 </div>
                 <input type="file" name="mpu" class="form-control mt-2">
             </div>

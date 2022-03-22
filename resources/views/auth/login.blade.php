@@ -5,7 +5,7 @@
             <div class="card">
 
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
-                    <strong>Sign in</strong>
+                    <strong><b>Welcome</b></strong>
                 </h5>
                 @if (session('error'))
                     <div class="alert alert-danger">
@@ -54,7 +54,7 @@
                         </div>
 
                         <!-- Sign in button -->
-                        <button class="btn orange darken-2 white-text btn-block my-4" type="submit">Sign in</button>
+                        <button class="btn orange darken-2 white-text btn-block my-4" type="submit"><h6>Sign in&nbsp;<i class="fas fa-sign-in-alt"></i></h6></button>
 
                         <!-- Register -->
                         {{-- @if (!auth()->user()) --}}
