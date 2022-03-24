@@ -63,7 +63,7 @@
                                 <a class="text-center dropdown-item" href="{{ route('pssd01home') }}">PSSD_01</a>
                             </li>
                             <li>
-                                <a class="text-center dropdown-item" href="#">PSSD_04</a>
+                                <a class="text-center dropdown-item" href="{{ route('pssd04home') }}">PSSD_04</a>
                             </li>
                             {{-- <li>
                                 <a class="text-center white-text dropdown-item" href="#">Submenu item 3 &raquo; </a>
