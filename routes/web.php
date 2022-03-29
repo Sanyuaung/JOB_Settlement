@@ -14,6 +14,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CBMController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JCBcontroller;
 use App\Http\Controllers\MPUcontroller;
@@ -112,14 +113,17 @@ Route::post('/outstandingprint', [onecardController::class,"coprint"])->name("co
 Route::get('/codownload/{date}', [onecardController::class,"codownload"])->name("codownload");
 
 // PSSD_01
-Route::get('/pssd01', [onecardController::class,"pssd01home"])->name("pssd01home");
-Route::post('/pssd01print', [onecardController::class,"pssd01print"])->name("pssd01print");
-Route::get('/pssd01download/{date}', [onecardController::class,"pssd01download"])->name("pssd01download");
+Route::get('/pssd01', [CBMController::class,"pssd01home"])->name("pssd01home");
+Route::post('/pssd01print', [CBMController::class,"pssd01print"])->name("pssd01print");
+Route::get('/pssd01download/{date}', [CBMController::class,"pssd01download"])->name("pssd01download");
 
 // PSSD_04
 Route::get('/pssd04', [onecardController::class,"pssd04home"])->name("pssd04home");
 Route::post('/pssd04print', [onecardController::class,"pssd04print"])->name("pssd04print");
 Route::get('/pssd04download/{date}', [onecardController::class,"pssd04download"])->name("pssd04download");
+
+Route::get('/d', [onecardController::class,"d"])->name("d");
+
 
 // User Control
 Route::get('/usercontol',[AdminController::class,"home"])->name("userhome");

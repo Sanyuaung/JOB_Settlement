@@ -66,6 +66,14 @@
                         @enderror
                     </div>
 
+                    <div class="md-form mt-4">
+                        <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Net">
+                        <label for="materialRegisterFormEmail">Net Settlement Amount</label>
+                        @error('Net')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+
                     <!-- Price -->
                     <div class="md-form mt-4">
                         <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="rate">

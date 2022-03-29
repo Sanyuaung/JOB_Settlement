@@ -16,6 +16,7 @@
                     <th scope="col">USD Amount</th>
                     <th scope="col">MMK Amount</th>
                     <th scope="col">Exchange Rate</th>
+                    <th scope="col">Net Settlement Amount</th>
                     <th scope="col">Commissions Amount</th>
                     <th scope="col">Type of Transaction</th>
                     <th scope="col">Card Type</th>
@@ -29,6 +30,7 @@
                         <td>{{ $tranx->usdAmt }}</td>
                         <td>{{ $tranx->mmkAmt }}</td>
                         <td>{{ $tranx->exRate }}</td>
+                        <td>{{ $tranx->netAmt }}</td>
                         <td>{{ $tranx->commAmt }}</td>
                         <td>{{ $tranx->typeOfTrans }}</td>
                         <td>{{ $tranx->cardType }}</td>

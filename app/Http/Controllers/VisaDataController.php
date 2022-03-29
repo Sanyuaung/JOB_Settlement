@@ -20,6 +20,7 @@ class VisaDataController extends Controller
             'num'=>"required",
             'usd'=>"required",
             'mmk'=>"required",
+            'Net'=>"required",
             'rate'=>"required",
             'typeOfTrans'=>"required",
             'commAmt'=>"required",
@@ -39,6 +40,7 @@ class VisaDataController extends Controller
             $tranx->usdAmt=$req->usd;
             $tranx->mmkAmt=$req->mmk;
             $tranx->exRate=$req->rate;
+            $tranx->netAmt=$req->Net;
             $tranx->typeOfTrans=strtoupper($req->typeOfTrans);
             $tranx->commAmt=$req->commAmt;
             $tranx->cardType=$req->cardType;

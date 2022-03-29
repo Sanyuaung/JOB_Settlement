@@ -36,6 +36,7 @@ class AuthController extends Controller
                 $user=new User();
                 $user->name=$validation["username"];
                 $user->email=$validation["email"];
+                $user->department="-";
                 $user->password=Hash::make($password);
                 $user->save();
                 // if (Auth::attempt(['email' => $validation['email'], 'password' => $validation['password']])) {
