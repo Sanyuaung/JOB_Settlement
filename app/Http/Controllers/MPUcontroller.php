@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\acom;
 use App\Models\aerr;
 use App\Models\ierr;
@@ -43,7 +44,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -77,7 +79,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -111,7 +114,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -145,7 +149,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -179,7 +184,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -325,7 +331,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -359,7 +366,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -393,7 +401,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -427,7 +436,8 @@ class MPUcontroller extends Controller
             unset($count);
             $data=(array_slice($files, 1));
             if ($data==[]) {
-                return back()->with('nodata', " This File is Empty.");
+                Alert::error('This File is Empty.');
+                return back();
             } else {
                 $parts =(array_chunk($data, 5000));
                 foreach ($parts as $part) {
@@ -512,7 +522,8 @@ class MPUcontroller extends Controller
                             'filename'=>$filename,
                         ]);
         } else {
-            return back()->with('mpuerror', " Doesn't work this file (Please select other file).");
+            Alert::error('Error', 'Doesn\'t work this file');
+            return back();
         }
     }
 }

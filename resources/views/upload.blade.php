@@ -1,5 +1,7 @@
 @extends('layouts/app')
 @section('content')
+@include('sweetalert::alert')
+
     <div class="container-fluid mt-5">
         <div class="text-center">
             {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}

@@ -1,4 +1,6 @@
 <x-authlayout>
+@include('sweetalert::alert')
+
     <div class="container">
         <div class="col-md-4 offset-4 mt-5">
             <!-- Material form register -->

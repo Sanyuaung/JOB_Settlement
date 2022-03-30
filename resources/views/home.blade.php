@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+@include('sweetalert::alert')
+
     <link href="/css/style.css" rel="stylesheet">
     @if (session('message'))
         <div class="alert alert-danger">

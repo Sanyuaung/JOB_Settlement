@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Rules\IsValidPassword;
@@ -30,7 +30,8 @@ class AuthController extends Controller
         if ($validation) {
             $auth=User::where('email', request("email"))->first();
             if ($auth) {
-                return redirect()->back()->withErrors(["email"=>"Email already exists 😭"]);
+                Alert::error('Sorry', 'Email already exists 😭');
+                return redirect()->back();
             } else {
                 $password=$validation["password"];
                 $user=new User();
@@ -39,9 +40,8 @@ class AuthController extends Controller
                 $user->department="-";
                 $user->password=Hash::make($password);
                 $user->save();
-                // if (Auth::attempt(['email' => $validation['email'], 'password' => $validation['password']])) {
-                    return redirect('login')->with('message','Successful 🙂');
-                // }
+                Alert::success('Congrats 🙂', 'You\'ve Successfully Registered');
+                return redirect('login');
             }
         }else {
             return back()->withErrors($validation);
@@ -56,10 +56,11 @@ class AuthController extends Controller
         if ($validation) {
             $auth=Auth::attempt(['email' => request("email"),'status'=>1, 'password' => request("password")]);
             if ($auth) {
+                Alert::info('Welcome '.auth()->user()->name);
                 return  redirect()->route('home');
-                ;
             } else {
-                return back()->with('error', 'Authentication Failed Try Again 😭');
+                Alert::error('Sorry 😭', 'Authentication Failed Try Again ...');
+                return back();
             }
         } else {
             return back()->withErrors('$validation');
@@ -68,6 +69,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        Alert::info('Thanks you!');
         return redirect()->route('login');
     }
     public function forgetpasswordhome()
@@ -88,9 +90,9 @@ class AuthController extends Controller
                 return view("auth.forgetPassword", ['old'=>$auth]);
                 }
             else{
-                return back()->withErrors(["email"=>"User not found 😭"]);
+                Alert::error('Sorry', 'User not found 😭'); 
+                return back();
             }   
-        
         }
     }
     public function updatePassword($id){
@@ -108,7 +110,9 @@ class AuthController extends Controller
             $update->email=$validation["email"];
             $update->password=Hash::make($password);
             $update->update();
-            return redirect()->route('login')->with('message','Update Success, Please Sign in 🙂');
+            // Alert::success('Successfully Chaged!', 'Please Sign in');
+            Alert::success('Successfully Chaged!');
+            return redirect()->route('login');
         }else {
             return back()->withErrors($validation);
         }

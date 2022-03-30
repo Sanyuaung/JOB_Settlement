@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\syavisatran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VisaDataController extends Controller
 {
@@ -46,7 +47,8 @@ class VisaDataController extends Controller
             $tranx->cardType=$req->cardType;
             $tranx->currency=strtoupper($req->currency);
             $tranx->save();
-            return back()->with("success", "Input Data Successful");
+            Alert::success('Sucessfully added');
+            return back();
         } else {
             return back()->withErrors($validation);
         }
@@ -80,9 +82,11 @@ class VisaDataController extends Controller
             $a=DB::connection('mysql2')->select("select CurrencyDate from KCN_EXCHANGE where CurrencyDate=$date");
             if (empty($a)) {
                 DB::connection('mysql2')->select("insert into KCN_EXCHANGE (CurrencyDate,CURRENCY_CODE,MarketRate) VALUES ('$date','$req->ccy','$req->rate')");
-                return back()->with("success", "Input Data Successful");
+                Alert::success('Sucessfully added');
+                return back();
             } elseif ($a[0]->CurrencyDate=$date) {
-                return back()->with("already", "Date is Already Imported");
+                Alert::info('Already Imported');
+                return back();
             } else {
                 return back()->withErrors($validation);
             }

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Exports\DataExport;
 use App\Models\jcb;
-
+use RealRashid\SweetAlert\Facades\Alert;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 
@@ -51,7 +50,8 @@ class JCBcontroller extends Controller
                         'four'   => $data->total4()
                     ]);
         } else {
-            return back()->with('errors', " Doesn't work this file (Please select CLR file).");
+            Alert::error('Error', 'Doesn\'t work this file');
+            return back();
         }
     }
     public function download()

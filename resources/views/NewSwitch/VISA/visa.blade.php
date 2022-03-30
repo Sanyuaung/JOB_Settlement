@@ -1,5 +1,7 @@
 @extends('layouts/app')
 @section('content')
+@include('sweetalert::alert')
+
     <link href="/css/visa.css" rel="stylesheet">
 
     <div class="container">

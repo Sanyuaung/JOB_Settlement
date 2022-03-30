@@ -1,5 +1,6 @@
 @extends('layouts/app')
 @section('content')
+@include('sweetalert::alert')
     <link href="/css/style.css" rel="stylesheet">
 
     <div class="container-fluid">

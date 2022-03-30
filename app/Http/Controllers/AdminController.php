@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -34,7 +34,8 @@ class AdminController extends Controller
             $editUpdateUser->department=$validation["department"];
             $editUpdateUser->status=$validation["status"];
             $editUpdateUser->update();
-            return redirect()->route('userhome')->with('message','User Updated');
+            Alert::success('Updated', $editUpdateUser->name.' is updated successfully');
+            return redirect()->route('userhome');
         }else{
             return back()->withErrors($validation);
         }
@@ -43,6 +44,7 @@ class AdminController extends Controller
     {
         $deleteUser=User::find($id);
         $deleteUser->delete();
-        return back()->with('message','Delete Success');
+        Alert::success('Deleted!', $deleteUser->name.' is deleted successfully');
+        return back();
     }
 }
