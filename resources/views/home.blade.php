@@ -55,6 +55,9 @@
                             Outstanding</a></li>
                 @endif
                 @if (auth()->user()->department == 'Admin' || auth()->user()->department == 'Card')
+                    <li><a id="home" class="text-center white-text dropdown-item" href="{{ route('annualfeehome') }}">Credit_Card AnnualFee</a></li>
+                @endif
+                @if (auth()->user()->department == 'Admin' || auth()->user()->department == 'Card')
                     <li>
                         <a id="home" class="text-center white-text dropdown-item" href="#"><span class="iconify"
                                 data-icon="noto:bank" data-width="20"></span>

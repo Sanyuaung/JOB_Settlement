@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Exports\AtmExport;
+use App\Exports\CCAnnualFeeExport;
 use App\Exports\COExport;
 use App\Models\Atm;
+use App\Models\CCAnnualFee;
 use App\Models\CO;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -60,5 +62,35 @@ class onecardController extends Controller
     public function codownload($date)
     {
         return Excel::download(new COExport($date), "Customer Outstanding list for $date.xlsx");
+    }
+
+    public function annualfeehome()
+    {
+        return view('NewSwitch/Reports/CreditCard_AnnualFee/AnnualFeeHome');
+    }
+
+    public function AnnualFeePrint(Request $req)
+    {
+        $validation=$req->validate([
+            "month"=>"required",
+        ]);
+        $year1=substr($req->month, 0, 4);
+        $month1=substr($req->month, 5, 2);
+        $date1=$year1.$month1;
+        $year2=substr($req->month, 0, 4)-1;
+        $month=substr($req->month, 5, 2)+"01";
+        $month2="0".$month;
+        $date2=$year2.$month2."01";
+        $data=new CCAnnualFee();
+        $annual=$data->data($req);
+        // dd($month1);
+        return view('NewSwitch/Reports/CreditCard_AnnualFee/AnnualFeeShow', 
+        ['annual'=>$annual,'month1'=>$month1,'date1'=>$date1,'date2'=>$date2]);        
+    }
+
+    public function AnnualFeedownload($month1, $date2, $date1)
+    {
+        // dd($date2);
+        return Excel::download(new CCAnnualFeeExport($month1, $date2, $date1), "$date1 Credit Card Annual Fee (Not Using Withing 1 year).xlsx");
     }
 }

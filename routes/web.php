@@ -118,11 +118,14 @@ Route::post('/pssd01print', [CBMController::class,"pssd01print"])->name("pssd01p
 Route::get('/pssd01download/{date}', [CBMController::class,"pssd01download"])->name("pssd01download");
 
 // PSSD_04
-Route::get('/pssd04', [onecardController::class,"pssd04home"])->name("pssd04home");
-Route::post('/pssd04print', [onecardController::class,"pssd04print"])->name("pssd04print");
-Route::get('/pssd04download/{date}', [onecardController::class,"pssd04download"])->name("pssd04download");
+Route::get('/pssd04', [CBMController::class,"pssd04home"])->name("pssd04home");
+Route::post('/pssd04print', [CBMController::class,"pssd04print"])->name("pssd04print");
+Route::get('/pssd04download/{date}', [CBMController::class,"pssd04download"])->name("pssd04download");
 
-Route::get('/d', [onecardController::class,"d"])->name("d");
+Route::get('/AnnualFee', [onecardController::class,"annualfeehome"])->name("annualfeehome");
+Route::post('/AnnualFeePrint', [onecardController::class,"AnnualFeePrint"])->name("AnnualFeePrint");
+Route::get('/AnnualFeedownload/{month1}/{date2}/{date1}', [onecardController::class,"AnnualFeedownload"])->name("AnnualFeedownload");
+
 
 
 // User Control

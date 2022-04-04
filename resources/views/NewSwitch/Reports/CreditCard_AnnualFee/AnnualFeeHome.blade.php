@@ -3,14 +3,14 @@
     <link href="/css/visa.css" rel="stylesheet">
     <div class="container">
         <div class="h">
-            <h1 id="VISA" class="grey-text text-center">Welcome Customer Outstanding Reports</h1>
+            <h1 id="VISA" class="grey-text text-center">Welcome Credit Card AnnualFee Reports</h1>
             <h5 class="mt-4 card-header  white-text text-center py-4"><strong>Select Report Date</strong></h5>
         </div>
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0 datepicker ">
 
             <!-- Form -->
-            <form class="text-center" action="{{ route('coprint') }}" method="post">
+            <form class="text-center" action="{{ route('AnnualFeePrint') }}" method="post">
                 @csrf
                 <div class="md-form mt-4">
                     {{-- <label for="materialRegisterFormStart">Start month:</label>

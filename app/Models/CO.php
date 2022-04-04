@@ -24,7 +24,8 @@ class CO extends Model
         // dd($date);
         if ($validation) {
             DB::connection('mysql2')->statement(DB::raw('set @row:=0'));
-            $co = DB::connection('mysql2')->select("select $date as date,@row:=@row + 1 AS NO, F.CUST_ID,F.CUST_NAME,C.CONTACT_NAME, C.CONTACT_BIRTH_DATE, C.CONTACT_MOBILE,
+            $co = DB::connection('mysql2')->select("select $date as date,@row:=@row + 1 AS NO, F.CUST_ID,F.CUST_NAME,C.CONTACT_NAME, 
+            C.CONTACT_BIRTH_DATE, C.CONTACT_MOBILE,
             C.CONTACT_EMPLOYER_NAME, C.CONTACT_STAFF, A.CARD_BRANCH_ID AS CUST_BRANCH_ID,
             B.CSTMTACCT_ACCT_NO as ACCOUNT_NO,B.CSTMTACCT_YYYYMM AS STMT_MONTH, B.CSTMTACCT_CURRENCY AS CURRENCY,
             COALESCE(B.CSTMTACCT_ACCT_OPEN_BAL, 0) AS OPEN_BALANCE, E.ACCGRPLMT_CREDIT_LMT,
@@ -37,9 +38,8 @@ class CO extends Model
             INNER JOIN CZ_ACCGRPLMT E ON E.ACCGRPLMT_CUST_ID=A.CARD_CUST_ID 
             LEFT JOIN CZ_CONTACT C ON C.CONTACT_ID=F.CUST_ID AND CONTACT_OF='CS' AND CONTACT_TYPE_ID='MAIN' 
             LEFT JOIN CZ_STATUS D ON STS_ID=CUST_STATUS_ID
-            GROUP BY A.CARD_BRANCH_ID, STATUS,CURR_AGE_CODE,CLOSE_BALANCE,E.ACCGRPLMT_CREDIT_LMT,OPEN_BALANCE,CURRENCY,STMT_MONTH,ACCOUNT_NO,F.CUST_ID,
-            F.CUST_NAME,C.CONTACT_NAME, C.CONTACT_BIRTH_DATE, C.CONTACT_MOBILE,
-            C.CONTACT_EMPLOYER_NAME, C.CONTACT_STAFF ORDER BY NO ASC");
+            GROUP BY B.CSTMTACCT_ACCT_NO ORDER BY A.CARD_BRANCH_ID ASC");
+            // dd($co);
             return $co;
         }
     }

@@ -108,7 +108,7 @@ class MPUcontroller extends Controller
                         'filename'=>$filename,
                     ]);
             };
-        } elseif ($e=='INC' && $a==='11C' || $e=='INC' && $f==='01C') {
+        } elseif ($e=='INC' && $a==='11C') {
             $files=file(request('mpu')->getRealPath());
             $count=array_pop($files);
             unset($count);
@@ -360,7 +360,7 @@ class MPUcontroller extends Controller
                             'filename'=>$filename,
                         ]);
             };
-        } elseif ($e=='INC' && $a==='11E') { // 11E
+        } elseif ($e=='INC' && $a==='11E'|| $e=='INC' && $f==='01E') { // 11E
             $files=file(request('mpu')->getRealPath());
             $count=array_pop($files);
             unset($count);
@@ -416,7 +416,7 @@ class MPUcontroller extends Controller
                 $filePath=glob($path);
                 foreach ($filePath as $file) {
                     $data=array_map('str_getcsv', file($file));
-                    DB::delete('delete from inc11es');
+                    DB::delete('delete from ierrs');
                     foreach ($data as $row) {
                         ierr::Create([
                                     'Field1'=>$row [0],
