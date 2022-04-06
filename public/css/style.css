@@ -470,7 +470,5 @@ button span {
 .dropdown-menu .dropdown-submenu .dropdown-item:hover{
     background-color: #e52e2e;
     color: #fff;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    border-radius: 0px;
 }

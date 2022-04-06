@@ -15,9 +15,9 @@ class PSSD01 extends Model
     public static function data(Request $req)
     {
         $validation=$req->validate([
-            "start"=>"required",
+            "date"=>"required",
         ]);
-        $date=substr($req->start, 0, 4).substr($req->start, 5, 2).substr($req->start, 8, 2);
+        $date=substr($req->date, 0, 4).substr($req->date, 5, 2).substr($req->date, 8, 2);
         if ($validation) {
             DB::connection('mysql2')->statement(DB::raw('set @row:=0'));
             $data = DB::connection('mysql2')->select("select DATE_FORMAT(Txn.AUTHTXN_REQUEST_DATE,'%Y-%m-%d') as Report_Date,

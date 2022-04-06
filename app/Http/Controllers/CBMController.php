@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Exports\PSSD01Export;
+use App\Exports\PSSD02Export;
 use App\Exports\PSSD04Export;
 use App\Models\PSSD01;
+use App\Models\PSSD02;
 use App\Models\PSSD04;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 class CBMController extends Controller
 {
@@ -18,9 +21,9 @@ class CBMController extends Controller
     public function pssd01print(Request $req)
     {
         $validation=$req->validate([
-            "start"=>"required",
+            "date"=>"required",
         ]);
-        $date=substr($req->start, 0, 4).substr($req->start, 5, 2).substr($req->start, 8, 2);
+        $date=substr($req->date, 0, 4).substr($req->date, 5, 2).substr($req->date, 8, 2);
         $data=new PSSD01();
         $pssd01=$data->data($req);
         // dd($pssd01);
@@ -35,9 +38,9 @@ class CBMController extends Controller
     public function pssd04print(Request $req)
     {
         $validation=$req->validate([
-            "start"=>"required",
+            "date"=>"required",
         ]);
-        $date=substr($req->start, 0, 4).substr($req->start, 5, 2).substr($req->start, 8, 2);
+        $date=substr($req->date, 0, 4).substr($req->date, 5, 2).substr($req->date, 8, 2);
         $data=new PSSD04();
         $pssd04=$data->data($req);
         // dd($pssd04);
@@ -45,5 +48,23 @@ class CBMController extends Controller
     }
     public function pssd04download($date){
         return Excel::download(new PSSD04Export($date), "PSSD_04($date).xlsx");
+    }
+    public function pssd02home()
+    {
+        return view('NewSwitch/Reports/CBM_Reports/PSSD_02/pssd02home');
+    }
+    public function pssd02print(Request $req)
+    {
+        $validation=$req->validate([
+            "date"=>"required",
+        ]);
+        $date=substr($req->date, 0, 4).substr($req->date, 5, 2).substr($req->date, 8, 2);
+        $data=new PSSD02();
+        $pssd02=$data->data($req);
+        // dd($pssd02);
+        return view('NewSwitch/Reports/CBM_Reports/PSSD_02/pssd02print', ['pssd02'=>$pssd02,'date'=>$date]);
+    }
+    public function pssd02download($date){
+        return Excel::download(new PSSD02Export($date), "PSSD_02($date).xlsx");
     }
 }

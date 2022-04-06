@@ -117,6 +117,12 @@ Route::get('/pssd01', [CBMController::class,"pssd01home"])->name("pssd01home");
 Route::post('/pssd01print', [CBMController::class,"pssd01print"])->name("pssd01print");
 Route::get('/pssd01download/{date}', [CBMController::class,"pssd01download"])->name("pssd01download");
 
+// PSSD_02
+Route::get('/pssd02', [CBMController::class,"pssd02home"])->name("pssd02home");
+Route::post('/pssd02print', [CBMController::class,"pssd02print"])->name("pssd02print");
+Route::get('/pssd02download/{date}', [CBMController::class,"pssd02download"])->name("pssd02download");
+
+
 // PSSD_04
 Route::get('/pssd04', [CBMController::class,"pssd04home"])->name("pssd04home");
 Route::post('/pssd04print', [CBMController::class,"pssd04print"])->name("pssd04print");

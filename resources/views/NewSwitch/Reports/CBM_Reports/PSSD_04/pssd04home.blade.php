@@ -13,10 +13,10 @@
             <form class="text-center" action="{{ route('pssd04print') }}" method="post">
                 @csrf
                 <div class="md-form mt-4">
-                    <input type="date" class="form-control" name="start">
+                    <input type="date" class="form-control" name="date">
                     <label for="materialRegisterFormEmail">Date&nbsp;<span class="iconify"
                             data-icon="flat-color-icons:calendar" data-width="25"></span></label>
-                    @error('start')
+                    @error('date')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
