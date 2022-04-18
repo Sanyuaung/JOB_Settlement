@@ -11,9 +11,12 @@
     <section>
         <div class="icon">
             <h1 id="HOME">Myanmar Oriental Bank</h1>
+        </div>
     </section>
     <div class="home text-center dropdown">
-        <button type="button" data-mdb-toggle="dropdown" aria-expanded="false"><span>Settlement</span></button>
+        @if (auth()->user()->department == 'Admin' || auth()->user()->department == 'Card' || auth()->user()->department == 'Settlement')
+            <button type="button" data-mdb-toggle="dropdown" aria-expanded="false"><span>Settlement</span></button>
+        @endif
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             @if (auth()->user()->department == 'Settlement' || auth()->user()->department == 'Admin')
                 <li>
@@ -39,7 +42,8 @@
                 <li>
                     <a id="home" type="submit" href="{{ route('ccy') }}" class="text-center white-text dropdown-item"><span
                             class="iconify" data-icon="flat-color-icons:currency-exchange"
-                            data-width="25"></span>&nbsp; Daily Currency Rate</a>
+                            data-width="25"></span>&nbsp; Daily Currency
+                        Rate</a>
                 </li>
             @endif
         </ul>

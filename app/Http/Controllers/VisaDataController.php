@@ -62,7 +62,8 @@ class VisaDataController extends Controller
     
     public function ccy()
     {
-        return view('NewSwitch/VISA/currency');
+        $data=json_decode(file_get_contents('http://forex.cbm.gov.mm/api/latest'),true);
+        return view('NewSwitch/VISA/currency',['data'=>$data['rates']['USD']]);
     }
 
     public function ccyinsert(Request $req)

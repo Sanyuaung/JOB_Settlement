@@ -1,11 +1,12 @@
 @extends('layouts/app')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <link href="/css/visa.css" rel="stylesheet">
-
     <div class="container">
         <div>
+            <strong class="float-left green-text">CBM Exchange Rate Latest</strong><br>
+            <strong class="float-left green-text">USD - {{$data}}</strong>
             <h1 id="VISA" class="grey-text text-center">Welcome Daily Currency Rate</h1>
             @if (Session('success'))
                 <div class="alert alert-success">
@@ -44,7 +45,7 @@
                         <option selected></option>
                         <option value="USD">USD</option>
                         {{-- <option value="THB">THB</option>
-                <option value="EUR">EUR</option> --}}
+                        <option value="EUR">EUR</option> --}}
                     </select>
                     @error('ccy')
                         <p class="text-danger">{{ $message }}</p>
