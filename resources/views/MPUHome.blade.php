@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <link href="/css/style.css" rel="stylesheet">
 

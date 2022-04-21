@@ -1,13 +1,13 @@
 @extends('layouts/app')
 @section('content')
     <link href="/css/visa.css" rel="stylesheet">
+    <div class="btn2">
+        <a href="{{ route('visa') }}" class="btn white-text btn-indigo btn-rounded-pill float-left" role="button"><span>Add
+                New Transactions</span></a>
+    </div>
+    <div class="container-fluid d-flex flex-column-reverse">
 
-    <div class="container-fluid">
-        <div class="btn2">
-            <a href="{{ route('visa') }}" class="btn white-text btn-indigo btn-rounded-pill float-left"
-                role="button"><span>Add New Transactions</span></a>
-        </div>
-        <div class="table-container">
+        <div class="mt-2 table-container">
             <table id="table" class="scroll-table">
                 <tr>
                     {{-- <th scope="col">No</th> --}}

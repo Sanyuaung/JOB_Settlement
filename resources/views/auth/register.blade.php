@@ -1,14 +1,20 @@
 <x-authlayout>
-@include('sweetalert::alert')
-    
-    <div class="container">
+    @include('sweetalert::alert')
+    <style>
+        .center {
+            margin: auto;
+            padding: 50px;
+        }
+
+    </style>
+    <div class="center container">
         <div class="col-md-4 offset-4 mt-5">
             <!-- Material form register -->
             <div class="card">
 
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
-                <!-- <a class="float-left" href="{{ route('login') }}"><i class="fas fa-backward"></i></a> -->
-                <strong>Register</strong>
+                    <!-- <a class="float-left" href="{{ route('login') }}"><i class="fas fa-backward"></i></a> -->
+                    <strong>Register</strong>
                 </h5>
                 @if (session('error'))
                     <div class="alert alert-danger">

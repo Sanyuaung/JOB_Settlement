@@ -1,11 +1,18 @@
 <x-authlayout>
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
+    <style>
+        .center {
+            margin: auto;
+            padding: 50px;
+        }
 
-    <div class="container">
+    </style>
+    <div class="center container">
         <div class="col-md-4 offset-4 mt-5">
             <div class="card">
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
-                <a class="float-left" href="{{ route('forgetpasswordhome') }}"><i class="fas fa-backward"></i></a><strong>Create New Password</strong>
+                    <a class="float-left" href="{{ route('forgetpasswordhome') }}"><i
+                            class="fas fa-backward"></i></a><strong>Create New Password</strong>
                 </h5>
                 @if (session('error'))
                     <div class="alert alert-danger">

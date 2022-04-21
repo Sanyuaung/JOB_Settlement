@@ -1,10 +1,9 @@
 @extends('layouts/app')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
     <link href="/css/style.css" rel="stylesheet">
 
     <div class="container-fluid">
-        {{-- <div class="scroll-table-container"> --}}
         @if (session('message'))
             <div class="alert alert-success">
                 {{ session('message') }}
@@ -31,7 +30,8 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->department }}</td>
                         <td>{{ $user->status == '0' ? 'Pending' : 'Approved' }}</td>
-                        <td><a class="btn btn-sm green white-text" href="{{ route('edituser', $user->id) }}">Update</a></td>
+                        <td><a class="btn btn-sm green white-text" href="{{ route('edituser', $user->id) }}">Update</a>
+                        </td>
                         <td><a class="btn btn-sm red white-text" href="{{ route('deleteUser', $user->id) }}"
                                 onclick="return confirm('Are you sure?')">Delete</a></td>
                     </tr>

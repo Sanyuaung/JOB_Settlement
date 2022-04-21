@@ -24,7 +24,8 @@
                                 name="email" placeholder="E-mail" value="{{ $edituser->email }}"></td>
                         <td><select name="department" class="text-center">
                                 <option value="" {{ $edituser->department == '' ? 'selected' : '' }}></option>
-                                <option value="Admin" {{ $edituser->department == 'Admin' ? 'selected' : '' }}>Admin</option>
+                                <option value="Admin" {{ $edituser->department == 'Admin' ? 'selected' : '' }}>Admin
+                                </option>
                                 <option value="Card" {{ $edituser->department == 'Card' ? 'selected' : '' }}>Card Dept;
                                 </option>
                                 <option value="Settlement" {{ $edituser->department == 'Settlement' ? 'selected' : '' }}>

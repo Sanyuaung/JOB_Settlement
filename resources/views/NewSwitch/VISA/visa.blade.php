@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <link href="/css/visa.css" rel="stylesheet">
 
@@ -11,18 +11,15 @@
         </div>
         <div>
             <h1 id="VISA" class="grey-text text-center">Welcome Visa Transactions</h1>
-            {{-- <img src="{{asset('images/logo.png')}}" class="img-responsive "> --}}
-            {{-- <img  src="{{asset('images/logo.png')}}" class="text-center"> --}}
-
             @if (Session('success'))
                 <div class="alert alert-success">
                     {{ Session('success') }}
                 </div>
             @endif
 
-            <h3 style="line-height: 250%" class="mt-4 indigo white-text text-center">
-                <i class="ml-2 mt-2 float-left fab fa-cc-visa fa-2x"></i><strong>Create Transactions</strong>
-            </h3>
+            <h5 style="line-height: 250%" class="mt-4 indigo white-text text-center">
+                <i class="ml-2 mt-1 float-left fab fa-cc-visa fa-2x"></i><strong>Create Transactions</strong>
+            </h5>
 
             <!--Card content-->
             <div class="card-body px-lg-5 pt-0">
@@ -93,30 +90,6 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                    {{-- <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Debit">
-                <label for="materialRegisterFormEmail">Debit</label>
-                @error('Debit')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
-
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Credit">
-                <label for="materialRegisterFormEmail">Credit</label>
-                @error('Credit')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div>
-
-            <div class="md-form mt-4">
-                <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="Prepaid">
-                <label for="materialRegisterFormEmail">Prepaid</label>
-                @error('Prepaid')
-                    <p class="text-danger">{{$message}}</p>
-                @enderror
-            </div> --}}
-
                     <label for="cardType">Select Card Type : </label>
                     <select name="cardType" id="terminal">
                         <option selected></option>
@@ -161,7 +134,7 @@
                     <!-- Order button -->
                     <button class="white-text btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0"
                         type="sumbit">
-                        <h5><i class="mt-2 far fa-save fa-2x"></i><strong>&nbsp;&nbsp;Save Now</strong></h5>
+                        <h5><i class="mt-1 far fa-save fa-2x"></i><strong>&nbsp;&nbsp;Save Now</strong></h5>
                     </button>
                 </form>
                 <!-- Form -->

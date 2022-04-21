@@ -1,6 +1,13 @@
 <x-authlayout>
-@include('sweetalert::alert')
-    <div class="container">
+    @include('sweetalert::alert')
+    <style>
+        .center {
+            margin: auto;
+            padding: 50px;
+        }
+
+    </style>
+    <div class="center container">
         <div class="col-md-4 offset-4 mt-5">
             <!-- Material form register -->
             <div class="card">
@@ -55,7 +62,9 @@
                         </div>
 
                         <!-- Sign in button -->
-                        <button class="btn orange darken-2 white-text btn-block my-4" type="submit"><h6>Sign in&nbsp;<i class="fas fa-sign-in-alt"></i></h6></button>
+                        <button class="btn orange darken-2 white-text btn-block my-4" type="submit">
+                            <h6>Sign in&nbsp;<i class="fas fa-sign-in-alt"></i></h6>
+                        </button>
 
                         <!-- Register -->
                         {{-- @if (!auth()->user()) --}}

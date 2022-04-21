@@ -55,7 +55,8 @@
                     class="text-center white-text dropdown-item">Logout&nbsp;<i class="fas fa-sign-out-alt"></i></a>
                 @if (auth()->user()->department == 'Admin')
                     <li><b><a id="home" type="submit" href="{{ route('userhome') }}"
-                                class="text-center white-text dropdown-item">User Control&nbsp;<i class="fas fa-sliders-h"></i></a></li>
+                                class="text-center white-text dropdown-item">User Control&nbsp;<i
+                                    class="fas fa-sliders-h"></i></a></li>
                 @endif
                 {{-- <li><b><a id="home" type="submit" href="{{route('visa')}}" class="text-center white-text dropdown-item">Visa Transactions Add</a></li> --}}
                 {{-- <li><b><a id="home" type="submit" href="{{route('ccy')}}" class="text-center white-text dropdown-item">Daily Currency Rate</a></li> --}}
@@ -85,7 +86,7 @@
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-    <footer> Copyright © 2019 - {{ date('Y') }} San Yu Aung. All Rights Reserved.</footer>
+    <footer> Copyright © 2020 - {{ date('Y') }} San Yu Aung. All Rights Reserved.</footer>
 </body>
 
 </html>

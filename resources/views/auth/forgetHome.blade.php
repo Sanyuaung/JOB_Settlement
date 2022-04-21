@@ -1,17 +1,24 @@
 <x-authlayout>
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
+    <style>
+        .center {
+            margin: auto;
+            padding: 50px;
+        }
 
-    <div class="container">
+    </style>
+    <div class="center container">
         <div class="col-md-4 offset-4 mt-5">
             <!-- Material form register -->
             <div class="card">
 
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
-                <a class="float-left" href="{{ route('login') }}"><i class="fas fa-backward"></i></a><strong>Forget Password</strong>
+                    <a class="float-left" href="{{ route('login') }}"><i
+                            class="fas fa-backward"></i></a><strong>Forget Password</strong>
                 </h5>
                 @if (session('Errors'))
                     <div class="alert alert-danger">
-                        {{ session('Errors')}}
+                        {{ session('Errors') }}
                     </div>
                 @endif
                 <!--Card content-->
@@ -45,7 +52,8 @@
                         </div>
 
                         <!-- Sign in button -->
-                        <button class="btn orange darken-2 white-text btn-block my-4" type="submit">Continue&nbsp;&nbsp;<i class="fas fa-forward"></i></button>
+                        <button class="btn orange darken-2 white-text btn-block my-4"
+                            type="submit">Continue&nbsp;&nbsp;<i class="fas fa-forward"></i></button>
 
                     </form>
                     <!-- Form -->

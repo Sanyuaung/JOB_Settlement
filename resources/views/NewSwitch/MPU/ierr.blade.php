@@ -1,19 +1,16 @@
 @extends('layouts/app')
 @section('content')
     <link href="/css/style.css" rel="stylesheet">
-
-    <div class="container-fluid">
-        <div class="scroll-table-container">
-            <div class="btn1">
-                <a href="{{ route('MPUHome') }}" role="button"><span>Back</span></a>
-            </div>
-            <div class="btn4">
-                <a href="{{ route('downlodIERR') }}" onclick="return confirm('Are you sure you want to download?')"
-                    role="button"><span>Download EXCEL</span></a>
-            </div>
-            <div><label class="float-right">{{ $filename }}</label>
-            </div><br><br><br>
-            {{-- <div class="scroll-table-container"> --}}
+    <div class="btn1 ml-3">
+        <a href="{{ route('MPUHome') }}" role="button"><span>Back</span></a>
+    </div>
+    <div class="btn4">
+        <a href="{{ route('downlodIERR') }}" onclick="return confirm('Are you sure you want to download?')"
+            role="button"><span>Download EXCEL</span></a>
+        <label class="float-right">{{ $filename }}</label>
+    </div>
+    <div class="container-fluid d-flex flex-column-reverse">
+        <div class="mt-3 scroll-table-container">
             <table id="table" class="scroll-table">
                 <tr>
                     <th scope="col">NO</th>

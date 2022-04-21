@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
 
     <div class="container-fluid mt-5">
         <div class="text-center">

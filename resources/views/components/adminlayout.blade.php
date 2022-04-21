@@ -35,7 +35,8 @@
                 <ul class="list-group mt-5">
                     <li class="list-group-item"><a href="{{ route('admin.manage_premium_users') }}">Manage Premium
                             User</a></li>
-                    <li class="list-group-item"><a href="{{ route('admin.contact_messages') }}">Contact messages</a></li>
+                    <li class="list-group-item"><a href="{{ route('admin.contact_messages') }}">Contact messages</a>
+                    </li>
 
                 </ul>
 
