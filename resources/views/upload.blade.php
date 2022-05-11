@@ -4,7 +4,6 @@
 
     <div class="container-fluid mt-5">
         <div class="text-center">
-            {{-- <a href="{{route('download')}}" class="btn btn float-right" role="button">Download</a> --}}
             <a href="{{ route('home') }}" class="btn white-text btn-indigo btn-rounded-pill float-left"
                 role="button">Home</a>
             <a href="{{ route('pdf') }}" class="btn white-text btn-indigo btn-rounded-pill"

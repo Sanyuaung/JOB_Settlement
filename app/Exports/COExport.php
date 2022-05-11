@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Exports;
+
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithMapping;
@@ -10,12 +11,12 @@ use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
 
-class COExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize,WithColumnFormatting
+class COExport implements FromCollection, WithHeadings, WithMapping, ShouldAutoSize, WithColumnFormatting
 
 {
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function columnFormats(): array
     {
         return [
@@ -29,18 +30,18 @@ class COExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize
             'N' => NumberFormat::FORMAT_TEXT, // CLOSE_BALANCE
         ];
     }
-    
+
     protected $date;
     function __construct($date)
     {
-        $this->date=$date;
+        $this->date = $date;
     }
-    
+
     public function map($co): array
     {
         return [
 
-            $co->CUST_ID,
+            "'" . $co->CUST_ID,
             $co->CUST_NAME,
             $co->CONTACT_NAME,
             $co->CONTACT_BIRTH_DATE,
@@ -48,7 +49,7 @@ class COExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize
             $co->CONTACT_EMPLOYER_NAME,
             $co->CONTACT_STAFF,
             $co->CUST_BRANCH_ID,
-            "'".$co->ACCOUNT_NO,
+            "'" . $co->ACCOUNT_NO,
             $co->STMT_MONTH,
             $co->CURRENCY,
             $co->OPEN_BALANCE,
@@ -58,7 +59,7 @@ class COExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize
             $co->STATUS,
         ];
     }
-    
+
     public function collection()
     {
         return collect(DB::connection('mysql2')->select("select $this->date as date,@row:=@row + 1 AS NO, F.CUST_ID,F.CUST_NAME,C.CONTACT_NAME, 
@@ -78,10 +79,12 @@ class COExport implements FromCollection,WithHeadings,WithMapping,ShouldAutoSize
         GROUP BY B.CSTMTACCT_ACCT_NO ORDER BY A.CARD_BRANCH_ID ASC"));
     }
 
-    public function headings():array
+    public function headings(): array
     {
-        return ["CUST_ID","CUST_NAME","CONTACT_NAME","CONTACT_BIRTH_DATE","CONTACT_MOBILE",
-        "CONTACT_EMPLOYER_NAME","CONTACT_STAFF","CUST_BRANCH_ID","ACCOUNT_NO",
-        "STMT_MONTH","CURRENCY","OPEN_BALANCE","ACCGRPLMT_CREDIT_LMT","CLOSE_BALANCE","CURR_AGE_CODE","STATUS"];
+        return [
+            "CUST_ID", "CUST_NAME", "CONTACT_NAME", "CONTACT_BIRTH_DATE", "CONTACT_MOBILE",
+            "CONTACT_EMPLOYER_NAME", "CONTACT_STAFF", "CUST_BRANCH_ID", "ACCOUNT_NO",
+            "STMT_MONTH", "CURRENCY", "OPEN_BALANCE", "ACCGRPLMT_CREDIT_LMT", "CLOSE_BALANCE", "CURR_AGE_CODE", "STATUS"
+        ];
     }
 }

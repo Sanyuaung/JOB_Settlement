@@ -34,11 +34,11 @@ class PSSD02Export implements FromCollection,WithHeadings,WithMapping,ShouldAuto
             $pssd02->Acquire_Transaction_Amount,
             $pssd02->Acquire_Transaction_Amount_MMK,
             $pssd02->Number_of_Used_Transaction,
-            $pssd02->Used_Transaction_Amount,
-            $pssd02->Used_Transaction_Amount_MMK,
+            "'".$pssd02->Used_Transaction_Amount,
+            "'".$pssd02->Used_Transaction_Amount_MMK,
             $pssd02->Sold_Transaction_Count,
-            $pssd02->Sold_Transaction_Amount,
-            $pssd02->Sold_Transaction_Amount_MMK,
+            "'".$pssd02->Sold_Transaction_Amount,
+            "'".$pssd02->Sold_Transaction_Amount_MMK,
             $pssd02->Commision_Amount,
             $pssd02->Commision_Amount_MMK,
             $pssd02->Remark
@@ -59,8 +59,8 @@ class PSSD02Export implements FromCollection,WithHeadings,WithMapping,ShouldAuto
         END AS Card_Name,DATE_FORMAT($this->date,'%Y-%m-%d') AS Transaction_Date,
         CASE when AUTHTXN_CRDPLAN_ID like '%CRD%' then 'Credit'
             when A.AUTHTXN_CRDPLAN_ID like '%DEBIT%' then 'Debit'
-            when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co_brand'
-            when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co_brand' 
+            when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co-brand'
+            when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co-brand' 
             WHEN B.PAN LIKE C.BIN_Code THEN C.Card_Type
         END as Category_of_Card, D.CURRENCY_CODE AS CURRENCY,
         CASE when A.AUTHTXN_TXNTYPE_ID like 'WITHD%' then 'ATM'
@@ -115,8 +115,8 @@ class PSSD02Export implements FromCollection,WithHeadings,WithMapping,ShouldAuto
                 END AS Card_Name, DATE_FORMAT($this->date,'%Y-%m-%d') as Transaction_Date,
                 CASE when AUTHTXN_CRDPLAN_ID like '%CRD%' then 'Credit'
                 when A.AUTHTXN_CRDPLAN_ID like '%DEBIT%' then 'Debit'
-                when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co_brand'
-                when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co_brand' 
+                when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co-brand'
+                when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co-brand' 
                 WHEN B.PAN LIKE C.BIN_Code THEN C.Card_Type
                 END as Category_of_Card, D.CURRENCY_CODE AS Currency,
                 CASE 

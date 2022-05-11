@@ -47,7 +47,7 @@
 
 <body>
     <div>
-        <a href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" class="ml-2"></a>
+        <a href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}"></a>
         <a id="profile">({{ auth()->user()->department }})</a>
         <a id="profile" data-mdb-toggle="dropdown">{{ auth()->user()->name }} </a>
         <ul class="dropdown-menu dropdown-menu-end">

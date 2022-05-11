@@ -17,10 +17,13 @@
                     <th scope="col">MMK Amount</th>
                     <th scope="col">Exchange Rate</th>
                     <th scope="col">Net Settlement Amount</th>
+                    <th scope="col">Settlement Amount (USD) at Nostro</th>
+                    <th scope="col">Funding Date</th>
                     <th scope="col">Commissions Amount</th>
                     <th scope="col">Type of Transaction</th>
                     <th scope="col">Card Type</th>
                     <th scope="col">Authorization Currency</th>
+                    <th scope="col">Update</th>
                 </tr>
                 @foreach ($tranxs as $tranx)
                     <tr>
@@ -31,10 +34,14 @@
                         <td>{{ $tranx->mmkAmt }}</td>
                         <td>{{ $tranx->exRate }}</td>
                         <td>{{ $tranx->netAmt }}</td>
+                        <td>{{ $tranx->settAmt_Nostro_USD }}</td>
+                        <td>{{ $tranx->fundingDate }}</td>
                         <td>{{ $tranx->commAmt }}</td>
                         <td>{{ $tranx->typeOfTrans }}</td>
                         <td>{{ $tranx->cardType }}</td>
                         <td>{{ $tranx->currency }}</td>
+                        <td><a class="btn btn-sm green white-text" href="{{ route('visaedit', $tranx->id) }}">Update</a>
+                        </td>
                     </tr>
                 @endforeach
             </table>

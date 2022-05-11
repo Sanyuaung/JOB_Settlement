@@ -3,15 +3,13 @@
     <style>
         .center {
             margin: auto;
-            padding: 50px;
+            padding: 20px;
         }
 
     </style>
     <div class="center container">
         <div class="col-md-4 offset-4 mt-5">
-            <!-- Material form register -->
             <div class="card">
-
                 <h5 class="card-header orange darken-2 white-text text-center py-4">
                     <strong><b>Welcome</b></strong>
                 </h5>

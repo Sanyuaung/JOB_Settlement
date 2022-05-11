@@ -29,8 +29,8 @@ class PSSD02 extends Model
             END AS Card_Name,DATE_FORMAT($date,'%Y-%m-%d') AS Transaction_Date,
             CASE when AUTHTXN_CRDPLAN_ID like '%CRD%' then 'Credit'
                 when A.AUTHTXN_CRDPLAN_ID like '%DEBIT%' then 'Debit'
-                when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co_brand'
-                when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co_brand' 
+                when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co-brand'
+                when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co-brand' 
                 WHEN B.PAN LIKE C.BIN_Code THEN C.Card_Type
             END as Category_of_Card, D.CURRENCY_CODE AS CURRENCY,
             CASE when A.AUTHTXN_TXNTYPE_ID like 'WITHD%' then 'ATM'
@@ -85,8 +85,8 @@ class PSSD02 extends Model
                     END AS Card_Name, DATE_FORMAT($date,'%Y-%m-%d') as Transaction_Date,
                     CASE when AUTHTXN_CRDPLAN_ID like '%CRD%' then 'Credit'
                     when A.AUTHTXN_CRDPLAN_ID like '%DEBIT%' then 'Debit'
-                    when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co_brand'
-                    when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co_brand' 
+                    when A.AUTHTXN_CRDPLAN_ID like 'MU%' then 'Co-brand'
+                    when A.AUTHTXN_CRDPLAN_ID like 'MOB_UPI_DB%' then 'Co-brand' 
                     WHEN B.PAN LIKE C.BIN_Code THEN C.Card_Type
                     END as Category_of_Card, D.CURRENCY_CODE AS Currency,
                     CASE 

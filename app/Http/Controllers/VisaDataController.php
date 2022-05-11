@@ -31,8 +31,12 @@ class VisaDataController extends Controller
         $Year=substr($req->settledate, 0, 4);
         $Month=substr($req->settledate, 5, 2);
         $Date=substr($req->settledate, 8, 2);
-        // dd($req->cardType,$req->typeOfTrans);
+        $Year1=substr($req->fundingDate, 0, 4);
+        $Month1=substr($req->fundingDate, 5, 2);
+        $Date1=substr($req->fundingDate, 8, 2);
+        // dd($req->settledate);
         $settledate=$Year.$Month.$Date;
+        $fundingDate=$Year1.$Month1.$Date1;
         if ($validation) {
             //insert data to DB
             $tranx=new syavisatran();
@@ -42,6 +46,8 @@ class VisaDataController extends Controller
             $tranx->mmkAmt=$req->mmk;
             $tranx->exRate=$req->rate;
             $tranx->netAmt=$req->Net;
+            $tranx->settAmt_Nostro_USD=!empty($req->settAmt_Nostro_USD) ? $req->settAmt_Nostro_USD : '';
+            $tranx->fundingDate=!empty($fundingDate) ? $fundingDate : '';
             $tranx->typeOfTrans=strtoupper($req->typeOfTrans);
             $tranx->commAmt=$req->commAmt;
             $tranx->cardType=$req->cardType;
@@ -56,8 +62,64 @@ class VisaDataController extends Controller
 
     public function show()
     {
-        $tranx=syavisatran::latest()->paginate(10); // latest to first
+        $tranx=syavisatran::latest()->paginate(11); // latest to first
         return view('NewSwitch/VISA/showall', ['tranxs'=>$tranx]);
+    }
+    public function visaedit($id){
+        $edittran=syavisatran::find($id);
+        $Y=substr($edittran->settleDate, 0, 4); // YYYY
+        $M=substr($edittran->settleDate, 4, 2); // MM
+        $D=substr($edittran->settleDate, 6, 2); // MM
+        $settledate=$Y."-".$M."-".$D;
+        // dd($settledate);
+        // dd($Y,$M,$D);
+        return view("NewSwitch/VISA/visaedit",['edittran'=>$edittran,'settledate'=>$settledate]) ;
+    }
+    public function visaupdate($id){
+        $validation=request()->validate([
+            'settledate'=> "required",
+            'num'=>"required",
+            'usd'=>"required",
+            'mmk'=>"required",
+            'Net'=>"required",
+            'settAmt_Nostro_USD'=>"required",
+            'fundingDate'=>'required|max:8',
+            'rate'=>"required",
+            'commAmt'=>"required",
+            'cardType'=>"required",
+            'currency'=>"required",
+            'typeOfTrans'=>"required",
+        ]);
+        // dd($validation);
+        if($validation){        
+            // $Year=substr($validation["settledate"], 0, 4);
+            // $Month=substr($validation["settledate"], 5, 2);
+            // $Date=substr($validation["settledate"], 8, 2);
+            // $Year1=substr($validation["fundingDate"], 0, 4);
+            // $Month1=substr($validation["fundingDate"], 5, 2);
+            // $Date1=substr($validation["fundingDate"], 8, 2);
+        // dd($req->settledate);
+            // $settledate=$Year.$Month.$Date;
+            // $fundingDate=$Year1.$Month1.$Date1;
+            $vidaupdate=syavisatran::find($id);
+            $vidaupdate->settleDate=$validation["settledate"];
+            $vidaupdate->noTrans=$validation["num"];
+            $vidaupdate->usdAmt=$validation["usd"];
+            $vidaupdate->mmkAmt=$validation["mmk"];
+            $vidaupdate->exRate=$validation["rate"];
+            $vidaupdate->netAmt=$validation["Net"];
+            $vidaupdate->settAmt_Nostro_USD=!empty($validation["settAmt_Nostro_USD"]) ? $validation["settAmt_Nostro_USD"] : '';
+            $vidaupdate->fundingDate=!empty($validation["fundingDate"]) ? $validation["fundingDate"] : '';
+            $vidaupdate->commAmt=$validation["commAmt"];
+            $vidaupdate->cardType=$validation["cardType"];
+            $vidaupdate->currency=strtoupper($validation["currency"]);
+            $vidaupdate->typeOfTrans=strtoupper($validation["typeOfTrans"]);
+            $vidaupdate->update();
+            Alert::success('Updated','updated successfully');
+            return redirect()->route('showall');
+        }else{
+            return back()->withErrors($validation);
+        }
     }
     
     public function ccy()

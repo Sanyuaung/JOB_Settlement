@@ -73,6 +73,23 @@
                         @enderror
                     </div>
 
+                    <div class="md-form mt-4">
+                        <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control"
+                            name="settAmt_Nostro_USD">
+                        <label for="materialRegisterFormEmail">Settlement Amount (USD) at Nostro</label>
+                        @error('settAmt_Nostro_USD')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="md-form mt-4">
+                        <input type="date" id="materialRegisterFormEmail" class="form-control" name="fundingDate">
+                        <label for="materialRegisterFormEmail">Funding Date&nbsp;<span class="iconify"
+                                data-icon="flat-color-icons:calendar" data-width="25"></span></label>
+                        @error('fundingDate')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+
                     <!-- Price -->
                     <div class="md-form mt-4">
                         <input type="number" step="0.01" id="materialRegisterFormEmail" class="form-control" name="rate">

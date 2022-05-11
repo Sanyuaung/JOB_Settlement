@@ -25,10 +25,16 @@
                             data-width="20"></span>&nbsp; JCB Post Files</a>
                 </li>
             @endif
+            @if (auth()->user()->department == 'Admin' || auth()->user()->department == 'Settlement')
+                <li>
+                    <a id="home" type="submit" href="{{ route('UPIHome') }}"
+                        class="text-center white-text dropdown-item">UPI Settlement File</a>
+                </li>
+            @endif
             @if (auth()->user()->department == 'Admin' || auth()->user()->department == 'Card')
                 <li>
                     <a id="home" type="submit" href="{{ route('MPUHome') }}"
-                        class="text-center white-text dropdown-item">MPU / UPI / JCB New Switch</a>
+                        class="text-center white-text dropdown-item">MPU / JCB New Switch</a>
                 </li>
             @endif
             @if (auth()->user()->department == 'Settlement' || auth()->user()->department == 'Admin')
@@ -40,9 +46,9 @@
             @endif
             @if (auth()->user()->department == 'Admin' || auth()->user()->department == 'Card')
                 <li>
-                    <a id="home" type="submit" href="{{ route('ccy') }}" class="text-center white-text dropdown-item"><span
-                            class="iconify" data-icon="flat-color-icons:currency-exchange"
-                            data-width="25"></span>&nbsp; Daily Currency
+                    <a id="home" type="submit" href="{{ route('ccy') }}"
+                        class="text-center white-text dropdown-item"><span class="iconify"
+                            data-icon="flat-color-icons:currency-exchange" data-width="25"></span>&nbsp; Daily Currency
                         Rate</a>
                 </li>
             @endif
